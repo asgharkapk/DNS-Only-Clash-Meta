@@ -52,10 +52,6 @@ dns:
     - 1.0.0.2
     - 1.1.1.1
     - 1.1.1.2
-    - https://cloudflare-dns.com/dns-query
-    - tls://one.one.one.one
-    - one.one.one.one
-    - security.cloudflare-dns.com
   nameserver:
     - 1.0.0.1
     - 1.0.0.2
