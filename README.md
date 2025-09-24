@@ -84,6 +84,8 @@ In **Clash / Clash.Meta YAML configs**, the DNS section can define multiple type
   ```
 * Purpose: resolve domain names of your configured `nameserver` (especially if those are DoH/DoT endpoints).
 
+* * **`SHOULD BE ONLY PURE IP (IPV4/IPV6)`**
+
 ---
 
 ### 🔹 `nameserver`
