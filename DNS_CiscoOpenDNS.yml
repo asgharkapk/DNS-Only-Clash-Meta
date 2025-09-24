@@ -48,6 +48,18 @@ dns:
     - ntp.*.com
     - "*.ir"
   default-nameserver:
+    - 1.1.1.1
+    - 1.0.0.1
+    - 2606:4700:4700::1111
+    - 2606:4700:4700::1001
+    - 8.8.8.8
+    - 8.8.4.4
+    - 2001:4860:4860::8888
+    - 2001:4860:4860::8844
+    - 9.9.9.9
+    - 149.112.112.112
+    - 2620:fe::fe
+    - 2620:fe::9
     - 208.67.222.222
     - 208.67.220.220
     - 208.67.222.220
@@ -65,18 +77,15 @@ dns:
     - resolver1.opendns.com
     - tls://dns.opendns.com
   direct-nameserver:
-    - 2.188.21.42
-    - 2.188.21.50
-    - 2.188.21.140
-    - 2.188.21.20
-    - 217.218.127.127
-    - 217.218.155.155
-    - recursive1.dci.ir
-    - recursive2.dci.ir
-    - dns.tci.ir
-    - recursive3.dci.ir
-    - recursive4.dci.ir
-    - dci.ir
+    - 208.67.222.222
+    - 208.67.220.220
+    - 208.67.222.220
+    - 208.67.220.222
+    - 2620:119:35::35
+    - 2620:119:53::53
+    - https://doh.opendns.com/dns-query
+    - resolver1.opendns.com
+    - tls://dns.opendns.com
   proxy-server-nameserver:
     - 208.67.222.222
     - 208.67.220.220
