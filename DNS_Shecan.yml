@@ -52,11 +52,6 @@ dns:
     - 178.22.122.101
     - 185.51.200.1
     - 185.51.200.2
-    - https://free.shecan.ir/dns-query
-    - tls://free.shecan.ir
-    - free.shecan.ir
-    - free2.shecan.ir
-    - tls://free.shecan.ir
   nameserver:
     - 178.22.122.100
     - 178.22.122.101
