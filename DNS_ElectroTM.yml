@@ -66,15 +66,25 @@ dns:
     - 208.67.220.222
     - 2620:119:35::35
     - 2620:119:53::53
+    - 4.2.2.1
+    - 4.2.2.2
+    - 209.244.0.3
+    - 209.244.0.4
   nameserver:
     - 78.157.42.100
     - 78.157.42.101
+    - https://78.157.42.100/dns-query
+    - https://78.157.42.101/dns-query
   direct-nameserver:
     - 78.157.42.100
     - 78.157.42.101
+    - https://78.157.42.100/dns-query
+    - https://78.157.42.101/dns-query
   proxy-server-nameserver:
     - 78.157.42.100
     - 78.157.42.101
+    - https://78.157.42.100/dns-query
+    - https://78.157.42.101/dns-query
 sniffer:
   enable: true
   force-dns-mapping: true
