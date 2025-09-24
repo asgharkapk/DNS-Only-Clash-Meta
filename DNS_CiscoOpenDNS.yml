@@ -66,6 +66,10 @@ dns:
     - 208.67.220.222
     - 2620:119:35::35
     - 2620:119:53::53
+    - 4.2.2.1
+    - 4.2.2.2
+    - 209.244.0.3
+    - 209.244.0.4
   nameserver:
     - 208.67.222.222
     - 208.67.220.220
@@ -74,8 +78,10 @@ dns:
     - 2620:119:35::35
     - 2620:119:53::53
     - https://doh.opendns.com/dns-query
-    - resolver1.opendns.com
+    - https://dns.opendns.com/dns-query
     - tls://dns.opendns.com
+    - resolver1.opendns.com
+    - tls://dns.umbrella.com
   direct-nameserver:
     - 208.67.222.222
     - 208.67.220.220
@@ -84,8 +90,10 @@ dns:
     - 2620:119:35::35
     - 2620:119:53::53
     - https://doh.opendns.com/dns-query
-    - resolver1.opendns.com
+    - https://dns.opendns.com/dns-query
     - tls://dns.opendns.com
+    - resolver1.opendns.com
+    - tls://dns.umbrella.com
   proxy-server-nameserver:
     - 208.67.222.222
     - 208.67.220.220
@@ -94,8 +102,10 @@ dns:
     - 2620:119:35::35
     - 2620:119:53::53
     - https://doh.opendns.com/dns-query
-    - resolver1.opendns.com
+    - https://dns.opendns.com/dns-query
     - tls://dns.opendns.com
+    - resolver1.opendns.com
+    - tls://dns.umbrella.com
 sniffer:
   enable: true
   force-dns-mapping: true
