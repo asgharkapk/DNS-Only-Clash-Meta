@@ -67,6 +67,81 @@ ntp:
 
 ---
 
+In **Clash / Clash.Meta YAML configs**, the DNS section can define multiple types of upstream resolvers. Each serves a different role in the DNS workflow:
+
+---
+
+### 🔹 `default-nameserver`
+
+* Used for **bootstrapping DNS** before Clash’s own DNS is ready.
+* Typically set to **public, reliable IP-based resolvers** (not domain names, because Clash hasn’t resolved anything yet).
+* Example:
+
+  ```yaml
+  default-nameserver:
+    - 1.1.1.1
+    - 8.8.8.8
+  ```
+* Purpose: resolve domain names of your configured `nameserver` (especially if those are DoH/DoT endpoints).
+
+---
+
+### 🔹 `nameserver`
+
+* The **main resolvers Clash uses** to resolve domains.
+* You can mix plain DNS, DoH, DoT.
+* Example:
+
+  ```yaml
+  nameserver:
+    - https://dns.google/dns-query
+    - tls://1.1.1.1:853
+  ```
+* Clash uses these to resolve most queries, depending on rules and fake-IP setup.
+
+---
+
+### 🔹 `direct-nameserver`
+
+* Used **only when traffic is DIRECT** (bypasses proxy).
+* Ensures local/IR domains resolve correctly without being forced through foreign resolvers.
+* Example:
+
+  ```yaml
+  direct-nameserver:
+    - 178.22.122.100   # Shecan (Iran DNS)
+    - 185.51.200.2
+  ```
+* Purpose: avoid DNS poisoning/hijacking when accessing local sites directly.
+
+---
+
+### 🔹 `proxy-server-nameserver`
+
+* Used when **queries for proxy servers themselves** need resolution.
+* Example: if your proxy node’s hostname (`hk.example.com`) needs resolving, Clash uses this.
+* Example:
+
+  ```yaml
+  proxy-server-nameserver:
+    - 8.8.8.8
+    - 1.1.1.1
+  ```
+* Keeps node resolution separate from normal traffic, so proxies can still be reached if normal DNS is blocked.
+
+---
+
+✅ **Summary table:**
+
+| Field                     | Purpose                                          |
+| ------------------------- | ------------------------------------------------ |
+| `default-nameserver`      | Bootstrap resolver to reach your DoH/DoT servers |
+| `nameserver`              | Main resolvers for general queries               |
+| `direct-nameserver`       | Used for DIRECT connections only                 |
+| `proxy-server-nameserver` | Used for resolving proxy server hostnames        |
+
+---
+
 ## Recommended DNS Providers
 
 | Provider   | IPv4         | Notes                            |
