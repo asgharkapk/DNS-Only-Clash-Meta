@@ -244,4 +244,194 @@ nameserver:
     - tls://dns.adguard-dns.com
 ```
 
+In **Clash.Meta**, the **`nameserver-policy`** (sometimes called `dns-policy` in older configs) controls **how DNS queries are routed to your configured nameservers**. It’s useful when you have multiple DNS servers and want to specify **which queries go to which server**.
 
+Here’s a breakdown:
+
+---
+
+### **1. Basic `nameserver` config**
+
+Example:
+
+```yaml
+dns:
+  enable: true
+  listen: 0.0.0.0:7874
+  enhanced-mode: fake-ip
+  nameserver:
+    - 1.1.1.1
+    - 8.8.8.8
+```
+
+This just sets the DNS servers Clash will use. But **all queries are sent to these servers in order**, without policy control.
+
+---
+
+### **2. `nameserver-policy`**
+
+You can define **policies for specific domains**. Syntax:
+
+```yaml
+dns:
+  enable: true
+  listen: 0.0.0.0:7874
+  enhanced-mode: fake-ip
+  nameserver:
+    - 1.1.1.1
+    - 8.8.8.8
+  default-nameserver-policy: all
+  nameserver-policy:
+    - domain: "geosite:cn"
+      server:
+        - 223.5.5.5
+        - 223.6.6.6
+    - domain: "geosite:private"
+      server:
+        - 127.0.0.1
+```
+
+**Explanation:**
+
+| Field                       | Meaning                                                                        |
+| --------------------------- | ------------------------------------------------------------------------------ |
+| `default-nameserver-policy` | Which server(s) are used if no policy matches (`all`, `random`, `round-robin`) |
+| `nameserver-policy`         | List of domain-based rules mapping queries to specific DNS servers             |
+| `domain`                    | Can be an exact domain, suffix, or geosite category (requires `geosite.dat`)   |
+| `server`                    | DNS server(s) to use for that domain                                           |
+
+---
+
+### **3. Example Scenarios**
+
+**Split DNS:**
+
+* Chinese domains → China DNS
+* Foreign domains → Public DNS
+
+```yaml
+dns:
+  enable: true
+  enhanced-mode: fake-ip
+  nameserver:
+    - 1.1.1.1
+    - 8.8.8.8
+  default-nameserver-policy: all
+  nameserver-policy:
+    - domain: "geosite:cn"
+      server:
+        - 223.5.5.5
+        - 223.6.6.6
+```
+
+Here, queries to `geosite:cn` (China sites) go to AliDNS, others go to Cloudflare/Google.
+
+---
+
+### **4. Key Notes**
+
+1. **Order matters**: Clash checks `nameserver-policy` first, then falls back to `default-nameserver-policy`.
+2. **Enhanced-mode options**:
+
+   * `fake-ip` → resolves domains to fake IPs for routing through proxies
+   * `redir-host` → normal host-based resolution
+3. **Works with rule providers**: You can reference geosite categories for policy-based routing.
+
+---
+
+Here’s a **Clash.Meta DNS config optimized for Iran**, using `nameserver-policy` to avoid DNS hijacking while maintaining fast resolution:
+
+```yaml
+dns:
+  enable: true
+  listen: 0.0.0.0:7874
+  ipv6: false
+  default-nameserver-policy: all
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16   # standard fake IP range
+  nameserver:
+    # Public, secure DNS for foreign sites
+    - 1.1.1.1          # Cloudflare
+    - 1.0.0.1
+    - 8.8.8.8          # Google
+    - 8.8.4.4
+    - https://cloudflare-dns.com/dns-query    # Cloudflare DoH
+    - https://dns.google/dns-query            # Google DoH
+    - tls://1.1.1.1                           # Cloudflare DoT
+    - tls://8.8.8.8                            # Google DoT
+  nameserver-policy:
+    # Iran domains go to local/ISP DNS to prevent hijacking
+    - domain: "geosite:ir"
+      server:
+        - 2.188.21.140   # local Iranian DNS (Fars, etc.)
+        - 37.10.67.10
+    # Private networks go to local resolver
+    - domain: "geosite:private"
+      server:
+        - 127.0.0.1
+    # Optional: Chinese domains to AliDNS
+    - domain: "geosite:cn"
+      server:
+        - 223.5.5.5
+        - 223.6.6.6
+```
+
+### ✅ Key Points
+
+1. **`fake-ip-range`** ensures Clash can route connections through proxies even for foreign domains.
+2. **`default-nameserver-policy: all`** → all other domains not matched in `nameserver-policy` will use the public DNS servers.
+3. **`nameserver-policy`** prevents hijacking of `.ir` domains by routing them to trusted local DNS servers.
+4. **Private networks (`geosite:private`)** use `127.0.0.1` if you have a local resolver.
+
+---
+
+```yml
+dns:
+  enable: true
+  listen: 0.0.0.0:7874
+  ipv6: false
+  default-nameserver-policy: all
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  query-url-ttl: 600      # optional: cache TTL for faster responses
+  fallback:
+    - https://cloudflare-dns.com/dns-query
+    - https://dns.google/dns-query
+    - tls://1.1.1.1
+    - tls://8.8.8.8
+
+  # Primary nameservers for different regions
+  nameserver:
+    # Foreign/Public domains
+    - https://cloudflare-dns.com/dns-query
+    - https://dns.google/dns-query
+    - tls://1.1.1.1
+    - tls://8.8.8.8
+    - tls://9.9.9.9        # Quad9 DoT
+    - tls://149.112.112.112
+
+  nameserver-policy:
+    # Iranian domains → local DNS (avoid hijacking)
+    - domain: "geosite:ir"
+      server:
+        - 37.10.67.10
+        - 2.188.21.140
+
+    # Private/local networks
+    - domain: "geosite:private"
+      server:
+        - 127.0.0.1
+
+    # Chinese domains → AliDNS
+    - domain: "geosite:cn"
+      server:
+        - 223.5.5.5
+        - 223.6.6.6
+        - 180.76.76.76
+
+    # Optional: fallback for general regional categories
+    - domain: "geosite:asia"
+      server:
+        - 1.1.1.1
+        - 8.8.8.8
+```
