@@ -48,37 +48,63 @@ dns:
     - ntp.*.com
     - "*.ir"
   default-nameserver:
-    - 1.0.0.1
-    - 1.0.0.2
     - 1.1.1.1
-    - 1.1.1.2
+    - 1.0.0.1
+    - 2606:4700:4700::1111
+    - 2606:4700:4700::1001
+    - 8.8.8.8
+    - 8.8.4.4
+    - 2001:4860:4860::8888
+    - 2001:4860:4860::8844
+    - 9.9.9.9
+    - 149.112.112.112
+    - 2620:fe::fe
+    - 2620:fe::9
+    - 208.67.222.222
+    - 208.67.220.220
+    - 208.67.222.220
+    - 208.67.220.222
+    - 2620:119:35::35
+    - 2620:119:53::53
   nameserver:
     - 1.0.0.1
     - 1.0.0.2
     - 1.1.1.1
     - 1.1.1.2
+    - 2606:4700:4700::1111
+    - 2606:4700:4700::1001
     - https://cloudflare-dns.com/dns-query
     - tls://one.one.one.one
     - one.one.one.one
     - security.cloudflare-dns.com
+    - https://security.cloudflare-dns.com/dns-query
+    - tls://security.cloudflare-dns.com
   direct-nameserver:
     - 1.0.0.1
     - 1.0.0.2
     - 1.1.1.1
     - 1.1.1.2
+    - 2606:4700:4700::1111
+    - 2606:4700:4700::1001
     - https://cloudflare-dns.com/dns-query
     - tls://one.one.one.one
     - one.one.one.one
     - security.cloudflare-dns.com
+    - https://security.cloudflare-dns.com/dns-query
+    - tls://security.cloudflare-dns.com
   proxy-server-nameserver:
     - 1.0.0.1
     - 1.0.0.2
     - 1.1.1.1
     - 1.1.1.2
+    - 2606:4700:4700::1111
+    - 2606:4700:4700::1001
     - https://cloudflare-dns.com/dns-query
     - tls://one.one.one.one
     - one.one.one.one
     - security.cloudflare-dns.com
+    - https://security.cloudflare-dns.com/dns-query
+    - tls://security.cloudflare-dns.com
 sniffer:
   enable: true
   force-dns-mapping: true
