@@ -621,11 +621,8 @@ rule-providers:
     url: https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/BanEasyPrivacy.yaml
     interval: 86400
     path: ./ruleset/BanEasyPrivacy.yaml
-proxies:
-  - name: "Fake Proxy"
-    type: http
-    server: 127.0.0.1
-    port: 8080
+    
+proxies: ~
 
 proxy-groups:
   - name: 🌐Proxy
