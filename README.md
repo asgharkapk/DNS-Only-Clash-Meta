@@ -435,3 +435,74 @@ dns:
         - 1.1.1.1
         - 8.8.8.8
 ```
+
+---
+
+# Clash / Clash.Meta Configuration Key Reference
+
+This document explains what each configuration key does in a typical Clash/Clash.Meta configuration.
+
+---
+
+## Core Proxy Settings
+
+| Key                   | Default / Example | Description                                                                                                                                                  |
+| --------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `port`                | `7890`            | The main HTTP proxy port. Applications can connect here using HTTP/HTTPS proxy.                                                                              |
+| `socks-port`          | `7891`            | The SOCKS5 proxy port for applications that support SOCKS.                                                                                                   |
+| `mixed-port`          | `7892`            | A hybrid port that accepts both HTTP and SOCKS connections. Useful for apps with unknown proxy type.                                                         |
+| `allow-lan`           | `true`            | Whether devices on the local network (LAN) can connect to your proxy.                                                                                        |
+| `mode`                | `rule`            | Determines how traffic is handled: <br> - `direct`: bypass proxy <br> - `global`: all traffic through proxy <br> - `rule`: use rules to decide per domain/IP |
+| `log-level`           | `info`            | Sets logging verbosity: <br> - `info`: normal logs <br> - `warning`, `error`, `debug` available for troubleshooting                                          |
+| `external-controller` | `127.0.0.1:9090`  | API/GUI controller endpoint. Allows external tools (like Clash Dashboard) to interact with Clash.                                                            |
+
+---
+
+## DNS Configuration
+
+DNS is crucial for domain resolution, filtering, and preventing ISP hijacking.
+
+| Key                         | Example            | Description                                                                                                                                                                                                                   |
+| --------------------------- | ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `enable`                    | `true`             | Turns DNS service on or off.                                                                                                                                                                                                  |
+| `listen`                    | `0.0.0.0:7874`     | IP and port where the DNS service listens. `0.0.0.0` allows all interfaces.                                                                                                                                                   |
+| `ipv6`                      | `false`            | Whether to enable IPv6 resolution.                                                                                                                                                                                            |
+| `enhanced-mode`             | `fake-ip`          | Resolves certain domains to "fake" IPs so they can be proxied without DNS leaks. Options: `redir-host`, `fake-ip`.                                                                                                            |
+| `fake-ip-range`             | `198.18.0.1/16`    | IP range used for fake-IP resolution. Standard private testing range.                                                                                                                                                         |
+| `query-url-ttl`             | `600`              | Optional: cache time for DNS queries in seconds. Improves performance.                                                                                                                                                        |
+| `default-nameserver`        | `1.1.1.1, 8.8.8.8` | The DNS servers used when no `nameserver-policy` matches.                                                                                                                                                                     |
+| `nameserver`                | multiple           | List of DNS servers for general resolution, can include: <br> - Plain IP (UDP/TCP) <br> - `https://` (DoH) <br> - `tls://` (DoT)                                                                                              |
+| `fallback`                  | multiple           | DNS servers used if primary servers fail. Supports DoH/DoT.                                                                                                                                                                   |
+| `default-nameserver-policy` | `all`              | Which domains use the `default-nameserver`. Usually `all`.                                                                                                                                                                    |
+| `nameserver-policy`         | structured list    | Domain-specific DNS overrides. Example: <br> - `"geosite:ir"` → local Iranian DNS to prevent hijacking <br> - `"geosite:cn"` → AliDNS for Chinese domains <br> - `"geosite:private"` → `127.0.0.1` for local/private networks |
+
+### Notes on DNS Policies
+
+* **`geosite:*`** domains are groups of domains categorized by region or type. Useful for selective DNS routing.
+* DNS policies ensure sensitive or regional domains are resolved by trusted servers to prevent interference or hijacking.
+
+---
+
+## NTP Configuration
+
+| Key        | Example          | Description                                               |
+| ---------- | ---------------- | --------------------------------------------------------- |
+| `enable`   | `true`           | Enables NTP client to synchronize system clock via Clash. |
+| `server`   | `time.apple.com` | NTP server to query time from.                            |
+| `port`     | `123`            | Standard NTP port.                                        |
+| `interval` | `30`             | Interval (in seconds) for time synchronization.           |
+
+NTP ensures accurate system time, which is critical for SSL/TLS verification, certificate validation, and some proxy behaviors.
+
+---
+
+## Summary
+
+This configuration allows Clash/Clash.Meta to:
+
+* Handle HTTP/SOCKS traffic with multiple ports and rules.
+* Provide advanced DNS features: fake-IP, DoH/DoT, fallback, and domain-specific policies.
+* Synchronize time using NTP for secure connections.
+
+---
+
