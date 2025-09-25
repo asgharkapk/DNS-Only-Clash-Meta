@@ -601,7 +601,7 @@ proxies:
     port: 8080
 
 proxy-groups:
-  - name: 🌐Proxy
+  - name: 🌐Connection
     type: select
     proxies:
       - 🔓Direct
@@ -611,203 +611,203 @@ proxy-groups:
     proxies:
       - 🚫Block
       - 🔓Direct
-      - 🌐Proxy
+      - 🌐Connection
   - name: 🛑Advertisements
     type: select
     proxies:
       - 🚫Block
       - 🔓Direct
-      - 🌐Proxy
+      - 🌐Connection
   - name: 🛡️PrivacyTrackers
     type: select
     proxies:
       - 🚫Block
       - 🔓Direct
-      - 🌐Proxy
+      - 🌐Connection
   - name: 🦠SECURITY
     type: select
     proxies:
       - 🚫Block
       - 🔓Direct
-      - 🌐Proxy
+      - 🌐Connection
   - name: 🖥️Lan
     type: select
     proxies:
       - 🔓Direct
-      - 🌐Proxy
+      - 🌐Connection
       - 🚫Block
   - name: 🇮🇷IranWebsites
     type: select
     proxies:
       - 🔓Direct
-      - 🌐Proxy
+      - 🌐Connection
       - 🚫Block
   - name: </>GIT🎯
     type: select
     proxies:
       - 🔓Direct
-      - 🌐Proxy
+      - 🌐Connection
       - 🚫Block
   - name: 🎮Dota2🎯
     type: select
     proxies:
       - 🔓Direct
-      - 🌐Proxy
+      - 🌐Connection
       - 🚫Block
   - name: 🎮Steam🎯
     type: select
     proxies:
       - 🔓Direct
-      - 🌐Proxy
+      - 🌐Connection
       - 🚫Block
   - name: 🤬censorMovie🎯
     type: select
     proxies:
       - 🔓Direct
-      - 🌐Proxy
+      - 🌐Connection
       - 🚫Block
   - name: 🕹️VideoGame🎯
     type: select
     proxies:
       - 🔓Direct
-      - 🌐Proxy
+      - 🌐Connection
       - 🚫Block
   - name: 📲Xiaomi🎯
     type: select
     proxies:
       - 🔓Direct
-      - 🌐Proxy
+      - 🌐Connection
       - 🚫Block
   - name: 🪟Windows🎯
     type: select
     proxies:
       - 🔓Direct
-      - 🌐Proxy
+      - 🌐Connection
       - 🚫Block
   - name: 📥Download🎯
     type: select
     proxies:
       - 🔓Direct
-      - 🌐Proxy
+      - 🌐Connection
       - 🚫Block
   - name: 💻AnyDesk🎯
     type: select
     proxies:
       - 🔓Direct
-      - 🌐Proxy
+      - 🌐Connection
       - 🚫Block
   - name: 💬Whatsapp🎯
     type: select
     proxies:
       - 🔓Direct
-      - 🌐Proxy
+      - 🌐Connection
       - 🚫Block
   - name: 🎛NVIDIA🎯
     type: select
     proxies:
-      - 🌐Proxy
+      - 🌐Connection
       - 🔓Direct
       - 🚫Block
   - name: 📺YouTube🎯
     type: select
     proxies:
-      - 🌐Proxy
+      - 🌐Connection
       - 🔓Direct
       - 🚫Block
   - name: 📱Google🎯
     type: select
     proxies:
-      - 🌐Proxy
+      - 🌐Connection
       - 🔓Direct
       - 🚫Block
   - name: 📙Reddit🎯
     type: select
     proxies:
-      - 🌐Proxy
+      - 🌐Connection
       - 🔓Direct
       - 🚫Block
   - name: 🔵Telegram🎯
     type: select
     proxies:
-      - 🌐Proxy
+      - 🌐Connection
       - 🔓Direct
       - 🚫Block
   - name: 🤖OpenAI🎯
     type: select
     proxies:
-      - 🌐Proxy
+      - 🌐Connection
       - 🔓Direct
       - 🚫Block
   - name: 🐦Twitter🎯
     type: select
     proxies:
-      - 🌐Proxy
+      - 🌐Connection
       - 🔓Direct
       - 🚫Block
   - name: 🤖Grok🎯
     type: select
     proxies:
-      - 🌐Proxy
+      - 🌐Connection
       - 🔓Direct
       - 🚫Block
   - name: 🗨️Discord🎯
     type: select
     proxies:
-      - 🌐Proxy
+      - 🌐Connection
       - 🔓Direct
       - 🚫Block
   - name: 👾Twitch🎯
     type: select
     proxies:
-      - 🌐Proxy
+      - 🌐Connection
       - 🔓Direct
       - 🚫Block
   - name: ☁️Cloudflare🎯
     type: select
     proxies:
-      - 🌐Proxy
+      - 🌐Connection
       - 🔓Direct
       - 🚫Block
   - name: 📸Instagram🎯
     type: select
     proxies:
-      - 🌐Proxy
+      - 🌐Connection
       - 🔓Direct
       - 🚫Block
   - name: 🎥Netflix🎯
     type: select
     proxies:
-      - 🌐Proxy
+      - 🌐Connection
       - 🔓Direct
       - 🚫Block
   - name: 🎶Spotify🎯
     type: select
     proxies:
-      - 🌐Proxy
+      - 🌐Connection
       - 🔓Direct
       - 🚫Block
   - name: 🎬TikTok🎯
     type: select
     proxies:
-      - 🌐Proxy
+      - 🌐Connection
       - 🔓Direct
       - 🚫Block
   - name: 💼LinkedIn🎯
     type: select
     proxies:
-      - 🌐Proxy
+      - 🌐Connection
       - 🔓Direct
       - 🚫Block
   - name: 🤖AI🎯
     type: select
     proxies:
-      - 🌐Proxy
+      - 🌐Connection
       - 🔓Direct
       - 🚫Block
   - name: 🎦Streamer🎯
     type: select
     proxies:
-      - 🌐Proxy
+      - 🌐Connection
       - 🔓Direct
       - 🚫Block
   - name: 🎯Destinations
@@ -858,9 +858,7 @@ proxy-groups:
   - name: ⚡Online
     type: select
     proxies:
-      - 🔓Direct
-      - 🌐Proxy
-      - 🚫Block
+      - 🌐Connection
       - 🎯Destinations
 ntp:
   enable: true
