@@ -32,7 +32,7 @@ dns:
   cache-algorithm: arc
   use-system-hosts: true
   use-host: true
-  listen: 0.0.0.0:53
+  #listen: 0.0.0.0:53
   enhanced-mode: fake-ip
   fake-ip-filter-mode: blacklist
   fake-ip-range: 198.18.0.1/16
@@ -75,16 +75,19 @@ dns:
     - 78.157.42.101
     - https://78.157.42.100/dns-query
     - https://78.157.42.101/dns-query
+    - https://dns.electrotm.org/dns-query
   direct-nameserver:
     - 78.157.42.100
     - 78.157.42.101
     - https://78.157.42.100/dns-query
     - https://78.157.42.101/dns-query
+    - https://dns.electrotm.org/dns-query
   proxy-server-nameserver:
     - 78.157.42.100
     - 78.157.42.101
     - https://78.157.42.100/dns-query
     - https://78.157.42.101/dns-query
+    - https://dns.electrotm.org/dns-query
 sniffer:
   enable: true
   force-dns-mapping: true
