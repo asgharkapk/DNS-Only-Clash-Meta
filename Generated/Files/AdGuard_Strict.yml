@@ -590,16 +590,38 @@ rule-providers:
     interval: 86400
     path: ./ruleset/BanEasyPrivacy.yaml
 proxies:
-- name: Fake Proxy
-  type: http
-  server: 127.0.0.1
-  port: 8080
+- name: dns-out
+  type: dns
+- name: UDP_IPv4_DIRECT
+  type: direct
+  udp: true
+  ip-version: ipv4
+- name: UDP_IPv6_DIRECT
+  type: direct
+  udp: true
+  ip-version: ipv6
+- name: TCP_IPv4_DIRECT
+  type: direct
+  udp: false
+  ip-version: ipv4
+- name: TCP_IPv6_DIRECT
+  type: direct
+  udp: false
+  ip-version: ipv6
 proxy-groups:
 - name: 🌐Connection
   type: select
   proxies:
   - 🔓Direct
   - 🚫Block
+  - dns-out
+  - UDP_IPv4_DIRECT
+  - TCP_IPv4_DIRECT
+  - UDP_IPv6_DIRECT
+  - TCP_IPv6_DIRECT
+  - REJECT-DROP
+  - PASS
+  - COMPATIBLE
 - name: 📘Facebook🎯
   type: select
   proxies:
