@@ -48,30 +48,20 @@ dns:
   - ntp.*.com
   - '*.ir'
   default-nameserver:
-  - 8.8.8.8
-  - 8.8.4.4
-  - 2001:4860:4860::8888
-  - 2001:4860:4860::8844
+  - 9.9.9.9
+  - 2620:fe::fe
   nameserver:
-  - 8.8.8.8
-  - 8.8.4.4
-  - 2001:4860:4860::8888
-  - 2001:4860:4860::8844
-  - https://dns.google/dns-query
-  - tls://dns.google
+  - 9.9.9.9
+  - 2620:fe::fe
+  - https://dns.quad9.net/dns-query
   direct-nameserver:
-  - 8.8.8.8
-  - 8.8.4.4
-  - 2001:4860:4860::8888
-  - 2001:4860:4860::8844
+  - 9.9.9.9
+  - 2620:fe::fe
   proxy-server-nameserver:
-  - 8.8.8.8
-  - 8.8.4.4
-  - 2001:4860:4860::8888
-  - 2001:4860:4860::8844
+  - 9.9.9.9
+  - 2620:fe::fe
   fallback:
-  - 8.8.8.8
-  - 2001:4860:4860::8844
+  - 9.9.9.9
 sniffer:
   enable: true
   force-dns-mapping: true
