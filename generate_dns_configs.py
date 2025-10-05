@@ -7,7 +7,7 @@ logging.basicConfig(level=logging.INFO, format="%(levelname)s - %(message)s")
 
 INPUT_FILE = "dns_list.txt"
 TEMPLATE_FILE = "DNS_for_Clash.meta_Template.yml"
-OUTPUT_DIR = "Generated"
+OUTPUT_DIR = "Generated/List"
 
 DEFAULT_FALLBACK = [
     "8.8.8.8", "1.1.1.1", "9.9.9.9", "94.140.14.14",
@@ -30,13 +30,17 @@ def parse_dns_list():
                 provider, dtype, value = [x.strip() for x in line.split("|")]
             except ValueError:
                 continue
+
             if provider not in providers:
                 providers[provider] = {
                     "ipv4": [], "ipv6": [], "doh": [], "dot": [], "hostname": [],
                     "fallback": [], "country": None
                 }
+
             if dtype == "country":
                 providers[provider]["country"] = value
+            elif dtype == "fallback":
+                providers[provider]["fallback"].append(value)
             elif dtype in providers[provider]:
                 providers[provider][dtype].append(value)
             else:
@@ -65,8 +69,6 @@ def generate_readme(files):
         "- **Strict configs** → Replace *all* DNS fields (`default-nameserver`, `nameserver`, `direct-nameserver`, `proxy-server-nameserver`).",
         "- **Fallback** → If a provider defines `fallback` entries in `dns_list.txt`, those are used. Otherwise, a default global fallback list is applied.",
         "- **Country** → Each provider can define its main host country with a `country` entry.",
-        "",
-        "**USE NORMAL CONFIGS ONLY FOR TEMPLATE**",
         "",
         "## 📜 Available configs",
         "| Provider | Country | Normal | Strict | Fallback DNS | Description |",
@@ -121,10 +123,13 @@ def main():
         logging.info(f"⚙️ Generating configs for provider: {provider}")
         tpl = load_template()
 
+        all_entries = entries["ipv4"] + entries["ipv6"] + entries["doh"] + entries["dot"] + entries["hostname"]
+
         # Normal config
         normal_cfg = tpl.copy()
-        normal_cfg["dns"]["nameserver"] = entries["ipv4"] + entries["ipv6"] + entries["doh"] + entries["dot"] + entries["hostname"]
-        normal_cfg["dns"]["proxy-server-nameserver"] = entries["ipv4"] + entries["ipv6"]
+        normal_cfg["dns"]["nameserver"] = all_entries
+        normal_cfg["dns"]["direct-nameserver"] = all_entries
+        normal_cfg["dns"]["proxy-server-nameserver"] = all_entries
         normal_cfg = add_fallback(normal_cfg, entries)
         f1 = save_config(provider, normal_cfg, "Normal")
         files.append(f1)
@@ -132,12 +137,11 @@ def main():
 
         # Strict config
         strict_cfg = tpl.copy()
-        all_entries = entries["ipv4"] + entries["ipv6"] + entries["doh"] + entries["dot"] + entries["hostname"]
         strict_cfg["dns"]["default-nameserver"] = entries["ipv4"] + entries["ipv6"]
         strict_cfg["dns"]["nameserver"] = all_entries
-        strict_cfg["dns"]["direct-nameserver"] = entries["ipv4"] + entries["ipv6"]
-        strict_cfg["dns"]["proxy-server-nameserver"] = entries["ipv4"] + entries["ipv6"]
-        strict_cfg = add_fallback(strict_cfg, entries)   # ✅ fixed
+        strict_cfg["dns"]["direct-nameserver"] = all_entries
+        strict_cfg["dns"]["proxy-server-nameserver"] = all_entries
+        strict_cfg = add_fallback(strict_cfg, entries)
         f2 = save_config(provider, strict_cfg, "Strict")
         files.append(f2)
         logging.info(f"✅ Strict config saved: {f2}")
