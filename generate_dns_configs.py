@@ -7,7 +7,8 @@ logging.basicConfig(level=logging.INFO, format="%(levelname)s - %(message)s")
 
 INPUT_FILE = "dns_list.txt"
 TEMPLATE_FILE = "DNS_for_Clash.meta_Template.yml"
-OUTPUT_DIR = "Generated/List"
+OUTPUT_DIR = "Generated/Files"
+README_DIR = "Generated"
 
 DEFAULT_FALLBACK = [
     "8.8.8.8", "1.1.1.1", "9.9.9.9", "94.140.14.14",
@@ -110,7 +111,7 @@ def generate_readme(files):
         lines.append(f"| {provider} | {country} | {normal_url} | {strict_url} | `{fallback_str}` | {desc} |")
 
     lines.append("\n---\n✅ Generated automatically. Do not edit manually.")
-    with open(os.path.join(OUTPUT_DIR,"README.md"), "w", encoding="utf-8") as f:
+    with open(os.path.join(README_DIR,"README.md"), "w", encoding="utf-8") as f:
         f.write("\n".join(lines))
 
 def main():
