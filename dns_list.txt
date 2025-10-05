@@ -1,0 +1,14 @@
+# ProviderName | Type | Value
+Google | ipv4 | 8.8.8.8
+Google | ipv4 | 8.8.4.4
+Google | ipv6 | 2001:4860:4860::8888
+Google | ipv6 | 2001:4860:4860::8844
+Google | doh  | https://dns.google/dns-query
+Google | dot  | tls://dns.google
+
+Cloudflare | ipv4 | 1.1.1.1
+Cloudflare | ipv4 | 1.0.0.1
+Cloudflare | ipv6 | 2606:4700:4700::1111
+Cloudflare | ipv6 | 2606:4700:4700::1001
+Cloudflare | doh  | https://cloudflare-dns.com/dns-query
+Cloudflare | dot  | tls://1dot1dot1dot1.cloudflare-dns.com
