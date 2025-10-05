@@ -1,5 +1,8 @@
 import os
 import yaml
+import logging
+
+logging.basicConfig(level=logging.INFO, format="%(levelname)s - %(message)s")
 
 INPUT_FILE = "dns_list.txt"
 TEMPLATE_FILE = "DNS_for_Clash.meta_Template.yml"
@@ -50,9 +53,13 @@ def generate_readme(files):
         f.write("\n".join(lines))
 
 def main():
+    logging.info("🚀 Starting DNS config generation...")
     providers = parse_dns_list()
+    logging.info(f"📑 Found {len(providers)} providers in dns_list.txt")
+
     files = []
     for provider, entries in providers.items():
+        logging.info(f"⚙️ Generating configs for provider: {provider}")
         tpl = load_template()
 
         # Normal config
@@ -61,6 +68,7 @@ def main():
         normal_cfg["dns"]["proxy-server-nameserver"] = entries["ipv4"] + entries["ipv6"]
         f1 = save_config(provider, normal_cfg, "Normal")
         files.append(f1)
+        logging.info(f"✅ Normal config saved: {f1}")
 
         # Strict config
         strict_cfg = tpl.copy()
@@ -71,8 +79,10 @@ def main():
         strict_cfg["dns"]["proxy-server-nameserver"] = entries["ipv4"] + entries["ipv6"]
         f2 = save_config(provider, strict_cfg, "Strict")
         files.append(f2)
+        logging.info(f"✅ Strict config saved: {f2}")
 
     generate_readme(files)
+    logging.info("📄 README.md generated inside Generated/")
 
 if __name__ == "__main__":
     main()
