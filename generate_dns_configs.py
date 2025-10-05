@@ -44,7 +44,7 @@ def generate_readme(files):
     for f in files:
         name = os.path.basename(f)
         provider, t = name.replace(".yml","").rsplit("_",1)
-        url = f"https://raw.githubusercontent.com/OWNER/REPO/main/{OUTPUT_DIR}/{name}"
+        url = f"https://raw.githubusercontent.com/asgharkapk/DNS-Only-Clash-Meta/main/{OUTPUT_DIR}/{name}"
         lines.append(f"| {provider} | {t} | [Link]({url}) |")
     with open(os.path.join(OUTPUT_DIR,"README.md"), "w", encoding="utf-8") as f:
         f.write("\n".join(lines))
