@@ -31,7 +31,8 @@ def parse_dns_list():
                 continue
             if provider not in providers:
                     providers[provider] = {
-                        "ipv4": [], "ipv6": [], "doh": [], "dot": [], "hostname": [], "fallback": []
+                        "ipv4": [], "ipv6": [], "doh": [], "dot": [], "hostname": [],
+                        "fallback": [], "country": None
                     }
             providers[provider][dtype].append(value)
     return providers
@@ -57,10 +58,11 @@ def generate_readme(files):
         "- **Normal configs** → Replace only `nameserver` and `proxy-server-nameserver`.",
         "- **Strict configs** → Replace *all* DNS fields (`default-nameserver`, `nameserver`, `direct-nameserver`, `proxy-server-nameserver`).",
         "- **Fallback** → If a provider defines `fallback` entries in `dns_list.txt`, those are used. Otherwise, a default global fallback list is applied.",
+        "- **Country** → Each provider can define its main host country with a `country` entry.",
         "",
         "## 📜 Available configs",
-        "| Provider | Type | Raw Link | Fallback DNS | Description |",
-        "|----------|------|----------|--------------|-------------|",
+        "| Provider | Country | Type | Raw Link | Fallback DNS | Description |",
+        "|----------|---------|------|----------|--------------|-------------|",
     ]
 
     # build a map of provider -> fallback list from dns_list.txt
@@ -76,7 +78,8 @@ def generate_readme(files):
         if not fallback_list:
             fallback_list = DEFAULT_FALLBACK
         fallback_str = ", ".join(fallback_list)
-        lines.append(f"| {provider} | {t} | [Link]({url}) | `{fallback_str}` | {desc} |")
+        country = providers.get(provider, {}).get("country", "N/A")
+        lines.append(f"| {provider} | {country} | {t} | [Link]({url}) | `{fallback_str}` | {desc} |")
 
     lines.append("\n---\n✅ Generated automatically. Do not edit manually.")
     with open(os.path.join(OUTPUT_DIR,"README.md"), "w", encoding="utf-8") as f:
