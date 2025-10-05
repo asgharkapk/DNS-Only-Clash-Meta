@@ -8,6 +8,8 @@ These configs were automatically generated from **dns_list.txt** using the templ
 - **Fallback** → If a provider defines `fallback` entries in `dns_list.txt`, those are used. Otherwise, a default global fallback list is applied.
 - **Country** → Each provider can define its main host country with a `country` entry.
 
+**USE NORMAL CONFIGS ONLY FOR TEMPLATE**
+
 ## 📜 Available configs
 | Provider | Country | Normal | Strict | Fallback DNS | Description |
 |----------|---------|--------|--------|--------------|-------------|
