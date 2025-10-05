@@ -30,11 +30,16 @@ def parse_dns_list():
             except ValueError:
                 continue
             if provider not in providers:
-                    providers[provider] = {
-                        "ipv4": [], "ipv6": [], "doh": [], "dot": [], "hostname": [],
-                        "fallback": [], "country": None
-                    }
-            providers[provider][dtype].append(value)
+                providers[provider] = {
+                    "ipv4": [], "ipv6": [], "doh": [], "dot": [], "hostname": [],
+                    "fallback": [], "country": None
+                }
+            if dtype == "country":
+                providers[provider]["country"] = value
+            elif dtype in providers[provider]:
+                providers[provider][dtype].append(value)
+            else:
+                logging.warning(f"⚠️ Unknown dtype '{dtype}' in line: {line}")
     return providers
 
 def load_template():
@@ -111,7 +116,7 @@ def main():
         strict_cfg["dns"]["nameserver"] = all_entries
         strict_cfg["dns"]["direct-nameserver"] = entries["ipv4"] + entries["ipv6"]
         strict_cfg["dns"]["proxy-server-nameserver"] = entries["ipv4"] + entries["ipv6"]
-        strict_cfg = add_fallback(normal_cfg, entries)
+        strict_cfg = add_fallback(strict_cfg, entries)   # ✅ fixed
         f2 = save_config(provider, strict_cfg, "Strict")
         files.append(f2)
         logging.info(f"✅ Strict config saved: {f2}")
