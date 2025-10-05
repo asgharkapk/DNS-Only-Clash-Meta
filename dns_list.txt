@@ -1,26 +1,329 @@
 # ProviderName | Type | Value
-Google | ipv4 | 8.8.8.8
-Google | ipv4 | 8.8.4.4
-Google | ipv6 | 2001:4860:4860::8888
-Google | ipv6 | 2001:4860:4860::8844
-Google | doh  | https://dns.google/dns-query
-Google | dot  | tls://dns.google
-Google | country | United States
-Google | fallback | 8.8.8.8
-Google | fallback | 2001:4860:4860::8844
+# Provider | dtype | value
 
 Cloudflare | ipv4 | 1.1.1.1
 Cloudflare | ipv4 | 1.0.0.1
 Cloudflare | ipv6 | 2606:4700:4700::1111
 Cloudflare | ipv6 | 2606:4700:4700::1001
 Cloudflare | doh  | https://cloudflare-dns.com/dns-query
-Cloudflare | dot  | tls://1dot1dot1dot1.cloudflare-dns.com
-Cloudflare | fallback | 1.0.0.1
-Cloudflare | fallback | 2606:4700:4700::1001
+Cloudflare | dot  | one.one.one.one
 Cloudflare | country | United States
 
+Google | ipv4 | 8.8.8.8
+Google | ipv4 | 8.8.4.4
+Google | ipv6 | 2001:4860:4860::8888
+Google | ipv6 | 2001:4860:4860::8844
+Google | doh  | https://dns.google/dns-query
+Google | dot  | dns.google
+Google | country | United States
+
 Quad9 | ipv4 | 9.9.9.9
+Quad9 | ipv4 | 149.112.112.112
 Quad9 | ipv6 | 2620:fe::fe
 Quad9 | doh  | https://dns.quad9.net/dns-query
-Quad9 | fallback | 9.9.9.9
+Quad9 | dot  | dns.quad9.net
 Quad9 | country | Switzerland
+
+AdGuard | ipv4 | 94.140.14.14
+AdGuard | ipv4 | 94.140.15.15
+AdGuard | ipv6 | 2a10:50c0::feed:0ff
+AdGuard | doh  | https://dns.adguard.com/dns-query
+AdGuard | dot  | dns.adguard.com
+AdGuard | country | Global
+
+OpenDNS | ipv4 | 208.67.222.222
+OpenDNS | ipv4 | 208.67.220.220
+OpenDNS | doh  | https://dns.opendns.com/dns-query
+OpenDNS | dot  | resolver1.opendns.com
+OpenDNS | country | United States
+
+CleanBrowsing | ipv4 | 185.228.168.9
+CleanBrowsing | ipv4 | 185.228.169.9
+CleanBrowsing | doh  | https://doh.cleanbrowsing.org/doh/family-filter/
+CleanBrowsing | dot  | dot.cleanbrowsing.org
+CleanBrowsing | country | United States
+
+ControlD | ipv4 | 76.76.2.0
+ControlD | ipv4 | 76.76.10.0
+ControlD | ipv6 | 2606:1a40::1
+ControlD | doh  | https://doh.controld.com
+ControlD | dot  | p0.freedns.controld.com
+ControlD | country | United States
+
+# Provider | dtype | value
+
+ITC | ipv4 | 2.188.21.130
+ITC | ipv4 | 2.188.21.132
+ITC | ipv4 | 2.188.21.131
+ITC | ipv6 | 2a02:6b8::feed:0ff
+ITC | country | Iran
+
+ITC | ipv4 | 217.218.155.155
+ITC | ipv6 | 2a02:6b8::feed:0ff
+ITC | country | Iran
+
+Telecommunication Infrastructure Company | ipv4 | 2.189.44.44
+Telecommunication Infrastructure Company | ipv6 | 2a02:6b8::feed:0ff
+Telecommunication Infrastructure Company | country | Iran
+
+Farabord Dadeh Haye Iranian Co. | ipv4 | 81.91.144.116
+Farabord Dadeh Haye Iranian Co. | ipv6 | 2a02:6b8::feed:0ff
+Farabord Dadeh Haye Iranian Co. | country | Iran
+
+Asiatech Data Transmission Company | ipv4 | 37.156.145.21
+Asiatech Data Transmission Company | ipv6 | 2a02:6b8::feed:0ff
+Asiatech Data Transmission Company | country | Iran
+
+Sefroyek Pardaz Engineering Co. LTD | ipv4 | 185.51.200.50
+Sefroyek Pardaz Engineering Co. LTD | ipv6 | 2a02:6b8::feed:0ff
+Sefroyek Pardaz Engineering Co. LTD | country | Iran
+
+Iran University of Medical Sciences | ipv4 | 194.225.62.80
+Iran University of Medical Sciences | ipv6 | 2a02:6b8::feed:0ff
+Iran University of Medical Sciences | country | Iran
+
+Institute for Research in Fundamental Sciences | ipv4 | 194.225.73.141
+Institute for Research in Fundamental Sciences | ipv6 | 2a02:6b8::feed:0ff
+Institute for Research in Fundamental Sciences | country | Iran
+
+Kish Cell Pars Co. (PJS) | ipv4 | 91.245.229.1
+Kish Cell Pars Co. (PJS) | ipv6 | 2a02:6b8::feed:0ff
+Kish Cell Pars Co. (PJS) | country | Iran
+
+Iranian Research Organization for Science & Technology | ipv4 | 213.176.123.5
+Iranian Research Organization for Science & Technology | ipv6 | 2a02:6b8::feed:0ff
+Iranian Research Organization for Science & Technology | country | Iran
+
+# Provider | dtype | value
+
+Yandex | ipv4 | 77.88.8.8
+Yandex | ipv4 | 77.88.8.1
+Yandex | ipv4 | 77.88.8.2
+Yandex | ipv4 | 77.88.8.3
+Yandex | ipv6 | 2a02:6b8::feed:bad
+Yandex | ipv6 | 2a02:6b8:0:1::feed:bad
+Yandex | doh  | https://dns.yandex.ru/dns-query
+Yandex | dot  | dns.yandex.ru
+Yandex | country | Russia
+
+MSK-IX | ipv4 | 195.208.4.1
+MSK-IX | ipv4 | 195.208.5.1
+MSK-IX | ipv6 | 2a0c:a9c7:9::1
+MSK-IX | country | Russia
+
+Rostelecom | ipv4 | 178.47.11.25
+Rostelecom | ipv4 | 178.47.2.92
+Rostelecom | ipv6 | 2a02:6b8::feed:0ff
+Rostelecom | country | Russia
+
+MegaFon | ipv4 | 109.124.76.206
+MegaFon | country | Russia
+
+MTS | ipv4 | 188.191.88.1
+MTS | country | Russia
+
+ER-Telecom | ipv4 | 84.52.122.46
+ER-Telecom | country | Russia
+
+TransTeleCom | ipv4 | 217.150.35.129
+TransTeleCom | country | Russia
+
+ButovoNet | ipv4 | 94.158.96.2
+ButovoNet | country | Russia
+
+CloudVPS | ipv4 | 194.67.109.176
+CloudVPS | country | Russia
+
+MaxNet | ipv4 | 195.112.96.34
+MaxNet | country | Russia
+
+Dismail | ipv4 | 159.69.114.157
+Dismail | country | Russia
+
+# Provider | dtype | value
+
+Telecommunication Infrastructure Company | ipv4 | 2.188.21.130
+Telecommunication Infrastructure Company | ipv4 | 2.188.21.132
+Telecommunication Infrastructure Company | ipv4 | 2.188.21.131
+Telecommunication Infrastructure Company | ipv6 | 2a02:6b8::feed:0ff
+Telecommunication Infrastructure Company | country | Iran
+
+Iran University of Medical Sciences | ipv4 | 194.225.62.80
+Iran University of Medical Sciences | ipv6 | 2a02:6b8::feed:0ff
+Iran University of Medical Sciences | country | Iran
+
+Institute for Research in Fundamental Sciences | ipv4 | 194.225.73.141
+Institute for Research in Fundamental Sciences | ipv6 | 2a02:6b8::feed:0ff
+Institute for Research in Fundamental Sciences | country | Iran
+
+Shatel | ipv4 | 185.51.200.50
+Shatel | ipv6 | 2a02:6b8::feed:0ff
+Shatel | country | Iran
+
+Asiatech | ipv4 | 37.156.145.21
+Asiatech | ipv6 | 2a02:6b8::feed:0ff
+Asiatech | country | Iran
+
+Raya | ipv4 | 185.231.182.126
+Raya | ipv6 | 2a02:6b8::feed:0ff
+Raya | country | Iran
+
+Pars Online | ipv4 | 91.99.101.12
+Pars Online | ipv6 | 2a02:6b8::feed:0ff
+Pars Online | country | Iran
+
+MCI | ipv4 | 185.97.117.187
+MCI | ipv6 | 2a02:6b8::feed:0ff
+MCI | country | Iran
+
+HiWEB | ipv4 | 185.161.112.33
+HiWEB | ipv6 | 2a02:6b8::feed:0ff
+HiWEB | country | Iran
+
+Neda Rayaneh | ipv4 | 185.187.84.15
+Neda Rayaneh | ipv6 | 2a02:6b8::feed:0ff
+Neda Rayaneh | country | Iran
+
+# Provider | dtype | value
+
+AliDNS | ipv4 | 223.5.5.5
+AliDNS | ipv4 | 223.6.6.6
+AliDNS | ipv6 | 2400:3200::1
+AliDNS | doh  | https://dns.alidns.com/dns-query
+AliDNS | dot  | tls://dns.alidns.com
+AliDNS | country | China
+
+Baidu DNS | ipv4 | 180.76.76.76
+Baidu DNS | ipv6 | 2400:da00::6666
+Baidu DNS | doh  | https://doh.baidu.com/dns-query
+Baidu DNS | dot  | tls://doh.baidu.com
+Baidu DNS | country | China
+
+114DNS | ipv4 | 114.114.114.114
+114DNS | ipv4 | 114.114.115.115
+114DNS | ipv6 | 2400:3200::1
+114DNS | country | China
+
+ChinaNet | ipv4 | 202.96.128.86
+ChinaNet | ipv4 | 202.96.128.166
+ChinaNet | country | China
+
+China Telecom | ipv4 | 202.96.128.86
+China Telecom | ipv6 | 2400:3200::1
+China Telecom | country | China
+
+China Unicom | ipv4 | 202.96.128.86
+China Unicom | ipv6 | 2400:3200::1
+China Unicom | country | China
+
+CNNIC | ipv4 | 202.46.34.74
+CNNIC | ipv4 | 202.46.34.76
+CNNIC | country | China
+
+DNSPod | ipv4 | 119.29.29.29
+DNSPod | ipv6 | 2400:da00::6666
+DNSPod | country | China
+
+Tencent DNS | ipv4 | 119.29.29.29
+Tencent DNS | ipv6 | 2400:da00::6666
+Tencent DNS | country | China
+
+ChinaNetCenter | ipv4 | 202.96.128.86
+ChinaNetCenter | ipv6 | 2400:3200::1
+ChinaNetCenter | country | China
+
+# Provider | dtype | value
+
+1&1 Versatel | ipv4 | 82.194.125.129
+1&1 Versatel | ipv4 | 89.246.171.50
+1&1 Versatel | ipv6 | 2a02:6b8::feed:0ff
+1&1 Versatel | country | Germany
+
+Contabo | ipv4 | 213.136.86.57
+Contabo | ipv6 | 2a02:6b8::feed:0ff
+Contabo | country | Germany
+
+Strato AG | ipv4 | 85.214.123.65
+Strato AG | ipv6 | 2a02:6b8::feed:0ff
+Strato AG | country | Germany
+
+Deutsche Telekom | ipv4 | 37.82.201.52
+Deutsche Telekom | ipv6 | 2a02:6b8::feed:0ff
+Deutsche Telekom | country | Germany
+
+IONOS SE | ipv4 | 82.165.145.113
+IONOS SE | ipv6 | 2a02:6b8::feed:0ff
+IONOS SE | country | Germany
+
+Contabo | ipv4 | 164.68.99.85
+Contabo | ipv6 | 2a02:6b8::feed:0ff
+Contabo | country | Germany
+
+GTT Communications | ipv4 | 213.251.48.193
+GTT Communications | ipv6 | 2a02:6b8::feed:0ff
+GTT Communications | country | Germany
+
+Digitalcourage | ipv4 | 46.182.19.48
+Digitalcourage | ipv6 | 2a02:6b8::feed:0ff
+Digitalcourage | country | Germany
+
+DNS.SB | ipv4 | 185.51.200.2
+DNS.SB | ipv6 | 2a02:6b8::feed:0ff
+DNS.SB | country | Germany
+
+OpenNIC | ipv4 | 80.78.132.79
+OpenNIC | ipv6 | 2a0d:2146:2404::1069
+OpenNIC | country | Germany
+
+# Provider | dtype | value
+
+Google | ipv4 | 8.8.8.8
+Google | ipv4 | 8.8.4.4
+Google | ipv6 | 2001:4860:4860::8888
+Google | doh  | https://dns.google/dns-query
+Google | country | United States
+
+Cloudflare Gaming | ipv4 | 1.1.1.1
+Cloudflare Gaming | ipv4 | 1.0.0.1
+Cloudflare Gaming | ipv6 | 2606:4700:4700::1111
+Cloudflare Gaming | doh  | https://cloudflare-dns.com/dns-query
+Cloudflare Gaming | country | Global
+
+Quad9 Gaming | ipv4 | 9.9.9.9
+Quad9 Gaming | ipv4 | 149.112.112.112
+Quad9 Gaming | ipv6 | 2620:fe::fe
+Quad9 Gaming | doh  | https://dns.quad9.net/dns-query
+Quad9 Gaming | country | Switzerland
+
+OpenDNS | ipv4 | 208.67.222.222
+OpenDNS | ipv4 | 208.67.220.220
+OpenDNS | doh  | https://dns.opendns.com/dns-query
+OpenDNS | country | United States
+
+AdGuard Gaming | ipv4 | 94.140.14.14
+AdGuard Gaming | ipv4 | 94.140.15.15
+AdGuard Gaming | doh  | https://dns.adguard.com/dns-query
+AdGuard Gaming | country | Global
+
+ControlD | ipv4 | 76.76.2.0
+ControlD | ipv4 | 76.76.10.0
+ControlD | doh  | https://doh.controld.com
+ControlD | country | United States
+
+Neustar UltraDNS | ipv4 | 156.154.70.1
+Neustar UltraDNS | ipv4 | 156.154.71.1
+Neustar UltraDNS | ipv6 | 2610:a1:1018::1
+Neustar UltraDNS | doh  | https://doh.ultradns.net/dns-query
+Neustar UltraDNS | country | United States
+
+Comodo Secure DNS | ipv4 | 8.26.56.26
+Comodo Secure DNS | ipv4 | 8.20.247.20
+Comodo Secure DNS | country | Global
+
+DNS.Watch | ipv4 | 84.200.69.80
+DNS.Watch | ipv4 | 84.200.70.40
+DNS.Watch | country | Germany
+
+OpenNIC Gaming | ipv4 | 80.78.132.79
+OpenNIC Gaming | ipv6 | 2a0d:2146:2404::1069
+OpenNIC Gaming | country | Global
