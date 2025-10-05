@@ -628,7 +628,6 @@ proxy-groups:
   - TCP_IPv6_DIRECT
   - REJECT-DROP
   - PASS
-  - COMPATIBLE
 - name: 📘Facebook🎯
   type: select
   proxies:
