@@ -8,6 +8,16 @@ INPUT_FILE = "dns_list.txt"
 TEMPLATE_FILE = "DNS_for_Clash.meta_Template.yml"
 OUTPUT_DIR = "Generated"
 
+DEFAULT_FALLBACK = [
+    "8.8.8.8", "1.1.1.1", "9.9.9.9", "94.140.14.14",
+    "2606:4700:4700::1111", "2001:4860:4860::8888"
+]
+
+def add_fallback(dns_cfg, entries):
+    fallback = entries["fallback"] if entries["fallback"] else DEFAULT_FALLBACK
+    dns_cfg["dns"]["fallback"] = fallback
+    return dns_cfg
+
 def parse_dns_list():
     providers = {}
     with open(INPUT_FILE, "r", encoding="utf-8") as f:
@@ -20,7 +30,9 @@ def parse_dns_list():
             except ValueError:
                 continue
             if provider not in providers:
-                providers[provider] = {"ipv4": [], "ipv6": [], "doh": [], "dot": [], "hostname": []}
+                    providers[provider] = {
+                        "ipv4": [], "ipv6": [], "doh": [], "dot": [], "hostname": [], "fallback": []
+                    }
             providers[provider][dtype].append(value)
     return providers
 
@@ -39,16 +51,34 @@ def generate_readme(files):
     lines = [
         "# 📂 Generated DNS Configs",
         "",
-        "These configs were automatically generated from `dns_list.txt`.",
+        "These configs were automatically generated from **dns_list.txt** using the template `DNS_for_Clash.meta_Template.yml`.",
         "",
-        "| Provider | Type | Raw Link |",
-        "|----------|------|----------|",
+        "## ℹ️ How it works",
+        "- **Normal configs** → Replace only `nameserver` and `proxy-server-nameserver`.",
+        "- **Strict configs** → Replace *all* DNS fields (`default-nameserver`, `nameserver`, `direct-nameserver`, `proxy-server-nameserver`).",
+        "- **Fallback** → If a provider defines `fallback` entries in `dns_list.txt`, those are used. Otherwise, a default global fallback list is applied.",
+        "",
+        "## 📜 Available configs",
+        "| Provider | Type | Raw Link | Fallback DNS | Description |",
+        "|----------|------|----------|--------------|-------------|",
     ]
+
+    # build a map of provider -> fallback list from dns_list.txt
+    providers = parse_dns_list()
+
     for f in files:
         name = os.path.basename(f)
         provider, t = name.replace(".yml","").rsplit("_",1)
-        url = f"https://raw.githubusercontent.com/asgharkapk/DNS-Only-Clash-Meta/main/{OUTPUT_DIR}/{name}"
-        lines.append(f"| {provider} | {t} | [Link]({url}) |")
+        repo = os.environ.get("GITHUB_REPOSITORY","OWNER/REPO")
+        url = f"https://raw.githubusercontent.com/{repo}/main/{OUTPUT_DIR}/{name}"
+        desc = "Basic DNS replacement" if t == "Normal" else "Full strict DNS replacement"
+        fallback_list = providers.get(provider, {}).get("fallback", [])
+        if not fallback_list:
+            fallback_list = DEFAULT_FALLBACK
+        fallback_str = ", ".join(fallback_list)
+        lines.append(f"| {provider} | {t} | [Link]({url}) | `{fallback_str}` | {desc} |")
+
+    lines.append("\n---\n✅ Generated automatically. Do not edit manually.")
     with open(os.path.join(OUTPUT_DIR,"README.md"), "w", encoding="utf-8") as f:
         f.write("\n".join(lines))
 
@@ -66,6 +96,7 @@ def main():
         normal_cfg = tpl.copy()
         normal_cfg["dns"]["nameserver"] = entries["ipv4"] + entries["ipv6"] + entries["doh"] + entries["dot"] + entries["hostname"]
         normal_cfg["dns"]["proxy-server-nameserver"] = entries["ipv4"] + entries["ipv6"]
+        normal_cfg = add_fallback(normal_cfg, entries)
         f1 = save_config(provider, normal_cfg, "Normal")
         files.append(f1)
         logging.info(f"✅ Normal config saved: {f1}")
@@ -77,6 +108,7 @@ def main():
         strict_cfg["dns"]["nameserver"] = all_entries
         strict_cfg["dns"]["direct-nameserver"] = entries["ipv4"] + entries["ipv6"]
         strict_cfg["dns"]["proxy-server-nameserver"] = entries["ipv4"] + entries["ipv6"]
+        strict_cfg = add_fallback(normal_cfg, entries)
         f2 = save_config(provider, strict_cfg, "Strict")
         files.append(f2)
         logging.info(f"✅ Strict config saved: {f2}")
