@@ -1,6 +1,7 @@
 import os
 import yaml
 import logging
+import urllib.parse
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s - %(message)s")
 
@@ -77,7 +78,9 @@ def generate_readme(files):
         name = os.path.basename(f)
         provider, t = name.replace(".yml","").rsplit("_",1)
         repo = os.environ.get("GITHUB_REPOSITORY","OWNER/REPO")
-        url = f"https://raw.githubusercontent.com/{repo}/main/{OUTPUT_DIR}/{name}"
+        # encode file name for URL
+        encoded_name = urllib.parse.quote(name)
+        url = f"https://raw.githubusercontent.com/{repo}/main/{OUTPUT_DIR}/{encoded_name}"
         desc = "Basic DNS replacement" if t == "Normal" else "Full strict DNS replacement"
         fallback_list = providers.get(provider, {}).get("fallback", [])
         if not fallback_list:
