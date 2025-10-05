@@ -67,27 +67,43 @@ def generate_readme(files):
         "- **Country** → Each provider can define its main host country with a `country` entry.",
         "",
         "## 📜 Available configs",
-        "| Provider | Country | Type | Raw Link | Fallback DNS | Description |",
-        "|----------|---------|------|----------|--------------|-------------|",
+        "| Provider | Country | Normal | Strict | Fallback DNS | Description |",
+        "|----------|---------|--------|--------|--------------|-------------|",
     ]
 
     # build a map of provider -> fallback list from dns_list.txt
     providers = parse_dns_list()
 
+    # group files by provider
+    grouped = {}
     for f in files:
         name = os.path.basename(f)
         provider, t = name.replace(".yml","").rsplit("_",1)
-        repo = os.environ.get("GITHUB_REPOSITORY","OWNER/REPO")
-        # encode file name for URL
-        encoded_name = urllib.parse.quote(name)
-        url = f"https://raw.githubusercontent.com/{repo}/main/{OUTPUT_DIR}/{encoded_name}"
-        desc = "Basic DNS replacement" if t == "Normal" else "Full strict DNS replacement"
+        grouped.setdefault(provider, {})[t] = f
+
+    for provider, types in grouped.items():
+        country = providers.get(provider, {}).get("country", "N/A")
         fallback_list = providers.get(provider, {}).get("fallback", [])
         if not fallback_list:
             fallback_list = DEFAULT_FALLBACK
         fallback_str = ", ".join(fallback_list)
-        country = providers.get(provider, {}).get("country", "N/A")
-        lines.append(f"| {provider} | {country} | {t} | [Link]({url}) | `{fallback_str}` | {desc} |")
+
+        normal_url = strict_url = "N/A"
+        desc = "Basic DNS replacement / Full strict DNS replacement"
+
+        repo = os.environ.get("GITHUB_REPOSITORY","OWNER/REPO")
+
+        if "Normal" in types:
+            normal_name = os.path.basename(types["Normal"])
+            normal_encoded = urllib.parse.quote(normal_name)
+            normal_url = f"[Link](https://raw.githubusercontent.com/{repo}/main/{OUTPUT_DIR}/{normal_encoded})"
+
+        if "Strict" in types:
+            strict_name = os.path.basename(types["Strict"])
+            strict_encoded = urllib.parse.quote(strict_name)
+            strict_url = f"[Link](https://raw.githubusercontent.com/{repo}/main/{OUTPUT_DIR}/{strict_encoded})"
+
+        lines.append(f"| {provider} | {country} | {normal_url} | {strict_url} | `{fallback_str}` | {desc} |")
 
     lines.append("\n---\n✅ Generated automatically. Do not edit manually.")
     with open(os.path.join(OUTPUT_DIR,"README.md"), "w", encoding="utf-8") as f:
