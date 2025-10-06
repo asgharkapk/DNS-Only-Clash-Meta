@@ -62,8 +62,8 @@ dns:
   nameserver: &id001
   - 76.76.2.0
   - 76.76.10.0
-  - 2606:1a40::1
-  - https://doh.controld.com
+  - '"2606:1a40::1"'
+  - '"https://doh.controld.com"'
   - p0.freedns.controld.com
   direct-nameserver: *id001
   proxy-server-nameserver: *id001

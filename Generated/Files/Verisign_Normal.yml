@@ -62,7 +62,7 @@ dns:
   nameserver: &id001
   - 64.6.64.6
   - 64.6.65.6
-  - udp://64.6.64.6
+  - '"udp://64.6.64.6"'
   direct-nameserver: *id001
   proxy-server-nameserver: *id001
   fallback:
@@ -70,8 +70,8 @@ dns:
   - 1.1.1.1
   - 9.9.9.9
   - 94.140.14.14
-  - 2606:4700:4700::1111
-  - 2001:4860:4860::8888
+  - '"2606:4700:4700::1111"'
+  - '"2001:4860:4860::8888"'
 sniffer:
   enable: true
   force-dns-mapping: true

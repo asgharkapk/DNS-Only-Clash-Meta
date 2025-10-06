@@ -50,11 +50,11 @@ dns:
   default-nameserver:
   - 195.208.4.1
   - 195.208.5.1
-  - 2a0c:a9c7:9::1
+  - '"2a0c:a9c7:9::1"'
   nameserver: &id001
   - 195.208.4.1
   - 195.208.5.1
-  - 2a0c:a9c7:9::1
+  - '"2a0c:a9c7:9::1"'
   direct-nameserver: *id001
   proxy-server-nameserver: *id001
   fallback:

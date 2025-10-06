@@ -62,7 +62,7 @@ dns:
   nameserver: &id001
   - 114.114.114.114
   - 114.114.115.115
-  - 2400:3200::1
+  - '"2400:3200::1"'
   direct-nameserver: *id001
   proxy-server-nameserver: *id001
   fallback:

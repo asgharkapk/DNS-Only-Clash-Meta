@@ -64,37 +64,37 @@ dns:
   - 1.0.0.1
   - 1.0.0.2
   - 1.1.1.2
-  - 2606:4700:4700::1111
-  - 2606:4700:4700::1001
-  - https://cloudflare-dns.com/dns-query
+  - '"2606:4700:4700::1111"'
+  - '"2606:4700:4700::1001"'
+  - '"https://cloudflare-dns.com/dns-query"'
   - security.cloudflare-dns.com
-  - https://security.cloudflare-dns.com/dns-query
-  - https://family.cloudflare-dns.com/dns-query
-  - tls://1.1.1.1
-  - tcp://1.1.1.1
-  - udp://1.1.1.1
+  - '"https://security.cloudflare-dns.com/dns-query"'
+  - '"https://family.cloudflare-dns.com/dns-query"'
+  - '"tls://1.1.1.1"'
+  - '"tcp://1.1.1.1"'
+  - '"udp://1.1.1.1"'
   - one.one.one.one
-  - tcp://1.0.0.1
-  - tls://1.0.0.1
-  - tls://2606:4700:4700::1111
-  - tls://2606:4700:4700::1001
-  - tls://one.one.one.one
-  - tls://1dot1dot1dot1.cloudflare-dns.com
-  - tls://security.cloudflare-dns.com
-  - tls://family.cloudflare-dns.com
-  - udp://1.0.0.1
-  - udp://2606:4700:4700::1111
-  - udp://2606:4700:4700::1001
-  - udp://one.one.one.one
-  - udp://1dot1dot1dot1.cloudflare-dns.com
-  - udp://security.cloudflare-dns.com
-  - udp://family.cloudflare-dns.com
-  - tcp://2606:4700:4700::1111
-  - tcp://2606:4700:4700::1001
-  - tcp://one.one.one.one
-  - tcp://1dot1dot1dot1.cloudflare-dns.com
-  - tcp://security.cloudflare-dns.com
-  - tcp://family.cloudflare-dns.com
+  - '"tcp://1.0.0.1"'
+  - '"tls://1.0.0.1"'
+  - '"tls://2606:4700:4700::1111"'
+  - '"tls://2606:4700:4700::1001"'
+  - '"tls://one.one.one.one"'
+  - '"tls://1dot1dot1dot1.cloudflare-dns.com"'
+  - '"tls://security.cloudflare-dns.com"'
+  - '"tls://family.cloudflare-dns.com"'
+  - '"udp://1.0.0.1"'
+  - '"udp://2606:4700:4700::1111"'
+  - '"udp://2606:4700:4700::1001"'
+  - '"udp://one.one.one.one"'
+  - '"udp://1dot1dot1dot1.cloudflare-dns.com"'
+  - '"udp://security.cloudflare-dns.com"'
+  - '"udp://family.cloudflare-dns.com"'
+  - '"tcp://2606:4700:4700::1111"'
+  - '"tcp://2606:4700:4700::1001"'
+  - '"tcp://one.one.one.one"'
+  - '"tcp://1dot1dot1dot1.cloudflare-dns.com"'
+  - '"tcp://security.cloudflare-dns.com"'
+  - '"tcp://family.cloudflare-dns.com"'
   direct-nameserver: *id001
   proxy-server-nameserver: *id001
   fallback:

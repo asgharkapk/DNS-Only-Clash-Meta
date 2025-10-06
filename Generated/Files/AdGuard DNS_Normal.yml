@@ -62,13 +62,13 @@ dns:
   nameserver: &id001
   - 94.140.14.14
   - 94.140.15.15
-  - 2a10:50c0::ad1:ff
-  - 2a10:50c0::ad2:ff
-  - https://dns.adguard.com/dns-query
-  - tls://dns.adguard.com
-  - tls://94.140.14.14
-  - tcp://94.140.14.14
-  - udp://94.140.14.14
+  - '"2a10:50c0::ad1:ff"'
+  - '"2a10:50c0::ad2:ff"'
+  - '"https://dns.adguard.com/dns-query"'
+  - '"tls://dns.adguard.com"'
+  - '"tls://94.140.14.14"'
+  - '"tcp://94.140.14.14"'
+  - '"udp://94.140.14.14"'
   - dns.adguard.com
   direct-nameserver: *id001
   proxy-server-nameserver: *id001
@@ -77,8 +77,8 @@ dns:
   - 1.1.1.1
   - 9.9.9.9
   - 94.140.14.14
-  - 2606:4700:4700::1111
-  - 2001:4860:4860::8888
+  - '"2606:4700:4700::1111"'
+  - '"2001:4860:4860::8888"'
 sniffer:
   enable: true
   force-dns-mapping: true
