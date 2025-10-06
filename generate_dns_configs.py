@@ -18,7 +18,7 @@ DEFAULT_FALLBACK = [
 def quote_ipv6(entries):
     quoted = []
     for ip in entries:
-        if ":" in ip:  # likely IPv6
+        if ":" in ip and not ip.startswith("["):
             quoted.append(f'"{ip}"')
         else:
             quoted.append(ip)
