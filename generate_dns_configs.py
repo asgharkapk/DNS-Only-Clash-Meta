@@ -18,8 +18,8 @@ DEFAULT_FALLBACK = [
 def quote_ipv6(entries):
     quoted = []
     for ip in entries:
-        if ":" in ip and not ip.startswith("["):
-            quoted.append(f'"{ip}"')
+        if ":" in ip and not any(ip.startswith(proto) for proto in ("tcp://", "udp://", "tls://")):
+            quoted.append(f'{ip}')
         else:
             quoted.append(ip)
     return quoted
