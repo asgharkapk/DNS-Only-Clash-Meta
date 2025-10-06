@@ -4,7 +4,7 @@
 Cloudflare | ipv4 | 1.1.1.1
 Cloudflare | ipv4 | 1.0.0.1
 Cloudflare | ipv6 | 2606:4700:4700::1111
-Cloudflare | ipv6 | "2606:4700:4700::1001"
+Cloudflare | ipv6 | 2606:4700:4700::1001
 Cloudflare | doh  | https://cloudflare-dns.com/dns-query
 Cloudflare | hostname  | one.one.one.one
 Cloudflare | country | United States
@@ -15,8 +15,8 @@ Cloudflare | fallback | 8.8.8.8
 
 Google | ipv4 | 8.8.8.8
 Google | ipv4 | 8.8.4.4
-Google | ipv6 | "2001:4860:4860::8888"
-Google | ipv6 | "2001:4860:4860::8844"
+Google | ipv6 | 2001:4860:4860::8888
+Google | ipv6 | 2001:4860:4860::8844
 Google | doh  | https://dns.google/dns-query
 Google | dot  | dns.google
 Google | country | United States
@@ -289,7 +289,7 @@ Google | country | United States
 
 Cloudflare Gaming | ipv4 | 1.1.1.1
 Cloudflare Gaming | ipv4 | 1.0.0.1
-Cloudflare Gaming | ipv6 | "2606:4700:4700::1111"
+Cloudflare Gaming | ipv6 | 2606:4700:4700::1111
 Cloudflare Gaming | doh  | https://cloudflare-dns.com/dns-query
 Cloudflare Gaming | country | Global
 
@@ -472,8 +472,8 @@ Verisign | dot | udp://64.6.64.6
 # ProviderName | Type | Value
 Cloudflare | ipv4 | 1.1.1.1
 Cloudflare | ipv4 | 1.0.0.1
-Cloudflare | ipv6 | "2606:4700:4700::1111"
-Cloudflare | ipv6 | "2606:4700:4700::1001"
+Cloudflare | ipv6 | 2606:4700:4700::1111
+Cloudflare | ipv6 | 2606:4700:4700::1001
 Cloudflare | doh  | https://cloudflare-dns.com/dns-query
 Cloudflare | doh  | https://security.cloudflare-dns.com/dns-query
 Cloudflare | doh  | https://family.cloudflare-dns.com/dns-query
@@ -551,8 +551,8 @@ NextDNS | country | United States
 
 Cloudflare | ipv4 | 1.1.1.1
 Cloudflare | ipv4 | 1.0.0.1
-Cloudflare | ipv6 | "2606:4700:4700::1111"
-Cloudflare | ipv6 | "2606:4700:4700::1001"
+Cloudflare | ipv6 | 2606:4700:4700::1111
+Cloudflare | ipv6 | 2606:4700:4700::1001
 Cloudflare | doh  | https://cloudflare-dns.com/dns-query
 Cloudflare | hostname | one.one.one.one
 Cloudflare | country | United States
