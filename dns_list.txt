@@ -453,8 +453,6 @@ Cloudflare | hostname | one.one.one.one
 Cloudflare | country | United States
 Cloudflare | dot  | tls://1.1.1.1
 Cloudflare | dot  | tls://1.0.0.1
-Cloudflare | dot  | tls://2606:4700:4700::1111
-Cloudflare | dot  | tls://2606:4700:4700::1001
 Cloudflare | dot  | tls://one.one.one.one
 Cloudflare | dot  | tls://1dot1dot1dot1.cloudflare-dns.com
 Cloudflare | dot  | tls://security.cloudflare-dns.com
@@ -467,8 +465,6 @@ Cloudflare | dot  | udp://security.cloudflare-dns.com
 Cloudflare | dot  | udp://family.cloudflare-dns.com
 Cloudflare | dot  | tcp://1.1.1.1
 Cloudflare | dot  | tcp://1.0.0.1
-Cloudflare | dot  | tcp://2606:4700:4700::1111
-Cloudflare | dot  | tcp://2606:4700:4700::1001
 Cloudflare | dot  | tcp://one.one.one.one
 Cloudflare | dot  | tcp://1dot1dot1dot1.cloudflare-dns.com
 Cloudflare | dot  | tcp://security.cloudflare-dns.com
