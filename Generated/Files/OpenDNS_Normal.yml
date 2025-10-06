@@ -65,8 +65,8 @@ dns:
   - 208.67.222.220
   - 208.67.220.123
   - 208.67.222.123
-  - '''2620:119:35::35'''
-  - '''2620:119:53::53'''
+  - '"2620:119:35::35"'
+  - '"2620:119:53::53"'
   - https://dns.opendns.com/dns-query
   - https://doh.opendns.com/dns-query
   - resolver1.opendns.com

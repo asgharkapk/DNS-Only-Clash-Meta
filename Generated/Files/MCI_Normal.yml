@@ -61,7 +61,7 @@ dns:
   - 77.88.8.8
   nameserver: &id001
   - 185.97.117.187
-  - '''2a02:6b8::feed:0ff'''
+  - '"2a02:6b8::feed:0ff"'
   direct-nameserver: *id001
   proxy-server-nameserver: *id001
   fallback:
