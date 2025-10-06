@@ -167,7 +167,7 @@ def main():
         logging.info(f"⚙️ Generating configs for provider: {provider}")
         tpl = load_template()
 
-        all_entries = list(dict.fromkeys(entries["ipv4"] + entries["ipv6"] + entries["doh"] + entries["dot"] + entries["hostname"]))
+        all_entries = list(dict.fromkeys(entries["ipv4"])) + list(dict.fromkeys(entries["ipv6"])) + list(dict.fromkeys(entries["doh"])) + list(dict.fromkeys(entries["dot"])) + list(dict.fromkeys(entries["hostname"]))
 
         # Normal config
         normal_cfg = tpl.copy()
@@ -181,7 +181,7 @@ def main():
 
         # Strict config
         strict_cfg = tpl.copy()
-        strict_cfg["dns"]["default-nameserver"] = list(dict.fromkeys(entries["ipv4"] + entries["ipv6"]))
+        strict_cfg["dns"]["default-nameserver"] = list(dict.fromkeys(entries["ipv4"])) + list(dict.fromkeys(entries["ipv6"]))
         strict_cfg["dns"]["nameserver"] = all_entries
         strict_cfg["dns"]["direct-nameserver"] = all_entries
         strict_cfg["dns"]["proxy-server-nameserver"] = all_entries
