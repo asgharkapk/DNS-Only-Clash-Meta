@@ -64,11 +64,33 @@ dns:
   - 8.8.4.4
   - 8.8.8.8
   - 8.8.4.4
+  - 8.8.8.8
+  - 8.8.4.4
+  - 8.8.8.8
+  - 8.8.4.4
+  - 8.8.8.8
+  - 8.8.4.4
+  - 8.8.8.8
+  - 8.8.4.4
   - 2001:4860:4860::8888
   - 2001:4860:4860::8844
   - 2001:4860:4860::8888
+  - 2001:4860:4860::8888
+  - 2001:4860:4860::8844
+  - 2001:4860:4860::8888
+  - 2001:4860:4860::8844
   - https://dns.google/dns-query
   - https://dns.google/dns-query
+  - https://dns.google/dns-query
+  - https://dns.google/dns-query
+  - dns.google
+  - tls://8.8.8.8
+  - tcp://8.8.8.8
+  - udp://8.8.8.8
+  - tls://8.8.8.8
+  - tcp://8.8.8.8
+  - udp://8.8.8.8
+  - dns.google
   - dns.google
   direct-nameserver: *id001
   proxy-server-nameserver: *id001
