@@ -48,9 +48,9 @@
   - "ntp.*.com"
   - "*.ir"
   "default-nameserver":
-  - "\"2a02:6ea0:c7c7::2\""
+  - "2a02:6ea0:c7c7::2"
   "nameserver": &id001
-  - "\"2a02:6ea0:c7c7::2\""
+  - "2a02:6ea0:c7c7::2"
   "direct-nameserver": *id001
   "proxy-server-nameserver": *id001
   "fallback":

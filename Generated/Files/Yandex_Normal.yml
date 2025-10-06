@@ -64,8 +64,8 @@
   - "77.88.8.1"
   - "77.88.8.2"
   - "77.88.8.3"
-  - "\"2a02:6b8::feed:bad\""
-  - "\"2a02:6b8:0:1::feed:bad\""
+  - "2a02:6b8::feed:bad"
+  - "2a02:6b8:0:1::feed:bad"
   - "https://dns.yandex.ru/dns-query"
   - "dns.yandex.ru"
   "direct-nameserver": *id001

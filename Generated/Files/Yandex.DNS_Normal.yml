@@ -62,8 +62,8 @@
   "nameserver": &id001
   - "77.88.8.8"
   - "77.88.8.1"
-  - "\"2a02:6b8::feed:0ff\""
-  - "\"2a02:6b8:0:1::feed:0ff\""
+  - "2a02:6b8::feed:0ff"
+  - "2a02:6b8:0:1::feed:0ff"
   - "https://doh.yandex.ru/dns-query"
   - "tls://77.88.8.8"
   - "tcp://77.88.8.8"

@@ -49,10 +49,10 @@
   - "*.ir"
   "default-nameserver":
   - "119.29.29.29"
-  - "\"2400:da00::6666\""
+  - "2400:da00::6666"
   "nameserver": &id001
   - "119.29.29.29"
-  - "\"2400:da00::6666\""
+  - "2400:da00::6666"
   "direct-nameserver": *id001
   "proxy-server-nameserver": *id001
   "fallback":
