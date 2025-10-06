@@ -6,8 +6,12 @@ Cloudflare | ipv4 | 1.0.0.1
 Cloudflare | ipv6 | 2606:4700:4700::1111
 Cloudflare | ipv6 | 2606:4700:4700::1001
 Cloudflare | doh  | https://cloudflare-dns.com/dns-query
-Cloudflare | dot  | one.one.one.one
+Cloudflare | hostname  | one.one.one.one
 Cloudflare | country | United States
+Cloudflare | dot | tls://1.1.1.1
+Cloudflare | dot | tcp://1.1.1.1
+Cloudflare | dot | udp://1.1.1.1
+Cloudflare | fallback | 8.8.8.8
 
 Google | ipv4 | 8.8.8.8
 Google | ipv4 | 8.8.4.4
@@ -392,3 +396,403 @@ Neustar UltraDNS | fallback | 8.26.56.26
 Comodo Secure DNS | fallback | 84.200.69.80
 DNS.Watch | fallback | 80.78.132.79
 OpenNIC Gaming | fallback | 156.154.70.1
+
+# ProviderName | Type | Value
+CacheFly | ipv4 | 66.225.214.69
+NForce Entertainment B.V. | ipv4 | 109.201.152.181
+DataCamp Limited | ipv4 | 195.181.164.46
+Alibaba (US) Technology Co., Ltd. | ipv6 | 240b:4001:20c:8501:9018:ecd8:11c7:ed0
+Alibaba (US) Technology Co., Ltd. | ipv6 | 240b:4001:20c:8501:9018:ecd8:11c7:ed1
+Alibaba (US) Technology Co., Ltd. | ipv4 | 47.236.196.115
+Alibaba (US) Technology Co., Ltd. | ipv4 | 47.237.118.40
+Alibaba.com Singapore E-Commerce Private Limited | ipv4 | 161.117.15.158
+Alibaba (US) Technology Co., Ltd. | ipv4 | 161.117.42.126
+Alibaba (US) Technology Co., Ltd. | ipv4 | 8.213.16.67
+Alibaba (US) Technology Co., Ltd. | ipv4 | 8.213.25.107
+Cdn77 | ipv6 | 2a02:6ea0:c7c7::2
+Datacamp Limited | ipv6 | 2a02:6ea0:ca18:3::2
+i3D.net B.V | ipv4 | 188.122.78.198
+i3D.net B.V | ipv4 | 188.122.78.199
+i3D.net B.V | ipv4 | 188.122.78.200
+i3D.net B.V | ipv4 | 188.122.78.201
+i3D.net B.V | ipv6 | 2a00:1636:409:91:9999::198
+i3D.net B.V | ipv6 | 2a00:1636:409:92:9999::199
+i3D.net B.V | ipv6 | 2a00:1636:409:93:9999::200
+i3D.net B.V | ipv6 | 2a00:1636:409:94:9999::201
+CacheFly | ipv4 | 50.31.197.68
+CacheFly | ipv4 | 50.31.197.74
+CacheFly | ipv6 | 2605:4c40:197:f110::74e2
+CacheFly | ipv6 | 2605:4c40:197:f110::9e8b
+CacheFly | ipv6 | 2605:4c40:214:f110::6188
+Google | ipv4 | 8.8.8.8
+Google | ipv4 | 8.8.4.4
+Level3 | ipv4 | 4.2.2.1
+Level3 | ipv4 | 4.2.2.2
+Level3 | ipv4 | 4.2.2.3
+Level3 | ipv4 | 4.2.2.4
+Level3 | ipv4 | 4.2.2.5
+Level3 | ipv4 | 4.2.2.6
+Verisign | ipv4 | 64.6.64.6
+Verisign | ipv4 | 64.6.65.6
+Quad9 | ipv4 | 9.9.9.9
+OpenDNS | ipv4 | 208.67.220.220
+OpenDNS | ipv4 | 208.67.222.222
+Shecan | ipv4 | 178.22.122.100
+Shecan | ipv4 | 185.51.200.2
+Asiatech | ipv4 | 194.36.174.161
+Pars Online | ipv4 | 91.99.101.12
+Resanapardaz Sepahan | ipv4 | 185.186.242.161
+Tehran University Med | ipv4 | 194.225.62.80
+HostIran | ipv4 | 172.29.2.100
+Electro DNS | ipv4 | 78.157.42.100
+Electro DNS | ipv4 | 78.157.42.101
+Begzar | ipv4 | 185.55.225.25
+Begzar | ipv4 | 185.55.226.26
+NextDNS | ipv4 | 45.90.28.0
+NextDNS | ipv4 | 45.90.28.165
+NextDNS | ipv4 | 45.90.28.193
+NextDNS | ipv4 | 45.90.30.0
+NextDNS | ipv4 | 45.90.30.165
+NextDNS | ipv4 | 45.90.30.193
+NextDNS | doh | dnsl.nextdns.io
+NextDNS | doh | dns2.nextdns.io
+Cloudflare | ipv4 | 1.1.1.1
+Cloudflare | ipv4 | 1.0.0.1
+Cloudflare | ipv4 | 1.0.0.2
+Cloudflare | ipv4 | 1.1.1.2
+Cloudflare | dot | one.one.one.one
+Cloudflare | doh | security.cloudflare-dns.com
+Other | doh | https://deamnet-a.cerrajeriasanmiguel.com:8888/dns-query
+Other | doh | https://deamnet-b.cerrajeriasanmiguel.com:8888/dns-query
+Other | dot | tls://4.4.4.4
+OpenDNS | dot | udp://208.67.222.222
+Cloudflare | dot | tcp://1.0.0.1
+Verisign | dot | udp://64.6.64.6
+
+# ProviderName | Type | Value
+Cloudflare | ipv4 | 1.1.1.1
+Cloudflare | ipv4 | 1.0.0.1
+Cloudflare | ipv6 | 2606:4700:4700::1111
+Cloudflare | ipv6 | 2606:4700:4700::1001
+Cloudflare | doh  | https://cloudflare-dns.com/dns-query
+Cloudflare | doh  | https://security.cloudflare-dns.com/dns-query
+Cloudflare | doh  | https://family.cloudflare-dns.com/dns-query
+Cloudflare | hostname | one.one.one.one
+Cloudflare | country | United States
+Cloudflare | dot  | tls://1.1.1.1
+Cloudflare | dot  | tls://1.0.0.1
+Cloudflare | dot  | tls://2606:4700:4700::1111
+Cloudflare | dot  | tls://2606:4700:4700::1001
+Cloudflare | dot  | tls://one.one.one.one
+Cloudflare | dot  | tls://1dot1dot1dot1.cloudflare-dns.com
+Cloudflare | dot  | tls://security.cloudflare-dns.com
+Cloudflare | dot  | tls://family.cloudflare-dns.com
+Cloudflare | dot  | udp://1.1.1.1
+Cloudflare | dot  | udp://1.0.0.1
+Cloudflare | dot  | udp://2606:4700:4700::1111
+Cloudflare | dot  | udp://2606:4700:4700::1001
+Cloudflare | dot  | udp://one.one.one.one
+Cloudflare | dot  | udp://1dot1dot1dot1.cloudflare-dns.com
+Cloudflare | dot  | udp://security.cloudflare-dns.com
+Cloudflare | dot  | udp://family.cloudflare-dns.com
+Cloudflare | dot  | tcp://1.1.1.1
+Cloudflare | dot  | tcp://1.0.0.1
+Cloudflare | dot  | tcp://2606:4700:4700::1111
+Cloudflare | dot  | tcp://2606:4700:4700::1001
+Cloudflare | dot  | tcp://one.one.one.one
+Cloudflare | dot  | tcp://1dot1dot1dot1.cloudflare-dns.com
+Cloudflare | dot  | tcp://security.cloudflare-dns.com
+Cloudflare | dot  | tcp://family.cloudflare-dns.com
+
+OpenDNS | ipv4 | 208.67.222.222
+OpenDNS | ipv4 | 208.67.220.220
+OpenDNS | ipv4 | 208.67.222.220
+OpenDNS | ipv4 | 208.67.220.123
+OpenDNS | ipv4 | 208.67.222.123
+OpenDNS | doh  | https://doh.opendns.com/dns-query
+OpenDNS | dot  | tls://208.67.222.222
+OpenDNS | dot  | tls://208.67.220.220
+OpenDNS | dot  | tls://208.67.222.220
+OpenDNS | dot  | tls://208.67.220.123
+OpenDNS | dot  | tls://208.67.222.123
+OpenDNS | country | United States
+
+Quad9 | ipv4 | 9.9.9.9
+Quad9 | ipv4 | 149.112.112.112
+Quad9 | doh  | https://dns.quad9.net/dns-query
+Quad9 | dot  | tls://dns.quad9.net
+Quad9 | country | United States
+
+Google DNS | ipv4 | 8.8.8.8
+Google DNS | ipv4 | 8.8.4.4
+Google DNS | doh  | https://dns.google/dns-query
+Google DNS | dot  | tls://dns.google
+Google DNS | country | United States
+
+AdGuard DNS | ipv4 | 94.140.14.14
+AdGuard DNS | ipv4 | 94.140.15.15
+AdGuard DNS | doh  | https://dns.adguard.com/dns-query
+AdGuard DNS | dot  | tls://dns.adguard.com
+AdGuard DNS | country | United States
+
+CleanBrowsing | ipv4 | 185.228.168.9
+CleanBrowsing | ipv4 | 185.228.169.9
+CleanBrowsing | doh  | https://doh.cleanbrowsing.org/doh/family-filter/
+CleanBrowsing | dot  | tls://doh.cleanbrowsing.org
+CleanBrowsing | country | United States
+
+NextDNS | ipv4 | 45.90.28.0
+NextDNS | ipv4 | 45.90.28.165
+NextDNS | ipv4 | 45.90.28.193
+NextDNS | ipv4 | 45.90.30.0
+NextDNS | ipv4 | 45.90.30.165
+NextDNS | ipv4 | 45.90.30.193
+NextDNS | doh  | https://dns.nextdns.io
+NextDNS | dot  | tls://dns.nextdns.io
+NextDNS | country | United States
+
+Cloudflare | ipv4 | 1.1.1.1
+Cloudflare | ipv4 | 1.0.0.1
+Cloudflare | ipv6 | 2606:4700:4700::1111
+Cloudflare | ipv6 | 2606:4700:4700::1001
+Cloudflare | doh  | https://cloudflare-dns.com/dns-query
+Cloudflare | hostname | one.one.one.one
+Cloudflare | country | United States
+Cloudflare | dot | tls://1.1.1.1
+Cloudflare | dot | tcp://1.1.1.1
+Cloudflare | dot | udp://1.1.1.1
+Quad9 | ipv4 | 9.9.9.9
+Quad9 | ipv4 | 149.112.112.112
+Quad9 | ipv6 | 2620:fe::fe
+Quad9 | ipv6 | 2620:fe::9
+Quad9 | doh  | https://dns.quad9.net/dns-query
+Quad9 | hostname | resolver1.opendns.com
+Quad9 | country | Switzerland
+Quad9 | dot  | tls://9.9.9.9
+Quad9 | dot  | tcp://9.9.9.9
+Quad9 | dot  | udp://9.9.9.9
+OpenDNS | ipv4 | 208.67.222.222
+OpenDNS | ipv4 | 208.67.220.220
+OpenDNS | ipv6 | 2620:119:35::35
+OpenDNS | ipv6 | 2620:119:53::53
+OpenDNS | doh  | https://doh.opendns.com/dns-query
+OpenDNS | hostname | resolver1.opendns.com
+OpenDNS | country | United States
+OpenDNS | dot  | tls://208.67.222.222
+OpenDNS | dot  | tcp://208.67.222.222
+OpenDNS | dot  | udp://208.67.222.222
+Google | ipv4 | 8.8.8.8
+Google | ipv4 | 8.8.4.4
+Google | ipv6 | 2001:4860:4860::8888
+Google | ipv6 | 2001:4860:4860::8844
+Google | doh  | https://dns.google/dns-query
+Google | hostname | dns.google
+Google | country | United States
+Google | dot  | tls://8.8.8.8
+Google | dot  | tcp://8.8.8.8
+Google | dot  | udp://8.8.8.8
+CleanBrowsing | ipv4 | 185.228.168.9
+CleanBrowsing | ipv4 | 185.228.169.9
+CleanBrowsing | ipv6 | 2a09::185.228.168.9
+CleanBrowsing | ipv6 | 2a09::185.228.169.9
+CleanBrowsing | doh  | https://doh.cleanbrowsing.org/dns-query
+CleanBrowsing | hostname | resolver1.cleanbrowsing.org
+CleanBrowsing | country | United States
+CleanBrowsing | dot  | tls://185.228.168.9
+CleanBrowsing | dot  | tcp://185.228.168.9
+CleanBrowsing | dot  | udp://185.228.168.9
+
+
+CacheFly | ipv4 | 66.225.214.69
+NForce Entertainment B.V. | ipv4 | 109.201.152.181
+DataCamp Limited | ipv4 | 195.181.164.46
+Alibaba (US) Technology Co., Ltd. | ipv6 | 240b:4001:20c:8501:9018:ecd8:11c7:ed0
+Alibaba (US) Technology Co., Ltd. | ipv6 | 240b:4001:20c:8501:9018:ecd8:11c7:ed1
+Alibaba (US) Technology Co., Ltd. | ipv4 | 47.236.196.115
+Alibaba (US) Technology Co., Ltd. | ipv4 | 47.237.118.40
+Alibaba.com Singapore E-Commerce Private Limited | ipv4 | 161.117.15.158
+Alibaba (US) Technology Co., Ltd. | ipv4 | 161.117.42.126
+Alibaba (US) Technology Co., Ltd. | ipv4 | 8.213.16.67
+Alibaba (US) Technology Co., Ltd. | ipv4 | 8.213.25.107
+Cdn77 | ipv6 | 2a02:6ea0:c7c7::2
+Datacamp Limited | ipv6 | 2a02:6ea0:ca18:3::2
+i3D.net B.V | ipv4 | 188.122.78.198
+i3D.net B.V | ipv4 | 188.122.78.199
+i3D.net B.V | ipv4 | 188.122.78.200
+i3D.net B.V | ipv4 | 188.122.78.201
+i3D.net B.V | ipv6 | 2a00:1636:409:91:9999::198
+i3D.net B.V | ipv6 | 2a00:1636:409:92:9999::199
+i3D.net B.V | ipv6 | 2a00:1636:409:93:9999::200
+i3D.net B.V | ipv6 | 2a00:1636:409:94:9999::201
+CacheFly | ipv4 | 50.31.197.68
+CacheFly | ipv4 | 50.31.197.74
+CacheFly | ipv6 | 2605:4c40:197:f110::74e2
+CacheFly | ipv6 | 2605:4c40:197:f110::9e8b
+CacheFly | ipv6 | 2605:4c40:214:f110::6188
+Google | ipv4 | 8.8.8.8
+Google | ipv4 | 8.8.4.4
+Level3 | ipv4 | 4.2.2.1
+Level3 | ipv4 | 4.2.2.2
+Level3 | ipv4 | 4.2.2.3
+Level3 | ipv4 | 4.2.2.4
+Level3 | ipv4 | 4.2.2.5
+Level3 | ipv4 | 4.2.2.6
+Verisign | ipv4 | 64.6.64.6
+Verisign | ipv4 | 64.6.65.6
+Quad9 | ipv4 | 9.9.9.9
+OpenDNS | ipv4 | 208.67.220.220
+OpenDNS | ipv4 | 208.67.222.222
+Shecan | ipv4 | 178.22.122.100
+Shecan | ipv4 | 185.51.200.2
+Asiatech | ipv4 | 194.36.174.161
+Pars Online | ipv4 | 91.99.101.12
+Resanapardaz Sepahan | ipv4 | 185.186.242.161
+Tehran University Med | ipv4 | 194.225.62.80
+HostIran | ipv4 | 172.29.2.100
+Electro DNS | ipv4 | 78.157.42.100
+Electro DNS | ipv4 | 78.157.42.101
+Begzar | ipv4 | 185.55.225.25
+Begzar | ipv4 | 185.55.226.26
+NextDNS | ipv4 | 45.90.28.0
+NextDNS | ipv4 | 45.90.28.165
+NextDNS | ipv4 | 45.90.28.193
+NextDNS | ipv4 | 45.90.30.0
+NextDNS | ipv4 | 45.90.30.165
+NextDNS | ipv4 | 45.90.30.193
+NextDNS | doh | dnsl.nextdns.io
+NextDNS | doh | dns2.nextdns.io
+Cloudflare | ipv4 | 1.1.1.1
+Cloudflare | ipv4 | 1.0.0.1
+Cloudflare | ipv4 | 1.0.0.2
+Cloudflare | ipv4 | 1.1.1.2
+Cloudflare | dot | one.one.one.one
+Cloudflare | doh | security.cloudflare-dns.com
+Other | doh | https://deamnet-a.cerrajeriasanmiguel.com:8888/dns-query
+Other | doh | https://deamnet-b.cerrajeriasanmiguel.com:8888/dns-query
+Other | dot | tls://4.4.4.4
+OpenDNS | dot | udp://208.67.222.222
+Cloudflare | dot | tcp://1.0.0.1
+Verisign | dot | udp://64.6.64.6
+
+Cloudflare | ipv4 | 1.1.1.1
+Cloudflare | ipv4 | 1.0.0.1
+Cloudflare | ipv6 | 2606:4700:4700::1111
+Cloudflare | ipv6 | 2606:4700:4700::1001
+Cloudflare | doh  | https://cloudflare-dns.com/dns-query
+Cloudflare | hostname  | one.one.one.one
+Cloudflare | dot | tls://1.1.1.1
+Cloudflare | dot | tcp://1.1.1.1
+Cloudflare | dot | udp://1.1.1.1
+
+Google | ipv4 | 8.8.8.8
+Google | ipv4 | 8.8.4.4
+Google | ipv6 | 2001:4860:4860::8888
+Google | ipv6 | 2001:4860:4860::8844
+Google | doh  | https://dns.google/dns-query
+Google | hostname  | dns.google
+Google | dot | tls://8.8.8.8
+Google | dot | tcp://8.8.8.8
+Google | dot | udp://8.8.8.8
+
+Quad9 | ipv4 | 9.9.9.9
+Quad9 | ipv4 | 149.112.112.112
+Quad9 | ipv6 | 2620:fe::fe
+Quad9 | ipv6 | 2620:fe::9
+Quad9 | doh  | https://dns.quad9.net/dns-query
+Quad9 | hostname  | dns.quad9.net
+Quad9 | dot | tls://9.9.9.9
+Quad9 | dot | tcp://9.9.9.9
+Quad9 | dot | udp://9.9.9.9
+
+OpenDNS | ipv4 | 208.67.222.222
+OpenDNS | ipv4 | 208.67.220.220
+OpenDNS | ipv6 | 2620:119:35::35
+OpenDNS | ipv6 | 2620:119:53::53
+OpenDNS | doh  | https://doh.opendns.com/dns-query
+OpenDNS | hostname  | resolver1.opendns.com
+OpenDNS | dot | tls://208.67.222.222
+OpenDNS | dot | tcp://208.67.222.222
+OpenDNS | dot | udp://208.67.222.222
+
+Yandex.DNS | ipv4 | 77.88.8.8
+Yandex.DNS | ipv4 | 77.88.8.1
+Yandex.DNS | ipv6 | 2a02:6b8::feed:0ff
+Yandex.DNS | ipv6 | 2a02:6b8:0:1::feed:0ff
+Yandex.DNS | doh  | https://doh.yandex.ru/dns-query
+Yandex.DNS | hostname  | dns.yandex.ru
+Yandex.DNS | dot | tls://77.88.8.8
+Yandex.DNS | dot | tcp://77.88.8.8
+Yandex.DNS | dot | udp://77.88.8.8
+
+CleanBrowsing | ipv4 | 185.228.168.9
+CleanBrowsing | ipv4 | 185.228.169.9
+CleanBrowsing | ipv6 | 2a0d:2a00:1::2
+CleanBrowsing | ipv6 | 2a0d:2a00:2::2
+CleanBrowsing | doh  | https://doh.cleanbrowsing.org/doh/family-filter/
+CleanBrowsing | hostname  | family-filter.cleanbrowsing.org
+CleanBrowsing | dot | tls://185.228.168.9
+CleanBrowsing | dot | tcp://185.228.168.9
+CleanBrowsing | dot | udp://185.228.168.9
+
+Comodo Secure DNS | ipv4 | 8.26.56.26
+Comodo Secure DNS | ipv4 | 8.20.247.20
+Comodo Secure DNS | ipv6 | 2001:4860:4860::8888
+Comodo Secure DNS | ipv6 | 2001:4860:4860::8844
+Comodo Secure DNS | doh  | https://doh.comodo.com/dns-query
+Comodo Secure DNS | hostname  | resolver1.opendns.com
+Comodo Secure DNS | dot | tls://8.26.56.26
+Comodo Secure DNS | dot | tcp://8.26.56.26
+Comodo Secure DNS | dot | udp://8.26.56.26
+
+DNS4EU | ipv4 | 185.225.232.232
+DNS4EU | ipv6 | 2a0d:2406:1801::1
+DNS4EU | doh  | https://doh.dns4eu.eu/dns-query
+DNS4EU | hostname  | dns4eu.eu
+DNS4EU | dot | tls://185.225.232.232
+DNS4EU | dot | tcp://185.225.232.232
+DNS4EU | dot | udp://185.225.232.232
+
+DNS.SB | ipv4 | 185.222.222.222
+DNS.SB | ipv4 | 45.11.45.11
+DNS.SB | ipv6 | 2a09::1
+DNS.SB | ipv6 | 2a11::1
+DNS.SB | doh  | https://doh.dns.sb/dns-query
+DNS.SB | hostname  | public-dns-a.dns.sb
+DNS.SB | dot | tls://185.222.222.222
+DNS.SB | dot | tcp://185.222.222.222
+DNS.SB | dot | udp://185.222.222.222
+
+AdGuard DNS | ipv4 | 94.140.14.14
+AdGuard DNS | ipv4 | 94.140.15.15
+AdGuard DNS | ipv6 | 2a10:50c0::ad1:ff
+AdGuard DNS | ipv6 | 2a10:50c0::ad2:ff
+AdGuard DNS | doh  | https://dns.adguard.com/dns-query
+AdGuard DNS | hostname  | dns.adguard.com
+AdGuard DNS | dot | tls://94.140.14.14
+AdGuard DNS | dot | tcp://94.140.14.14
+AdGuard DNS | dot | udp://94.140.14.14
+
+Alternate DNS | ipv4 | 198.101.242.72
+Alternate DNS | ipv4 | 198.101.242.200
+Alternate DNS | ipv6 | 2001:470:20::2
+Alternate DNS | ipv6 | 2001:470:20::3
+Alternate DNS | doh  | https://dns.alternate-dns.com/dns-query
+Alternate DNS | hostname  | resolver1.alternate-dns.com
+Alternate DNS | dot | tls://198.101.242.72
+Alternate DNS | dot | tcp://198.101.242.72
+Alternate DNS | dot | udp://198.101.242.72
+
+Information Technology Company (ITC) | ipv4 | 2.188.21.130
+Information Technology Company (ITC) | ipv4 | 2.188.21.132
+Information Technology Company (ITC) | ipv4 | 2.188.21.131
+Information Technology Company (ITC) | ipv4 | 217.218.155.155
+Farabord Dadeh Haye Iranian Co. | ipv4 | 81.91.144.116
+Farabord Dadeh Haye Iranian Co. | ipv4 | 185.51.200.10
+Parvaz System Information Technology Company (Ltd) | ipv4 | 185.161.112.33
+Parvaz System Information Technology Company (Ltd) | ipv4 | 185.161.112.34
+Tehran University of Medical Science | ipv4 | 194.225.62.80
+Tehran University of Medical Science | ipv4 | 194.225.73.141
+Iranian Research Organization for Science & Technology | ipv4 | 213.176.123.5
+Institute for Research in Fundamental Sciences | ipv4 | 194.225.73.141
+Telecommunication Infrastructure Company | ipv4 | 2.189.44.44
+Kish Cell Pars Co. (PJS) | ipv4 | 91.245.229.1
