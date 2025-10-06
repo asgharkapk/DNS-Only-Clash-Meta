@@ -62,8 +62,8 @@ dns:
   nameserver: &id001
   - 156.154.70.1
   - 156.154.71.1
-  - '"2610:a1:1018::1"'
-  - '"https://doh.ultradns.net/dns-query"'
+  - 2610:a1:1018::1
+  - https://doh.ultradns.net/dns-query
   direct-nameserver: *id001
   proxy-server-nameserver: *id001
   fallback:

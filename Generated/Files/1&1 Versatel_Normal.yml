@@ -62,7 +62,7 @@ dns:
   nameserver: &id001
   - 82.194.125.129
   - 89.246.171.50
-  - '"2a02:6b8::feed:0ff"'
+  - 2a02:6b8::feed:0ff
   direct-nameserver: *id001
   proxy-server-nameserver: *id001
   fallback:

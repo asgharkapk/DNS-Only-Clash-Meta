@@ -62,8 +62,8 @@ dns:
   nameserver: &id001
   - 9.9.9.9
   - 149.112.112.112
-  - '"2620:fe::fe"'
-  - '"https://dns.quad9.net/dns-query"'
+  - 2620:fe::fe
+  - https://dns.quad9.net/dns-query
   direct-nameserver: *id001
   proxy-server-nameserver: *id001
   fallback:

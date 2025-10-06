@@ -49,10 +49,10 @@ dns:
   - '*.ir'
   default-nameserver:
   - 202.96.128.86
-  - '"2400:3200::1"'
+  - 2400:3200::1
   nameserver: &id001
   - 202.96.128.86
-  - '"2400:3200::1"'
+  - 2400:3200::1
   direct-nameserver: *id001
   proxy-server-nameserver: *id001
   fallback:

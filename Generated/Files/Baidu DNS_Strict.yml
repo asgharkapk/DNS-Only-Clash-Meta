@@ -49,11 +49,11 @@ dns:
   - '*.ir'
   default-nameserver:
   - 180.76.76.76
-  - '"2400:da00::6666"'
+  - 2400:da00::6666
   nameserver: &id001
   - 180.76.76.76
-  - '"2400:da00::6666"'
-  - '"https://doh.baidu.com/dns-query"'
+  - 2400:da00::6666
+  - https://doh.baidu.com/dns-query
   - tls://doh.baidu.com
   direct-nameserver: *id001
   proxy-server-nameserver: *id001
