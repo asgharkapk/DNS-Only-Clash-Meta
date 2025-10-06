@@ -56,7 +56,7 @@ def save_config(provider, data, suffix):
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     out_file = os.path.join(OUTPUT_DIR, f"{provider}_{suffix}.yml")
     with open(out_file, "w", encoding="utf-8") as f:
-        yaml.dump(data, f, allow_unicode=True, sort_keys=False)
+        yaml.dump(data, f, allow_unicode=True, sort_keys=False, default_style='"')
     return out_file
 
 def generate_readme(files):
