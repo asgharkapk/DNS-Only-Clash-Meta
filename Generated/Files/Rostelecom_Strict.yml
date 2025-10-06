@@ -50,11 +50,11 @@ dns:
   default-nameserver:
   - 178.47.11.25
   - 178.47.2.92
-  - '"2a02:6b8::feed:0ff"'
+  - 2a02:6b8::feed:0ff
   nameserver: &id001
   - 178.47.11.25
   - 178.47.2.92
-  - '"2a02:6b8::feed:0ff"'
+  - 2a02:6b8::feed:0ff
   direct-nameserver: *id001
   proxy-server-nameserver: *id001
   fallback:

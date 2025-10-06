@@ -61,9 +61,9 @@ dns:
   - 77.88.8.8
   nameserver: &id001
   - 180.76.76.76
-  - '"2400:da00::6666"'
-  - '"https://doh.baidu.com/dns-query"'
-  - '"tls://doh.baidu.com"'
+  - 2400:da00::6666
+  - https://doh.baidu.com/dns-query
+  - tls://doh.baidu.com
   direct-nameserver: *id001
   proxy-server-nameserver: *id001
   fallback:
