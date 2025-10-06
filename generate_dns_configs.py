@@ -15,18 +15,9 @@ DEFAULT_FALLBACK = [
     "2606:4700:4700::1111", "2001:4860:4860::8888"
 ]
 
-def quote_ipv6(entries):
-    quoted = []
-    for ip in entries:
-        if ":" in ip.strip() and not any(ip.strip().lower().startswith(proto) for proto in ("tcp://", "udp://", "tls://")):
-            quoted.append(f'{ip}')
-        else:
-            quoted.append(ip)
-    return quoted
-
 def add_fallback(dns_cfg, entries):
     fallback = entries["fallback"] if entries["fallback"] else DEFAULT_FALLBACK
-    dns_cfg["dns"]["fallback"] = quote_ipv6(list(dict.fromkeys(fallback)))
+    dns_cfg["dns"]["fallback"] = list(dict.fromkeys(fallback))
     return dns_cfg
 
 def parse_dns_list():
@@ -176,7 +167,7 @@ def main():
         logging.info(f"⚙️ Generating configs for provider: {provider}")
         tpl = load_template()
 
-        all_entries = quote_ipv6(list(dict.fromkeys(entries["ipv4"] + entries["ipv6"] + entries["doh"] + entries["dot"] + entries["hostname"])))
+        all_entries = list(dict.fromkeys(entries["ipv4"] + entries["ipv6"] + entries["doh"] + entries["dot"] + entries["hostname"]))
 
         # Normal config
         normal_cfg = tpl.copy()
@@ -190,7 +181,7 @@ def main():
 
         # Strict config
         strict_cfg = tpl.copy()
-        strict_cfg["dns"]["default-nameserver"] = quote_ipv6(list(dict.fromkeys(entries["ipv4"] + entries["ipv6"])))
+        strict_cfg["dns"]["default-nameserver"] = list(dict.fromkeys(entries["ipv4"] + entries["ipv6"]))
         strict_cfg["dns"]["nameserver"] = all_entries
         strict_cfg["dns"]["direct-nameserver"] = all_entries
         strict_cfg["dns"]["proxy-server-nameserver"] = all_entries
