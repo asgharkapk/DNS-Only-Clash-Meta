@@ -69,6 +69,7 @@
   - "tls://8.8.8.8"
   - "tcp://8.8.8.8"
   - "udp://8.8.8.8"
+  - "dns.google"
   "direct-nameserver": *id001
   "proxy-server-nameserver": *id001
   "fallback":

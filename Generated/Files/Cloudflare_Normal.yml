@@ -89,6 +89,7 @@
   - "tcp://1dot1dot1dot1.cloudflare-dns.com"
   - "tcp://security.cloudflare-dns.com"
   - "tcp://family.cloudflare-dns.com"
+  - "one.one.one.one"
   "direct-nameserver": *id001
   "proxy-server-nameserver": *id001
   "fallback":

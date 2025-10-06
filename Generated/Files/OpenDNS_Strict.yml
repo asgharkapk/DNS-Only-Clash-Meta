@@ -73,6 +73,7 @@
   - "tls://208.67.220.123"
   - "tls://208.67.222.123"
   - "tcp://208.67.222.222"
+  - "resolver1.opendns.com"
   "direct-nameserver": *id001
   "proxy-server-nameserver": *id001
   "fallback":

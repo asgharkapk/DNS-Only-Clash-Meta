@@ -64,6 +64,7 @@
   - "tcp://9.9.9.9"
   - "udp://9.9.9.9"
   - "resolver1.opendns.com"
+  - "dns.quad9.net"
   "direct-nameserver": *id001
   "proxy-server-nameserver": *id001
   "fallback":
