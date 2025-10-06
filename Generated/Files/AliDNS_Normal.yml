@@ -62,7 +62,7 @@ dns:
   nameserver: &id001
   - 223.5.5.5
   - 223.6.6.6
-  - 2400:3200::1
+  - '''2400:3200::1'''
   - https://dns.alidns.com/dns-query
   - tls://dns.alidns.com
   direct-nameserver: *id001

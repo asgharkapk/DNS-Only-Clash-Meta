@@ -62,7 +62,7 @@ dns:
   nameserver: &id001
   - 1.1.1.1
   - 1.0.0.1
-  - 2606:4700:4700::1111
+  - '''2606:4700:4700::1111'''
   - https://cloudflare-dns.com/dns-query
   direct-nameserver: *id001
   proxy-server-nameserver: *id001

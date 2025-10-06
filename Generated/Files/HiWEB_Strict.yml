@@ -49,10 +49,10 @@ dns:
   - '*.ir'
   default-nameserver:
   - 185.161.112.33
-  - 2a02:6b8::feed:0ff
+  - '''2a02:6b8::feed:0ff'''
   nameserver: &id001
   - 185.161.112.33
-  - 2a02:6b8::feed:0ff
+  - '''2a02:6b8::feed:0ff'''
   direct-nameserver: *id001
   proxy-server-nameserver: *id001
   fallback:

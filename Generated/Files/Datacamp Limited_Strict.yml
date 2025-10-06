@@ -48,9 +48,9 @@ dns:
   - ntp.*.com
   - '*.ir'
   default-nameserver:
-  - 2a02:6ea0:ca18:3::2
+  - '''2a02:6ea0:ca18:3::2'''
   nameserver: &id001
-  - 2a02:6ea0:ca18:3::2
+  - '''2a02:6ea0:ca18:3::2'''
   direct-nameserver: *id001
   proxy-server-nameserver: *id001
   fallback:
