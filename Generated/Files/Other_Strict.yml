@@ -51,9 +51,6 @@ dns:
   nameserver: &id001
   - https://deamnet-a.cerrajeriasanmiguel.com:8888/dns-query
   - https://deamnet-b.cerrajeriasanmiguel.com:8888/dns-query
-  - https://deamnet-a.cerrajeriasanmiguel.com:8888/dns-query
-  - https://deamnet-b.cerrajeriasanmiguel.com:8888/dns-query
-  - tls://4.4.4.4
   - tls://4.4.4.4
   direct-nameserver: *id001
   proxy-server-nameserver: *id001

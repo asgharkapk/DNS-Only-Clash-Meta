@@ -62,8 +62,6 @@ dns:
   nameserver: &id001
   - 78.157.42.100
   - 78.157.42.101
-  - 78.157.42.100
-  - 78.157.42.101
   direct-nameserver: *id001
   proxy-server-nameserver: *id001
   fallback:

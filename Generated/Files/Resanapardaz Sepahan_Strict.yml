@@ -49,9 +49,7 @@ dns:
   - '*.ir'
   default-nameserver:
   - 185.186.242.161
-  - 185.186.242.161
   nameserver: &id001
-  - 185.186.242.161
   - 185.186.242.161
   direct-nameserver: *id001
   proxy-server-nameserver: *id001

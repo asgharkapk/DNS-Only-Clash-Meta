@@ -66,23 +66,9 @@ dns:
   - 45.90.30.0
   - 45.90.30.165
   - 45.90.30.193
-  - 45.90.28.0
-  - 45.90.28.165
-  - 45.90.28.193
-  - 45.90.30.0
-  - 45.90.30.165
-  - 45.90.30.193
-  - 45.90.28.0
-  - 45.90.28.165
-  - 45.90.28.193
-  - 45.90.30.0
-  - 45.90.30.165
-  - 45.90.30.193
   - dnsl.nextdns.io
   - dns2.nextdns.io
   - https://dns.nextdns.io
-  - dnsl.nextdns.io
-  - dns2.nextdns.io
   - tls://dns.nextdns.io
   direct-nameserver: *id001
   proxy-server-nameserver: *id001

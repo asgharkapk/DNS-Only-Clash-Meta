@@ -50,14 +50,9 @@ dns:
   default-nameserver:
   - 64.6.64.6
   - 64.6.65.6
-  - 64.6.64.6
-  - 64.6.65.6
   nameserver: &id001
   - 64.6.64.6
   - 64.6.65.6
-  - 64.6.64.6
-  - 64.6.65.6
-  - udp://64.6.64.6
   - udp://64.6.64.6
   direct-nameserver: *id001
   proxy-server-nameserver: *id001
