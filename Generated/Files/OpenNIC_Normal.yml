@@ -61,7 +61,7 @@ dns:
   - 77.88.8.8
   nameserver: &id001
   - 80.78.132.79
-  - 2a0d:2146:2404::1069
+  - '"2a0d:2146:2404::1069"'
   direct-nameserver: *id001
   proxy-server-nameserver: *id001
   fallback:

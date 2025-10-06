@@ -62,7 +62,7 @@ dns:
   nameserver: &id001
   - 94.140.14.14
   - 94.140.15.15
-  - https://dns.adguard.com/dns-query
+  - '"https://dns.adguard.com/dns-query"'
   direct-nameserver: *id001
   proxy-server-nameserver: *id001
   fallback:

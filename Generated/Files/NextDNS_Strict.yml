@@ -63,7 +63,7 @@ dns:
   - 45.90.30.193
   - dnsl.nextdns.io
   - dns2.nextdns.io
-  - https://dns.nextdns.io
+  - '"https://dns.nextdns.io"'
   - tls://dns.nextdns.io
   direct-nameserver: *id001
   proxy-server-nameserver: *id001
@@ -72,8 +72,8 @@ dns:
   - 1.1.1.1
   - 9.9.9.9
   - 94.140.14.14
-  - 2606:4700:4700::1111
-  - 2001:4860:4860::8888
+  - '"2606:4700:4700::1111"'
+  - '"2001:4860:4860::8888"'
 sniffer:
   enable: true
   force-dns-mapping: true

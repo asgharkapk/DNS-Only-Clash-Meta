@@ -62,9 +62,9 @@ dns:
   nameserver: &id001
   - 9.9.9.9
   - 149.112.112.112
-  - 2620:fe::fe
-  - 2620:fe::9
-  - https://dns.quad9.net/dns-query
+  - '"2620:fe::fe"'
+  - '"2620:fe::9"'
+  - '"https://dns.quad9.net/dns-query"'
   - dns.quad9.net
   - tls://dns.quad9.net
   - tls://9.9.9.9

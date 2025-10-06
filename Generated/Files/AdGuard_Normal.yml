@@ -62,8 +62,8 @@ dns:
   nameserver: &id001
   - 94.140.14.14
   - 94.140.15.15
-  - 2a10:50c0::feed:0ff
-  - https://dns.adguard.com/dns-query
+  - '"2a10:50c0::feed:0ff"'
+  - '"https://dns.adguard.com/dns-query"'
   - dns.adguard.com
   direct-nameserver: *id001
   proxy-server-nameserver: *id001
