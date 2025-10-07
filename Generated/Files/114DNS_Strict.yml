@@ -1,1069 +1,1069 @@
-"global-client-fingerprint": "chrome"
-"port": !!int "7890"
-"socks-port": !!int "7891"
-"redir-port": !!int "7892"
-"mixed-port": !!int "7893"
-"tproxy-port": !!int "7894"
-"allow-lan": !!bool "true"
-"tcp-concurrent": !!bool "true"
-"enable-process": !!bool "true"
-"find-process-mode": "strict"
-"ipv6": !!bool "true"
-"log-level": "debug"
-"geo-auto-update": !!bool "true"
-"geo-update-interval": !!int "168"
-"secret": ""
-"bind-address": "*"
-"unified-delay": !!bool "false"
-"disable-keep-alive": !!bool "false"
-"keep-alive-idle": !!int "30"
-"keep-alive-interval": !!int "30"
-"profile":
-  "name": "My Custom Clash Profile"
-  "version": !!int "1"
-  "author": "test"
-  "store-selected": !!bool "true"
-  "store-fake-ip": !!bool "true"
-"dns":
-  "enable": !!bool "true"
-  "ipv6": !!bool "true"
-  "respect-rules": !!bool "false"
-  "prefer-h3": !!bool "true"
-  "cache-algorithm": "arc"
-  "use-system-hosts": !!bool "true"
-  "use-host": !!bool "true"
-  "listen": "0.0.0.0:53"
-  "enhanced-mode": "fake-ip"
-  "fake-ip-filter-mode": "blacklist"
-  "fake-ip-range": "198.18.0.1/16"
-  "fake-ip-filter":
-  - "*.lan"
-  - "*.localdomain"
-  - "*.invalid"
-  - "*.localhost"
-  - "*.test"
-  - "*.local"
-  - "*.home.arpa"
-  - "time.*.com"
-  - "ntp.*.com"
-  - "*.ir"
-  "default-nameserver":
-  - "114.114.114.114"
-  - "114.114.115.115"
-  - "2400:3200::1"
-  "nameserver": &id001
-  - "114.114.114.114"
-  - "114.114.115.115"
-  - "2400:3200::1"
-  "direct-nameserver": *id001
-  "proxy-server-nameserver": *id001
-  "fallback":
-  - "202.96.128.86"
-"sniffer":
-  "enable": !!bool "true"
-  "force-dns-mapping": !!bool "true"
-  "parse-pure-ip": !!bool "true"
-  "override-destination": !!bool "false"
-  "sniff":
-    "HTTP":
-      "ports":
-      - !!int "80"
-      - !!int "8080"
-      - !!int "8880"
-      - !!int "2052"
-      - !!int "2082"
-      - !!int "2086"
-      - !!int "2095"
-    "TLS":
-      "ports":
-      - !!int "443"
-      - !!int "8443"
-      - !!int "2053"
-      - !!int "2083"
-      - !!int "2087"
-      - !!int "2096"
-"tun":
-  "enable": !!bool "true"
-  "stack": "mixed"
-  "auto-route": !!bool "true"
-  "auto-detect-interface": !!bool "true"
-  "auto-redir": !!bool "true"
-  "dns-hijack":
-  - "any:53"
-  - "tcp://any:53"
-"rule-providers":
-  "category_public_tracker":
-    "type": "http"
-    "behavior": "domain"
-    "url": "https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/generated/category-public-tracker.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/category_public_tracker.yaml"
-  "iran_ads":
-    "type": "http"
-    "behavior": "domain"
-    "url": "https://github.com/bootmortis/iran-hosted-domains/releases/latest/download/clash_rules_ads.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/iran_ads.yaml"
-  "PersianBlocker":
-    "type": "http"
-    "behavior": "domain"
-    "url": "https://github.com/MasterKia/iran-hosted-domains/releases/latest/download/clash_rules_ads.yaml"
-    "path": "./ruleset/PersianBlocker.yaml"
-    "interval": !!int "86400"
-  "youtube":
-    "type": "http"
-    "behavior": "domain"
-    "url": "https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/generated/youtube.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/youtube.yaml"
-  "ACLyoutube":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/YouTube.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/ACLyoutube.yaml"
-  "telegram":
-    "type": "http"
-    "behavior": "domain"
-    "url": "https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/generated/telegram.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/telegram.yaml"
-  "twitch":
-    "type": "http"
-    "behavior": "domain"
-    "url": "https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/generated/twitch.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/twitch.yaml"
-  "censor":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/10ium/clash_rules/main/censor.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/censor.yaml"
-  "local_ips":
-    "type": "http"
-    "behavior": "ipcidr"
-    "url": "https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/generated/local-ips.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/local_ips.yaml"
-  "private":
-    "type": "http"
-    "behavior": "domain"
-    "url": "https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/generated/private.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/private.yaml"
-  "category_ir":
-    "type": "http"
-    "behavior": "domain"
-    "url": "https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/generated/category-ir.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/category_ir.yaml"
-  "iran":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/10ium/clash_rules/main/iran.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/iran.yaml"
-  "steam":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/10ium/clash_rules/main/steam.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/steam.yaml"
-  "game":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/10ium/clash_rules/refs/heads/main/game.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/game.yaml"
-  "category-games":
-    "type": "http"
-    "behavior": "domain"
-    "url": "https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/refs/heads/generated/category-games.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/category-games.yaml"
-  "ir":
-    "type": "http"
-    "format": "yaml"
-    "behavior": "domain"
-    "url": "https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/refs/heads/release/ir.yaml"
-    "path": "./ruleset/ir.yaml"
-    "interval": !!int "86400"
-  "C4Uprivate":
-    "type": "http"
-    "format": "yaml"
-    "behavior": "domain"
-    "url": "https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/refs/heads/release/private.yaml"
-    "path": "./ruleset/C4Uprivate.yaml"
-    "interval": !!int "86400"
-  "apps":
-    "type": "http"
-    "format": "yaml"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/refs/heads/release/apps.yaml"
-    "path": "./ruleset/apps.yaml"
-    "interval": !!int "86400"
-  "ircidr":
-    "type": "http"
-    "format": "yaml"
-    "behavior": "ipcidr"
-    "url": "https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/refs/heads/release/ircidr.yaml"
-    "path": "./ruleset/ircidr.yaml"
-    "interval": !!int "86400"
-  "irasn":
-    "type": "http"
-    "format": "yaml"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/refs/heads/release/irasn.yaml"
-    "path": "./ruleset/irasn.yaml"
-    "interval": !!int "86400"
-  "arvancloud":
-    "type": "http"
-    "format": "yaml"
-    "behavior": "ipcidr"
-    "url": "https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/refs/heads/release/arvancloud.yaml"
-    "path": "./ruleset/arvancloud.yaml"
-    "interval": !!int "86400"
-  "derakcloud":
-    "type": "http"
-    "format": "yaml"
-    "behavior": "ipcidr"
-    "url": "https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/refs/heads/release/derakcloud.yaml"
-    "path": "./ruleset/derakcloud.yaml"
-    "interval": !!int "86400"
-  "iranserver":
-    "type": "http"
-    "format": "yaml"
-    "behavior": "ipcidr"
-    "url": "https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/refs/heads/release/iranserver.yaml"
-    "path": "./ruleset/iranserver.yaml"
-    "interval": !!int "86400"
-  "parspack":
-    "type": "http"
-    "format": "yaml"
-    "behavior": "ipcidr"
-    "url": "https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/refs/heads/release/parspack.yaml"
-    "path": "./ruleset/parspack.yaml"
-    "interval": !!int "86400"
-  "malware":
-    "type": "http"
-    "format": "yaml"
-    "behavior": "domain"
-    "url": "https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/refs/heads/release/malware.yaml"
-    "path": "./ruleset/malware.yaml"
-    "interval": !!int "86400"
-  "phishing":
-    "type": "http"
-    "format": "yaml"
-    "behavior": "domain"
-    "url": "https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/refs/heads/release/phishing.yaml"
-    "path": "./ruleset/phishing.yaml"
-    "interval": !!int "86400"
-  "cryptominers":
-    "type": "http"
-    "format": "yaml"
-    "behavior": "domain"
-    "url": "https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/refs/heads/release/cryptominers.yaml"
-    "path": "./ruleset/cryptominers.yaml"
-    "interval": !!int "86400"
-  "ads":
-    "type": "http"
-    "format": "yaml"
-    "behavior": "domain"
-    "url": "https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/refs/heads/release/category-ads-all.yaml"
-    "path": "./ruleset/ads.yaml"
-    "interval": !!int "86400"
-  "DownloadManagers":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/10ium/clash_rules/refs/heads/main/DownloadManagers.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/DownloadManagers.yaml"
-  "BanProgramAD":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/10ium/mihomo_rule/refs/heads/main/list/BanProgramAD.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/BanProgramAD.yaml"
-  "BanAD":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/10ium/mihomo_rule/refs/heads/main/list/BanAD.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/BanAD.yaml"
-  "PrivateTracker":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/10ium/mihomo_rule/refs/heads/main/list/PrivateTracker.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/PrivateTracker.yaml"
-  "BanEasyList":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/10ium/mihomo_rule/refs/heads/main/list/BanEasyList.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/BanEasyList.yaml"
-  "Download":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/10ium/mihomo_rule/refs/heads/main/list/Download.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/Download.yaml"
-  "GameDownload":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/10ium/mihomo_rule/refs/heads/main/list/GameDownload.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/GameDownload.yaml"
-  "SteamRegionCheck":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/10ium/mihomo_rule/refs/heads/main/list/SteamRegionCheck.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/SteamRegionCheck.yaml"
-  "Xbox":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/10ium/mihomo_rule/refs/heads/main/list/Xbox.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/Xbox.yaml"
-  "YouTubeMusic":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/10ium/mihomo_rule/refs/heads/main/list/YouTubeMusic.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/YouTubeMusic.yaml"
-  "10iumYouTube":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/10ium/mihomo_rule/refs/heads/main/list/YouTube.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/10iumYouTube.yaml"
-  "Ponzi":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/10ium/mihomo_rule/refs/heads/main/Ponzi.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/Ponzi.yaml"
-  "warninglist":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/10ium/mihomo_rule/refs/heads/main/warning-list.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/warninglist.yaml"
-  "google":
-    "type": "http"
-    "behavior": "domain"
-    "url": "https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/refs/heads/generated/google.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/google.yaml"
-  "google-play":
-    "type": "http"
-    "behavior": "domain"
-    "url": "https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/refs/heads/generated/google-play.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/google-play.yaml"
-  "xiaomi-ads":
-    "type": "http"
-    "behavior": "domain"
-    "url": "https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/refs/heads/generated/xiaomi-ads.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/xiaomi-ads.yaml"
-  "xiaomi_block_list":
-    "type": "http"
-    "format": "yaml"
-    "behavior": "domain"
-    "url": "https://raw.githubusercontent.com/10ium/clash_rules/refs/heads/main/xiaomi_block_list.yaml"
-    "path": "./ruleset/xiaomi_block_list.yaml"
-    "interval": !!int "86400"
-  "xiaomi_white_list":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/10ium/clash_rules/refs/heads/main/xiaomi_white_list.yaml"
-    "path": "./ruleset/xiaomi_white_list.yaml"
-    "interval": !!int "86400"
-  "cloudflare":
-    "type": "http"
-    "behavior": "domain"
-    "url": "https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/refs/heads/generated/cloudflare.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/cloudflare.yaml"
-  "github":
-    "type": "http"
-    "behavior": "domain"
-    "url": "https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/refs/heads/generated/github.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/github.yaml"
-  "whatsapp":
-    "type": "http"
-    "behavior": "domain"
-    "url": "https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/generated/whatsapp.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/whatsapp.yaml"
-  "LiteAds":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/10ium/clash_rules/refs/heads/main/LiteAds.yaml"
-    "path": "./ruleset/LiteAds.yaml"
-    "interval": !!int "86400"
-  "discord":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/10ium/clash_rules/refs/heads/main/discord.yaml"
-    "path": "./ruleset/discord.yaml"
-    "interval": !!int "86400"
-  "instagram":
-    "type": "http"
-    "behavior": "domain"
-    "url": "https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/refs/heads/generated/instagram.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/instagram.yaml"
-  "category-ai":
-    "type": "http"
-    "behavior": "domain"
-    "url": "https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/refs/heads/generated/category-ai-!cn.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/category-ai.yaml"
-  "windows":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/10ium/clash_rules/refs/heads/main/windows.yaml"
-    "path": "./ruleset/windows.yaml"
-    "interval": !!int "86400"
-  "C4Utwitter":
-    "type": "http"
-    "format": "yaml"
-    "behavior": "ipcidr"
-    "url": "https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/release/twitter.yaml"
-    "path": "./ruleset/C4Utwitter.yaml"
-    "interval": !!int "86400"
-  "mihTwitter":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/10ium/mihomo_rule/refs/heads/main/list/Twitter.yaml"
-    "path": "./ruleset/mihTwitter.yaml"
-    "interval": !!int "86400"
-  "Domtwitter":
-    "type": "http"
-    "behavior": "domain"
-    "url": "https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/refs/heads/generated/twitter.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/Domtwitter.yaml"
-  "spotifyads":
-    "type": "http"
-    "behavior": "domain"
-    "url": "https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/refs/heads/generated/spotify-ads.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/spotifyads.yaml"
-  "DomainSpotify":
-    "type": "http"
-    "behavior": "domain"
-    "url": "https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/refs/heads/generated/spotify.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/DomainSpotify.yaml"
-  "mihspotify":
-    "type": "http"
-    "behavior": "domain"
-    "url": "https://raw.githubusercontent.com/10ium/mihomo_rule/refs/heads/main/list/Spotify.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/mihSpotify.yaml"
-  "IranAds":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/IranAds.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/IranAds.yaml"
-  "ACLgoogle":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/google.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/ACLgoogle.yaml"
-  "reddit":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/reddit.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/reddit.yaml"
-  "ACLtelegram":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/telegram.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/ACLtelegram.yaml"
-  "openai":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/OpenAi.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/openai.yaml"
-  "ACLTwitter":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/Twitter.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/ACLTwitter.yaml"
-  "ACLdiscord":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/discord.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/ACLdiscord.yaml"
-  "ACLsteam":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/steam.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/ACLsteam.yaml"
-  "ACLtwitch":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/twitch.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/ACLtwitch.yaml"
-  "ACLinsta":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/Instagram.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/ACLinsta.yaml"
-  "facebook":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/facebook.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/facebook.yaml"
-  "Netflix":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/Netflix.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/Netflix.yaml"
-  "NetflixIP":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/NetflixIP.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/NetflixIP.yaml"
-  "ACLSpotify":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/Spotify.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/ACLSpotify.yaml"
-  "TikTok":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/TikTok.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/TikTok.yaml"
-  "Dota2":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/Dota2.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/Dota2.yaml"
-  "BanEasyListChina":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/BanEasyListChina.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/BanEasyListChina.yaml"
-  "ACLBanEasyList":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/BanEasyList.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/ACLBanEasyList.yaml"
-  "ACLBanAD":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/BanAD.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/ACLBanAD.yaml"
-  "BanEasyPrivacy":
-    "type": "http"
-    "behavior": "classical"
-    "url": "https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/BanEasyPrivacy.yaml"
-    "interval": !!int "86400"
-    "path": "./ruleset/BanEasyPrivacy.yaml"
-"proxies":
-- "name": "dns-out"
-  "type": "dns"
-- "name": "UDP_IPv4_DIRECT"
-  "type": "direct"
-  "udp": !!bool "true"
-  "ip-version": "ipv4"
-- "name": "UDP_IPv6_DIRECT"
-  "type": "direct"
-  "udp": !!bool "true"
-  "ip-version": "ipv6"
-- "name": "TCP_IPv4_DIRECT"
-  "type": "direct"
-  "udp": !!bool "false"
-  "ip-version": "ipv4"
-- "name": "TCP_IPv6_DIRECT"
-  "type": "direct"
-  "udp": !!bool "false"
-  "ip-version": "ipv6"
-"proxy-groups":
-- "name": "\U0001F310Connection"
-  "type": "select"
-  "proxies":
-  - "\U0001F513Direct"
-  - "\U0001F6ABBlock"
-  - "dns-out"
-  - "UDP_IPv4_DIRECT"
-  - "TCP_IPv4_DIRECT"
-  - "UDP_IPv6_DIRECT"
-  - "TCP_IPv6_DIRECT"
-  - "REJECT-DROP"
-  - "PASS"
-- "name": "\U0001F4D8Facebook\U0001F3AF"
-  "type": "select"
-  "proxies":
-  - "\U0001F6ABBlock"
-  - "\U0001F513Direct"
-  - "\U0001F310Connection"
-- "name": "\U0001F6D1Advertisements"
-  "type": "select"
-  "proxies":
-  - "\U0001F6ABBlock"
-  - "\U0001F513Direct"
-  - "\U0001F310Connection"
-- "name": "\U0001F6E1️PrivacyTrackers"
-  "type": "select"
-  "proxies":
-  - "\U0001F6ABBlock"
-  - "\U0001F513Direct"
-  - "\U0001F310Connection"
-- "name": "\U0001F9A0SECURITY"
-  "type": "select"
-  "proxies":
-  - "\U0001F6ABBlock"
-  - "\U0001F513Direct"
-  - "\U0001F310Connection"
-- "name": "\U0001F5A5️Lan"
-  "type": "select"
-  "proxies":
-  - "\U0001F513Direct"
-  - "\U0001F310Connection"
-  - "\U0001F6ABBlock"
-- "name": "\U0001F1EE\U0001F1F7IranWebsites"
-  "type": "select"
-  "proxies":
-  - "\U0001F513Direct"
-  - "\U0001F310Connection"
-  - "\U0001F6ABBlock"
-- "name": "</>GIT\U0001F3AF"
-  "type": "select"
-  "proxies":
-  - "\U0001F513Direct"
-  - "\U0001F310Connection"
-  - "\U0001F6ABBlock"
-- "name": "\U0001F3AEDota2\U0001F3AF"
-  "type": "select"
-  "proxies":
-  - "\U0001F513Direct"
-  - "\U0001F310Connection"
-  - "\U0001F6ABBlock"
-- "name": "\U0001F3AESteam\U0001F3AF"
-  "type": "select"
-  "proxies":
-  - "\U0001F513Direct"
-  - "\U0001F310Connection"
-  - "\U0001F6ABBlock"
-- "name": "\U0001F92CcensorMovie\U0001F3AF"
-  "type": "select"
-  "proxies":
-  - "\U0001F513Direct"
-  - "\U0001F310Connection"
-  - "\U0001F6ABBlock"
-- "name": "\U0001F579️VideoGame\U0001F3AF"
-  "type": "select"
-  "proxies":
-  - "\U0001F513Direct"
-  - "\U0001F310Connection"
-  - "\U0001F6ABBlock"
-- "name": "\U0001F4F2Xiaomi\U0001F3AF"
-  "type": "select"
-  "proxies":
-  - "\U0001F513Direct"
-  - "\U0001F310Connection"
-  - "\U0001F6ABBlock"
-- "name": "\U0001FA9FWindows\U0001F3AF"
-  "type": "select"
-  "proxies":
-  - "\U0001F513Direct"
-  - "\U0001F310Connection"
-  - "\U0001F6ABBlock"
-- "name": "\U0001F4E5Download\U0001F3AF"
-  "type": "select"
-  "proxies":
-  - "\U0001F513Direct"
-  - "\U0001F310Connection"
-  - "\U0001F6ABBlock"
-- "name": "\U0001F4BBAnyDesk\U0001F3AF"
-  "type": "select"
-  "proxies":
-  - "\U0001F513Direct"
-  - "\U0001F310Connection"
-  - "\U0001F6ABBlock"
-- "name": "\U0001F4ACWhatsapp\U0001F3AF"
-  "type": "select"
-  "proxies":
-  - "\U0001F513Direct"
-  - "\U0001F310Connection"
-  - "\U0001F6ABBlock"
-- "name": "\U0001F39BNVIDIA\U0001F3AF"
-  "type": "select"
-  "proxies":
-  - "\U0001F310Connection"
-  - "\U0001F513Direct"
-  - "\U0001F6ABBlock"
-- "name": "\U0001F4FAYouTube\U0001F3AF"
-  "type": "select"
-  "proxies":
-  - "\U0001F310Connection"
-  - "\U0001F513Direct"
-  - "\U0001F6ABBlock"
-- "name": "\U0001F4F1Google\U0001F3AF"
-  "type": "select"
-  "proxies":
-  - "\U0001F310Connection"
-  - "\U0001F513Direct"
-  - "\U0001F6ABBlock"
-- "name": "\U0001F4D9Reddit\U0001F3AF"
-  "type": "select"
-  "proxies":
-  - "\U0001F310Connection"
-  - "\U0001F513Direct"
-  - "\U0001F6ABBlock"
-- "name": "\U0001F535Telegram\U0001F3AF"
-  "type": "select"
-  "proxies":
-  - "\U0001F310Connection"
-  - "\U0001F513Direct"
-  - "\U0001F6ABBlock"
-- "name": "\U0001F916OpenAI\U0001F3AF"
-  "type": "select"
-  "proxies":
-  - "\U0001F310Connection"
-  - "\U0001F513Direct"
-  - "\U0001F6ABBlock"
-- "name": "\U0001F426Twitter\U0001F3AF"
-  "type": "select"
-  "proxies":
-  - "\U0001F310Connection"
-  - "\U0001F513Direct"
-  - "\U0001F6ABBlock"
-- "name": "\U0001F916Grok\U0001F3AF"
-  "type": "select"
-  "proxies":
-  - "\U0001F310Connection"
-  - "\U0001F513Direct"
-  - "\U0001F6ABBlock"
-- "name": "\U0001F5E8️Discord\U0001F3AF"
-  "type": "select"
-  "proxies":
-  - "\U0001F310Connection"
-  - "\U0001F513Direct"
-  - "\U0001F6ABBlock"
-- "name": "\U0001F47ETwitch\U0001F3AF"
-  "type": "select"
-  "proxies":
-  - "\U0001F310Connection"
-  - "\U0001F513Direct"
-  - "\U0001F6ABBlock"
-- "name": "☁️Cloudflare\U0001F3AF"
-  "type": "select"
-  "proxies":
-  - "\U0001F310Connection"
-  - "\U0001F513Direct"
-  - "\U0001F6ABBlock"
-- "name": "\U0001F4F8Instagram\U0001F3AF"
-  "type": "select"
-  "proxies":
-  - "\U0001F310Connection"
-  - "\U0001F513Direct"
-  - "\U0001F6ABBlock"
-- "name": "\U0001F3A5Netflix\U0001F3AF"
-  "type": "select"
-  "proxies":
-  - "\U0001F310Connection"
-  - "\U0001F513Direct"
-  - "\U0001F6ABBlock"
-- "name": "\U0001F3B6Spotify\U0001F3AF"
-  "type": "select"
-  "proxies":
-  - "\U0001F310Connection"
-  - "\U0001F513Direct"
-  - "\U0001F6ABBlock"
-- "name": "\U0001F3ACTikTok\U0001F3AF"
-  "type": "select"
-  "proxies":
-  - "\U0001F310Connection"
-  - "\U0001F513Direct"
-  - "\U0001F6ABBlock"
-- "name": "\U0001F4BCLinkedIn\U0001F3AF"
-  "type": "select"
-  "proxies":
-  - "\U0001F310Connection"
-  - "\U0001F513Direct"
-  - "\U0001F6ABBlock"
-- "name": "\U0001F916AI\U0001F3AF"
-  "type": "select"
-  "proxies":
-  - "\U0001F310Connection"
-  - "\U0001F513Direct"
-  - "\U0001F6ABBlock"
-- "name": "\U0001F3A6Streamer\U0001F3AF"
-  "type": "select"
-  "proxies":
-  - "\U0001F310Connection"
-  - "\U0001F513Direct"
-  - "\U0001F6ABBlock"
-- "name": "\U0001F3AFDestinations"
-  "type": "select"
-  "proxies":
-  - "\U0001F5A5️Lan"
-  - "\U0001F1EE\U0001F1F7IranWebsites"
-  - "\U0001F6D1Advertisements"
-  - "\U0001F6E1️PrivacyTrackers"
-  - "\U0001F9A0SECURITY"
-  - "</>GIT\U0001F3AF"
-  - "\U0001F3AEDota2\U0001F3AF"
-  - "\U0001F3AESteam\U0001F3AF"
-  - "\U0001F4D8Facebook\U0001F3AF"
-  - "\U0001F39BNVIDIA\U0001F3AF"
-  - "\U0001F4FAYouTube\U0001F3AF"
-  - "\U0001F4F1Google\U0001F3AF"
-  - "\U0001F4D9Reddit\U0001F3AF"
-  - "\U0001F535Telegram\U0001F3AF"
-  - "\U0001F916OpenAI\U0001F3AF"
-  - "\U0001F426Twitter\U0001F3AF"
-  - "\U0001F916Grok\U0001F3AF"
-  - "\U0001F5E8️Discord\U0001F3AF"
-  - "\U0001F47ETwitch\U0001F3AF"
-  - "☁️Cloudflare\U0001F3AF"
-  - "\U0001F4F8Instagram\U0001F3AF"
-  - "\U0001F3A5Netflix\U0001F3AF"
-  - "\U0001F3B6Spotify\U0001F3AF"
-  - "\U0001F3ACTikTok\U0001F3AF"
-  - "\U0001F4BCLinkedIn\U0001F3AF"
-  - "\U0001F4E5Download\U0001F3AF"
-  - "\U0001F4BBAnyDesk\U0001F3AF"
-  - "\U0001F916AI\U0001F3AF"
-  - "\U0001F4ACWhatsapp\U0001F3AF"
-  - "\U0001F92CcensorMovie\U0001F3AF"
-  - "\U0001F579️VideoGame\U0001F3AF"
-  - "\U0001F4F2Xiaomi\U0001F3AF"
-  - "\U0001FA9FWindows\U0001F3AF"
-  - "\U0001F3A6Streamer\U0001F3AF"
-- "name": "\U0001F513Direct"
-  "type": "select"
-  "proxies":
-  - "DIRECT"
-- "name": "\U0001F6ABBlock"
-  "type": "select"
-  "proxies":
-  - "REJECT"
-- "name": "⚡Online"
-  "type": "select"
-  "proxies":
-  - "\U0001F310Connection"
-  - "\U0001F3AFDestinations"
-"ntp":
-  "enable": !!bool "true"
-  "server": "time.apple.com"
-  "port": !!int "123"
-  "interval": !!int "30"
-"rules":
-- "GEOIP,IR,\U0001F1EE\U0001F1F7IranWebsites"
-- "GEOSITE,category-ir,\U0001F1EE\U0001F1F7IranWebsites"
-- "RULE-SET,apps,\U0001F1EE\U0001F1F7IranWebsites"
-- "RULE-SET,category_ir,\U0001F1EE\U0001F1F7IranWebsites"
-- "RULE-SET,iran,\U0001F1EE\U0001F1F7IranWebsites"
-- "RULE-SET,ir,\U0001F1EE\U0001F1F7IranWebsites"
-- "RULE-SET,ircidr,\U0001F1EE\U0001F1F7IranWebsites"
-- "RULE-SET,irasn,\U0001F1EE\U0001F1F7IranWebsites"
-- "RULE-SET,arvancloud,\U0001F1EE\U0001F1F7IranWebsites"
-- "RULE-SET,derakcloud,\U0001F1EE\U0001F1F7IranWebsites"
-- "RULE-SET,iranserver,\U0001F1EE\U0001F1F7IranWebsites"
-- "RULE-SET,parspack,\U0001F1EE\U0001F1F7IranWebsites"
-- "GEOSITE,private,\U0001F5A5️Lan"
-- "IP-CIDR,10.10.34.0/24,\U0001F5A5️Lan"
-- "RULE-SET,local_ips,\U0001F5A5️Lan"
-- "RULE-SET,C4Uprivate,\U0001F5A5️Lan"
-- "RULE-SET,private,\U0001F5A5️Lan"
-- "RULE-SET,BanEasyPrivacy,\U0001F6E1️PrivacyTrackers"
-- "GEOSITE,category-ads-all,\U0001F6D1Advertisements"
-- "RULE-SET,ACLBanAD,\U0001F6D1Advertisements"
-- "RULE-SET,ACLBanEasyList,\U0001F6D1Advertisements"
-- "RULE-SET,BanEasyListChina,\U0001F6D1Advertisements"
-- "RULE-SET,IranAds,\U0001F6D1Advertisements"
-- "RULE-SET,spotifyads,\U0001F6D1Advertisements"
-- "RULE-SET,BanProgramAD,\U0001F6D1Advertisements"
-- "RULE-SET,BanAD,\U0001F6D1Advertisements"
-- "RULE-SET,PrivateTracker,\U0001F6D1Advertisements"
-- "RULE-SET,category_public_tracker,\U0001F6D1Advertisements"
-- "RULE-SET,LiteAds,\U0001F6D1Advertisements"
-- "RULE-SET,iran_ads,\U0001F6D1Advertisements"
-- "RULE-SET,PersianBlocker,\U0001F6D1Advertisements"
-- "RULE-SET,ads,\U0001F6D1Advertisements"
-- "RULE-SET,BanEasyList,\U0001F6D1Advertisements"
-- "RULE-SET,xiaomi-ads,\U0001F6D1Advertisements"
-- "RULE-SET,xiaomi_block_list,\U0001F6D1Advertisements"
-- "RULE-SET,malware,\U0001F9A0SECURITY"
-- "RULE-SET,cryptominers,\U0001F9A0SECURITY"
-- "RULE-SET,phishing,\U0001F9A0SECURITY"
-- "RULE-SET,warninglist,\U0001F9A0SECURITY"
-- "RULE-SET,Ponzi,\U0001F9A0SECURITY"
-- "GEOSITE,nvidia,\U0001F39BNVIDIA\U0001F3AF"
-- "GEOSITE,github,</>GIT\U0001F3AF"
-- "GEOSITE,gitlab,</>GIT\U0001F3AF"
-- "RULE-SET,github,</>GIT\U0001F3AF"
-- "RULE-SET,ACLyoutube,\U0001F4FAYouTube\U0001F3AF"
-- "RULE-SET,youtube,\U0001F4FAYouTube\U0001F3AF"
-- "RULE-SET,YouTubeMusic,\U0001F4FAYouTube\U0001F3AF"
-- "RULE-SET,10iumYouTube,\U0001F4FAYouTube\U0001F3AF"
-- "GEOSITE,google,\U0001F4F1Google\U0001F3AF"
-- "PROCESS-NAME,com.android.vending,\U0001F4F1Google\U0001F3AF"
-- "PROCESS-NAME,com.google.android.gms,\U0001F4F1Google\U0001F3AF"
-- "RULE-SET,ACLgoogle,\U0001F4F1Google\U0001F3AF"
-- "RULE-SET,google,\U0001F4F1Google\U0001F3AF"
-- "RULE-SET,google-play,\U0001F4F1Google\U0001F3AF"
-- "RULE-SET,reddit,\U0001F4D9Reddit\U0001F3AF"
-- "PROCESS-NAME,Telegram.exe,\U0001F535Telegram\U0001F3AF"
-- "PROCESS-NAME,org.telegram.messenger,\U0001F535Telegram\U0001F3AF"
-- "PROCESS-NAME,org.telegram.messenger.web,\U0001F535Telegram\U0001F3AF"
-- "RULE-SET,ACLtelegram,\U0001F535Telegram\U0001F3AF"
-- "RULE-SET,telegram,\U0001F535Telegram\U0001F3AF"
-- "GEOSITE,openai,\U0001F916OpenAI\U0001F3AF"
-- "RULE-SET,openai,\U0001F916OpenAI\U0001F3AF"
-- "PROCESS-NAME,Twitter.exe,\U0001F426Twitter\U0001F3AF"
-- "PROCESS-NAME,com.twitter.android,\U0001F426Twitter\U0001F3AF"
-- "RULE-SET,ACLTwitter,\U0001F426Twitter\U0001F3AF"
-- "RULE-SET,C4Utwitter,\U0001F426Twitter\U0001F3AF"
-- "RULE-SET,mihTwitter,\U0001F426Twitter\U0001F3AF"
-- "RULE-SET,Domtwitter,\U0001F426Twitter\U0001F3AF"
-- "DOMAIN-SUFFIX,grok.com,\U0001F916Grok\U0001F3AF"
-- "DOMAIN-SUFFIX,x.ai,\U0001F916Grok\U0001F3AF"
-- "RULE-SET,ACLdiscord,\U0001F5E8️Discord\U0001F3AF"
-- "GEOSITE,discord,\U0001F5E8️Discord\U0001F3AF"
-- "RULE-SET,discord,\U0001F5E8️Discord\U0001F3AF"
-- "RULE-SET,ACLsteam,\U0001F3AESteam\U0001F3AF"
-- "RULE-SET,steam,\U0001F3AESteam\U0001F3AF"
-- "RULE-SET,SteamRegionCheck,\U0001F3AESteam\U0001F3AF"
-- "RULE-SET,ACLtwitch,\U0001F47ETwitch\U0001F3AF"
-- "RULE-SET,twitch,\U0001F47ETwitch\U0001F3AF"
-- "GEOSITE,cloudflare,☁️Cloudflare\U0001F3AF"
-- "RULE-SET,cloudflare,☁️Cloudflare\U0001F3AF"
-- "PROCESS-NAME,com.instagram.android,\U0001F4F8Instagram\U0001F3AF"
-- "RULE-SET,ACLinsta,\U0001F4F8Instagram\U0001F3AF"
-- "GEOSITE,instagram,\U0001F4F8Instagram\U0001F3AF"
-- "RULE-SET,instagram,\U0001F4F8Instagram\U0001F3AF"
-- "GEOSITE,facebook,\U0001F4D8Facebook\U0001F3AF"
-- "RULE-SET,facebook,\U0001F4D8Facebook\U0001F3AF"
-- "GEOSITE,netflix,\U0001F3A5Netflix\U0001F3AF"
-- "RULE-SET,Netflix,\U0001F3A5Netflix\U0001F3AF"
-- "RULE-SET,NetflixIP,\U0001F3A5Netflix\U0001F3AF"
-- "PROCESS-NAME,com.spotify.music,\U0001F3B6Spotify\U0001F3AF"
-- "PROCESS-NAME,Spotify.exe,\U0001F3B6Spotify\U0001F3AF"
-- "RULE-SET,ACLSpotify,\U0001F3B6Spotify\U0001F3AF"
-- "RULE-SET,DomainSpotify,\U0001F3B6Spotify\U0001F3AF"
-- "RULE-SET,mihspotify,\U0001F3B6Spotify\U0001F3AF"
-- "RULE-SET,TikTok,\U0001F3ACTikTok\U0001F3AF"
-- "GEOSITE,linkedin,\U0001F4BCLinkedIn\U0001F3AF"
-- "PROCESS-NAME,dota2.exe,\U0001F3AEDota2\U0001F3AF"
-- "RULE-SET,Dota2,\U0001F3AEDota2\U0001F3AF"
-- "PROCESS-NAME,dota2.exe,\U0001F3AEDota2\U0001F3AF"
-- "IP-CIDR,103.10.124.0/23,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,103.28.54.0/23,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,146.66.155.0/24,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,155.133.224.0/19,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,162.254.192.0/21,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,185.25.182.0/24,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,45.121.184.0/22,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,146.66.155.36/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,155.133.248.53/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,155.133.246.66/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,155.133.248.53/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,155.133.246.66/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,155.133.253.38/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,155.133.232.98/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,155.133.235.34/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,155.133.246.34/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,162.254.198.43/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,155.133.230.101/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,162.213.192.58/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,162.254.192.67/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,155.133.233.99/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,155.133.239.25/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,155.133.245.35/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,103.10.124.44/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,103.10.125.146/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,155.133.238.163/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,3.5.221.177/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,20.60.213.1/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,20.60.213.129/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,23.2.13.184/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,68.169.42.221/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,95.100.170.43/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,95.100.170.59/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,146.66.155.69/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,148.72.168.4/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,155.133.226.73/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,155.133.227.41/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,155.133.230.99/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,155.133.238.178/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,155.133.246.40/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,155.133.248.41/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,155.133.252.88/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,162.254.192.73/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,162.254.193.100/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,162.254.196.70/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,162.254.198.156/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,173.237.26.52/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,185.25.182.51/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,185.25.183.163/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,188.42.106.164/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,188.42.190.28/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,103.10.124.117/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,103.10.125.147/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,103.28.54.174/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,103.28.54.189/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,155.133.246.39/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,155.133.248.36/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,162.254.193.73/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,162.254.194.37/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,162.254.197.36/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,162.254.198.103/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,162.254.199.179/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,23.251.100.186/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "DOMAIN-SUFFIX,steamcloud-bah.s3.dualstack.me-south-1.amazonaws.com,\U0001F3AEDota2\U0001F3AF"
-- "DOMAIN-SUFFIX,steamclouddubai.blob.core.windows.net,\U0001F3AEDota2\U0001F3AF"
-- "DOMAIN-SUFFIX,dota2.com,\U0001F3AEDota2\U0001F3AF"
-- "IP-CIDR,23.36.163.33/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "IP-CIDR,23.36.163.22/32,\U0001F3AEDota2\U0001F3AF,no-resolve"
-- "RULE-SET,DownloadManagers,\U0001F4E5Download\U0001F3AF"
-- "RULE-SET,Download,\U0001F4E5Download\U0001F3AF"
-- "RULE-SET,category-ai,\U0001F916AI\U0001F3AF"
-- "DOMAIN-SUFFIX,deepseek.com,\U0001F916AI\U0001F3AF"
-- "DOMAIN-SUFFIX,qwen.ai,\U0001F916AI\U0001F3AF"
-- "RULE-SET,censor,\U0001F92CcensorMovie\U0001F3AF"
-- "PROCESS-NAME,com.anydesk.anydeskandroid,\U0001F4BBAnyDesk\U0001F3AF"
-- "PROCESS-NAME,AnyDesk.exe,\U0001F4BBAnyDesk\U0001F3AF"
-- "DOMAIN-SUFFIX,anydesk.com,\U0001F4BBAnyDesk\U0001F3AF"
-- "RULE-SET,game,\U0001F579️VideoGame\U0001F3AF"
-- "RULE-SET,category-games,\U0001F579️VideoGame\U0001F3AF"
-- "RULE-SET,GameDownload,\U0001F579️VideoGame\U0001F3AF"
-- "RULE-SET,Xbox,\U0001F579️VideoGame\U0001F3AF"
-- "RULE-SET,xiaomi_white_list,\U0001F4F2Xiaomi\U0001F3AF"
-- "RULE-SET,whatsapp,\U0001F4ACWhatsapp\U0001F3AF"
-- "PROCESS-NAME,com.whatsapp,\U0001F4ACWhatsapp\U0001F3AF"
-- "PROCESS-NAME,WhatsApp.exe,\U0001F4ACWhatsapp\U0001F3AF"
-- "RULE-SET,windows,\U0001FA9FWindows\U0001F3AF"
-- "PROCESS-NAME,obs64.exe,\U0001F3A6Streamer\U0001F3AF"
-- "PROCESS-NAME,obs-browser-page.exe,\U0001F3A6Streamer\U0001F3AF"
-- "MATCH,⚡Online"
+global-client-fingerprint: chrome
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+tproxy-port: 7894
+allow-lan: true
+tcp-concurrent: true
+enable-process: true
+find-process-mode: strict
+ipv6: true
+log-level: debug
+geo-auto-update: true
+geo-update-interval: 168
+secret: ''
+bind-address: '*'
+unified-delay: false
+disable-keep-alive: false
+keep-alive-idle: 30
+keep-alive-interval: 30
+profile:
+  name: My Custom Clash Profile
+  version: 1
+  author: test
+  store-selected: true
+  store-fake-ip: true
+dns:
+  enable: true
+  ipv6: true
+  respect-rules: false
+  prefer-h3: true
+  cache-algorithm: arc
+  use-system-hosts: true
+  use-host: true
+  listen: 0.0.0.0:53
+  enhanced-mode: fake-ip
+  fake-ip-filter-mode: blacklist
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+  - '*.lan'
+  - '*.localdomain'
+  - '*.invalid'
+  - '*.localhost'
+  - '*.test'
+  - '*.local'
+  - '*.home.arpa'
+  - time.*.com
+  - ntp.*.com
+  - '*.ir'
+  default-nameserver:
+  - 114.114.114.114
+  - 114.114.115.115
+  - 2400:3200::1
+  nameserver: &id001
+  - 114.114.114.114
+  - 114.114.115.115
+  - 2400:3200::1
+  direct-nameserver: *id001
+  proxy-server-nameserver: *id001
+  fallback:
+  - 202.96.128.86
+sniffer:
+  enable: true
+  force-dns-mapping: true
+  parse-pure-ip: true
+  override-destination: false
+  sniff:
+    HTTP:
+      ports:
+      - 80
+      - 8080
+      - 8880
+      - 2052
+      - 2082
+      - 2086
+      - 2095
+    TLS:
+      ports:
+      - 443
+      - 8443
+      - 2053
+      - 2083
+      - 2087
+      - 2096
+tun:
+  enable: true
+  stack: mixed
+  auto-route: true
+  auto-detect-interface: true
+  auto-redir: true
+  dns-hijack:
+  - any:53
+  - tcp://any:53
+rule-providers:
+  category_public_tracker:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/generated/category-public-tracker.yaml
+    interval: 86400
+    path: ./ruleset/category_public_tracker.yaml
+  iran_ads:
+    type: http
+    behavior: domain
+    url: https://github.com/bootmortis/iran-hosted-domains/releases/latest/download/clash_rules_ads.yaml
+    interval: 86400
+    path: ./ruleset/iran_ads.yaml
+  PersianBlocker:
+    type: http
+    behavior: domain
+    url: https://github.com/MasterKia/iran-hosted-domains/releases/latest/download/clash_rules_ads.yaml
+    path: ./ruleset/PersianBlocker.yaml
+    interval: 86400
+  youtube:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/generated/youtube.yaml
+    interval: 86400
+    path: ./ruleset/youtube.yaml
+  ACLyoutube:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/YouTube.yaml
+    interval: 86400
+    path: ./ruleset/ACLyoutube.yaml
+  telegram:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/generated/telegram.yaml
+    interval: 86400
+    path: ./ruleset/telegram.yaml
+  twitch:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/generated/twitch.yaml
+    interval: 86400
+    path: ./ruleset/twitch.yaml
+  censor:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/clash_rules/main/censor.yaml
+    interval: 86400
+    path: ./ruleset/censor.yaml
+  local_ips:
+    type: http
+    behavior: ipcidr
+    url: https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/generated/local-ips.yaml
+    interval: 86400
+    path: ./ruleset/local_ips.yaml
+  private:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/generated/private.yaml
+    interval: 86400
+    path: ./ruleset/private.yaml
+  category_ir:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/generated/category-ir.yaml
+    interval: 86400
+    path: ./ruleset/category_ir.yaml
+  iran:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/clash_rules/main/iran.yaml
+    interval: 86400
+    path: ./ruleset/iran.yaml
+  steam:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/clash_rules/main/steam.yaml
+    interval: 86400
+    path: ./ruleset/steam.yaml
+  game:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/clash_rules/refs/heads/main/game.yaml
+    interval: 86400
+    path: ./ruleset/game.yaml
+  category-games:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/refs/heads/generated/category-games.yaml
+    interval: 86400
+    path: ./ruleset/category-games.yaml
+  ir:
+    type: http
+    format: yaml
+    behavior: domain
+    url: https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/refs/heads/release/ir.yaml
+    path: ./ruleset/ir.yaml
+    interval: 86400
+  C4Uprivate:
+    type: http
+    format: yaml
+    behavior: domain
+    url: https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/refs/heads/release/private.yaml
+    path: ./ruleset/C4Uprivate.yaml
+    interval: 86400
+  apps:
+    type: http
+    format: yaml
+    behavior: classical
+    url: https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/refs/heads/release/apps.yaml
+    path: ./ruleset/apps.yaml
+    interval: 86400
+  ircidr:
+    type: http
+    format: yaml
+    behavior: ipcidr
+    url: https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/refs/heads/release/ircidr.yaml
+    path: ./ruleset/ircidr.yaml
+    interval: 86400
+  irasn:
+    type: http
+    format: yaml
+    behavior: classical
+    url: https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/refs/heads/release/irasn.yaml
+    path: ./ruleset/irasn.yaml
+    interval: 86400
+  arvancloud:
+    type: http
+    format: yaml
+    behavior: ipcidr
+    url: https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/refs/heads/release/arvancloud.yaml
+    path: ./ruleset/arvancloud.yaml
+    interval: 86400
+  derakcloud:
+    type: http
+    format: yaml
+    behavior: ipcidr
+    url: https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/refs/heads/release/derakcloud.yaml
+    path: ./ruleset/derakcloud.yaml
+    interval: 86400
+  iranserver:
+    type: http
+    format: yaml
+    behavior: ipcidr
+    url: https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/refs/heads/release/iranserver.yaml
+    path: ./ruleset/iranserver.yaml
+    interval: 86400
+  parspack:
+    type: http
+    format: yaml
+    behavior: ipcidr
+    url: https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/refs/heads/release/parspack.yaml
+    path: ./ruleset/parspack.yaml
+    interval: 86400
+  malware:
+    type: http
+    format: yaml
+    behavior: domain
+    url: https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/refs/heads/release/malware.yaml
+    path: ./ruleset/malware.yaml
+    interval: 86400
+  phishing:
+    type: http
+    format: yaml
+    behavior: domain
+    url: https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/refs/heads/release/phishing.yaml
+    path: ./ruleset/phishing.yaml
+    interval: 86400
+  cryptominers:
+    type: http
+    format: yaml
+    behavior: domain
+    url: https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/refs/heads/release/cryptominers.yaml
+    path: ./ruleset/cryptominers.yaml
+    interval: 86400
+  ads:
+    type: http
+    format: yaml
+    behavior: domain
+    url: https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/refs/heads/release/category-ads-all.yaml
+    path: ./ruleset/ads.yaml
+    interval: 86400
+  DownloadManagers:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/clash_rules/refs/heads/main/DownloadManagers.yaml
+    interval: 86400
+    path: ./ruleset/DownloadManagers.yaml
+  BanProgramAD:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/mihomo_rule/refs/heads/main/list/BanProgramAD.yaml
+    interval: 86400
+    path: ./ruleset/BanProgramAD.yaml
+  BanAD:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/mihomo_rule/refs/heads/main/list/BanAD.yaml
+    interval: 86400
+    path: ./ruleset/BanAD.yaml
+  PrivateTracker:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/mihomo_rule/refs/heads/main/list/PrivateTracker.yaml
+    interval: 86400
+    path: ./ruleset/PrivateTracker.yaml
+  BanEasyList:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/mihomo_rule/refs/heads/main/list/BanEasyList.yaml
+    interval: 86400
+    path: ./ruleset/BanEasyList.yaml
+  Download:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/mihomo_rule/refs/heads/main/list/Download.yaml
+    interval: 86400
+    path: ./ruleset/Download.yaml
+  GameDownload:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/mihomo_rule/refs/heads/main/list/GameDownload.yaml
+    interval: 86400
+    path: ./ruleset/GameDownload.yaml
+  SteamRegionCheck:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/mihomo_rule/refs/heads/main/list/SteamRegionCheck.yaml
+    interval: 86400
+    path: ./ruleset/SteamRegionCheck.yaml
+  Xbox:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/mihomo_rule/refs/heads/main/list/Xbox.yaml
+    interval: 86400
+    path: ./ruleset/Xbox.yaml
+  YouTubeMusic:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/mihomo_rule/refs/heads/main/list/YouTubeMusic.yaml
+    interval: 86400
+    path: ./ruleset/YouTubeMusic.yaml
+  10iumYouTube:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/mihomo_rule/refs/heads/main/list/YouTube.yaml
+    interval: 86400
+    path: ./ruleset/10iumYouTube.yaml
+  Ponzi:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/mihomo_rule/refs/heads/main/Ponzi.yaml
+    interval: 86400
+    path: ./ruleset/Ponzi.yaml
+  warninglist:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/mihomo_rule/refs/heads/main/warning-list.yaml
+    interval: 86400
+    path: ./ruleset/warninglist.yaml
+  google:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/refs/heads/generated/google.yaml
+    interval: 86400
+    path: ./ruleset/google.yaml
+  google-play:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/refs/heads/generated/google-play.yaml
+    interval: 86400
+    path: ./ruleset/google-play.yaml
+  xiaomi-ads:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/refs/heads/generated/xiaomi-ads.yaml
+    interval: 86400
+    path: ./ruleset/xiaomi-ads.yaml
+  xiaomi_block_list:
+    type: http
+    format: yaml
+    behavior: domain
+    url: https://raw.githubusercontent.com/10ium/clash_rules/refs/heads/main/xiaomi_block_list.yaml
+    path: ./ruleset/xiaomi_block_list.yaml
+    interval: 86400
+  xiaomi_white_list:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/clash_rules/refs/heads/main/xiaomi_white_list.yaml
+    path: ./ruleset/xiaomi_white_list.yaml
+    interval: 86400
+  cloudflare:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/refs/heads/generated/cloudflare.yaml
+    interval: 86400
+    path: ./ruleset/cloudflare.yaml
+  github:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/refs/heads/generated/github.yaml
+    interval: 86400
+    path: ./ruleset/github.yaml
+  whatsapp:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/generated/whatsapp.yaml
+    interval: 86400
+    path: ./ruleset/whatsapp.yaml
+  LiteAds:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/clash_rules/refs/heads/main/LiteAds.yaml
+    path: ./ruleset/LiteAds.yaml
+    interval: 86400
+  discord:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/clash_rules/refs/heads/main/discord.yaml
+    path: ./ruleset/discord.yaml
+    interval: 86400
+  instagram:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/refs/heads/generated/instagram.yaml
+    interval: 86400
+    path: ./ruleset/instagram.yaml
+  category-ai:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/refs/heads/generated/category-ai-!cn.yaml
+    interval: 86400
+    path: ./ruleset/category-ai.yaml
+  windows:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/clash_rules/refs/heads/main/windows.yaml
+    path: ./ruleset/windows.yaml
+    interval: 86400
+  C4Utwitter:
+    type: http
+    format: yaml
+    behavior: ipcidr
+    url: https://raw.githubusercontent.com/Chocolate4U/Iran-clash-rules/release/twitter.yaml
+    path: ./ruleset/C4Utwitter.yaml
+    interval: 86400
+  mihTwitter:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/10ium/mihomo_rule/refs/heads/main/list/Twitter.yaml
+    path: ./ruleset/mihTwitter.yaml
+    interval: 86400
+  Domtwitter:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/refs/heads/generated/twitter.yaml
+    interval: 86400
+    path: ./ruleset/Domtwitter.yaml
+  spotifyads:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/refs/heads/generated/spotify-ads.yaml
+    interval: 86400
+    path: ./ruleset/spotifyads.yaml
+  DomainSpotify:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/10ium/V2rayDomains2Clash/refs/heads/generated/spotify.yaml
+    interval: 86400
+    path: ./ruleset/DomainSpotify.yaml
+  mihspotify:
+    type: http
+    behavior: domain
+    url: https://raw.githubusercontent.com/10ium/mihomo_rule/refs/heads/main/list/Spotify.yaml
+    interval: 86400
+    path: ./ruleset/mihSpotify.yaml
+  IranAds:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/IranAds.yaml
+    interval: 86400
+    path: ./ruleset/IranAds.yaml
+  ACLgoogle:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/google.yaml
+    interval: 86400
+    path: ./ruleset/ACLgoogle.yaml
+  reddit:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/reddit.yaml
+    interval: 86400
+    path: ./ruleset/reddit.yaml
+  ACLtelegram:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/telegram.yaml
+    interval: 86400
+    path: ./ruleset/ACLtelegram.yaml
+  openai:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/OpenAi.yaml
+    interval: 86400
+    path: ./ruleset/openai.yaml
+  ACLTwitter:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/Twitter.yaml
+    interval: 86400
+    path: ./ruleset/ACLTwitter.yaml
+  ACLdiscord:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/discord.yaml
+    interval: 86400
+    path: ./ruleset/ACLdiscord.yaml
+  ACLsteam:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/steam.yaml
+    interval: 86400
+    path: ./ruleset/ACLsteam.yaml
+  ACLtwitch:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/twitch.yaml
+    interval: 86400
+    path: ./ruleset/ACLtwitch.yaml
+  ACLinsta:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/Instagram.yaml
+    interval: 86400
+    path: ./ruleset/ACLinsta.yaml
+  facebook:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/facebook.yaml
+    interval: 86400
+    path: ./ruleset/facebook.yaml
+  Netflix:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/Netflix.yaml
+    interval: 86400
+    path: ./ruleset/Netflix.yaml
+  NetflixIP:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/NetflixIP.yaml
+    interval: 86400
+    path: ./ruleset/NetflixIP.yaml
+  ACLSpotify:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/Spotify.yaml
+    interval: 86400
+    path: ./ruleset/ACLSpotify.yaml
+  TikTok:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/TikTok.yaml
+    interval: 86400
+    path: ./ruleset/TikTok.yaml
+  Dota2:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/Dota2.yaml
+    interval: 86400
+    path: ./ruleset/Dota2.yaml
+  BanEasyListChina:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/BanEasyListChina.yaml
+    interval: 86400
+    path: ./ruleset/BanEasyListChina.yaml
+  ACLBanEasyList:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/BanEasyList.yaml
+    interval: 86400
+    path: ./ruleset/ACLBanEasyList.yaml
+  ACLBanAD:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/BanAD.yaml
+    interval: 86400
+    path: ./ruleset/ACLBanAD.yaml
+  BanEasyPrivacy:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/BanEasyPrivacy.yaml
+    interval: 86400
+    path: ./ruleset/BanEasyPrivacy.yaml
+proxies:
+- name: dns-out
+  type: dns
+- name: UDP_IPv4_DIRECT
+  type: direct
+  udp: true
+  ip-version: ipv4
+- name: UDP_IPv6_DIRECT
+  type: direct
+  udp: true
+  ip-version: ipv6
+- name: TCP_IPv4_DIRECT
+  type: direct
+  udp: false
+  ip-version: ipv4
+- name: TCP_IPv6_DIRECT
+  type: direct
+  udp: false
+  ip-version: ipv6
+proxy-groups:
+- name: 🌐Connection
+  type: select
+  proxies:
+  - 🔓Direct
+  - 🚫Block
+  - dns-out
+  - UDP_IPv4_DIRECT
+  - TCP_IPv4_DIRECT
+  - UDP_IPv6_DIRECT
+  - TCP_IPv6_DIRECT
+  - REJECT-DROP
+  - PASS
+- name: 📘Facebook🎯
+  type: select
+  proxies:
+  - 🚫Block
+  - 🔓Direct
+  - 🌐Connection
+- name: 🛑Advertisements
+  type: select
+  proxies:
+  - 🚫Block
+  - 🔓Direct
+  - 🌐Connection
+- name: 🛡️PrivacyTrackers
+  type: select
+  proxies:
+  - 🚫Block
+  - 🔓Direct
+  - 🌐Connection
+- name: 🦠SECURITY
+  type: select
+  proxies:
+  - 🚫Block
+  - 🔓Direct
+  - 🌐Connection
+- name: 🖥️Lan
+  type: select
+  proxies:
+  - 🔓Direct
+  - 🌐Connection
+  - 🚫Block
+- name: 🇮🇷IranWebsites
+  type: select
+  proxies:
+  - 🔓Direct
+  - 🌐Connection
+  - 🚫Block
+- name: </>GIT🎯
+  type: select
+  proxies:
+  - 🔓Direct
+  - 🌐Connection
+  - 🚫Block
+- name: 🎮Dota2🎯
+  type: select
+  proxies:
+  - 🔓Direct
+  - 🌐Connection
+  - 🚫Block
+- name: 🎮Steam🎯
+  type: select
+  proxies:
+  - 🔓Direct
+  - 🌐Connection
+  - 🚫Block
+- name: 🤬censorMovie🎯
+  type: select
+  proxies:
+  - 🔓Direct
+  - 🌐Connection
+  - 🚫Block
+- name: 🕹️VideoGame🎯
+  type: select
+  proxies:
+  - 🔓Direct
+  - 🌐Connection
+  - 🚫Block
+- name: 📲Xiaomi🎯
+  type: select
+  proxies:
+  - 🔓Direct
+  - 🌐Connection
+  - 🚫Block
+- name: 🪟Windows🎯
+  type: select
+  proxies:
+  - 🔓Direct
+  - 🌐Connection
+  - 🚫Block
+- name: 📥Download🎯
+  type: select
+  proxies:
+  - 🔓Direct
+  - 🌐Connection
+  - 🚫Block
+- name: 💻AnyDesk🎯
+  type: select
+  proxies:
+  - 🔓Direct
+  - 🌐Connection
+  - 🚫Block
+- name: 💬Whatsapp🎯
+  type: select
+  proxies:
+  - 🔓Direct
+  - 🌐Connection
+  - 🚫Block
+- name: 🎛NVIDIA🎯
+  type: select
+  proxies:
+  - 🌐Connection
+  - 🔓Direct
+  - 🚫Block
+- name: 📺YouTube🎯
+  type: select
+  proxies:
+  - 🌐Connection
+  - 🔓Direct
+  - 🚫Block
+- name: 📱Google🎯
+  type: select
+  proxies:
+  - 🌐Connection
+  - 🔓Direct
+  - 🚫Block
+- name: 📙Reddit🎯
+  type: select
+  proxies:
+  - 🌐Connection
+  - 🔓Direct
+  - 🚫Block
+- name: 🔵Telegram🎯
+  type: select
+  proxies:
+  - 🌐Connection
+  - 🔓Direct
+  - 🚫Block
+- name: 🤖OpenAI🎯
+  type: select
+  proxies:
+  - 🌐Connection
+  - 🔓Direct
+  - 🚫Block
+- name: 🐦Twitter🎯
+  type: select
+  proxies:
+  - 🌐Connection
+  - 🔓Direct
+  - 🚫Block
+- name: 🤖Grok🎯
+  type: select
+  proxies:
+  - 🌐Connection
+  - 🔓Direct
+  - 🚫Block
+- name: 🗨️Discord🎯
+  type: select
+  proxies:
+  - 🌐Connection
+  - 🔓Direct
+  - 🚫Block
+- name: 👾Twitch🎯
+  type: select
+  proxies:
+  - 🌐Connection
+  - 🔓Direct
+  - 🚫Block
+- name: ☁️Cloudflare🎯
+  type: select
+  proxies:
+  - 🌐Connection
+  - 🔓Direct
+  - 🚫Block
+- name: 📸Instagram🎯
+  type: select
+  proxies:
+  - 🌐Connection
+  - 🔓Direct
+  - 🚫Block
+- name: 🎥Netflix🎯
+  type: select
+  proxies:
+  - 🌐Connection
+  - 🔓Direct
+  - 🚫Block
+- name: 🎶Spotify🎯
+  type: select
+  proxies:
+  - 🌐Connection
+  - 🔓Direct
+  - 🚫Block
+- name: 🎬TikTok🎯
+  type: select
+  proxies:
+  - 🌐Connection
+  - 🔓Direct
+  - 🚫Block
+- name: 💼LinkedIn🎯
+  type: select
+  proxies:
+  - 🌐Connection
+  - 🔓Direct
+  - 🚫Block
+- name: 🤖AI🎯
+  type: select
+  proxies:
+  - 🌐Connection
+  - 🔓Direct
+  - 🚫Block
+- name: 🎦Streamer🎯
+  type: select
+  proxies:
+  - 🌐Connection
+  - 🔓Direct
+  - 🚫Block
+- name: 🎯Destinations
+  type: select
+  proxies:
+  - 🖥️Lan
+  - 🇮🇷IranWebsites
+  - 🛑Advertisements
+  - 🛡️PrivacyTrackers
+  - 🦠SECURITY
+  - </>GIT🎯
+  - 🎮Dota2🎯
+  - 🎮Steam🎯
+  - 📘Facebook🎯
+  - 🎛NVIDIA🎯
+  - 📺YouTube🎯
+  - 📱Google🎯
+  - 📙Reddit🎯
+  - 🔵Telegram🎯
+  - 🤖OpenAI🎯
+  - 🐦Twitter🎯
+  - 🤖Grok🎯
+  - 🗨️Discord🎯
+  - 👾Twitch🎯
+  - ☁️Cloudflare🎯
+  - 📸Instagram🎯
+  - 🎥Netflix🎯
+  - 🎶Spotify🎯
+  - 🎬TikTok🎯
+  - 💼LinkedIn🎯
+  - 📥Download🎯
+  - 💻AnyDesk🎯
+  - 🤖AI🎯
+  - 💬Whatsapp🎯
+  - 🤬censorMovie🎯
+  - 🕹️VideoGame🎯
+  - 📲Xiaomi🎯
+  - 🪟Windows🎯
+  - 🎦Streamer🎯
+- name: 🔓Direct
+  type: select
+  proxies:
+  - DIRECT
+- name: 🚫Block
+  type: select
+  proxies:
+  - REJECT
+- name: ⚡Online
+  type: select
+  proxies:
+  - 🌐Connection
+  - 🎯Destinations
+ntp:
+  enable: true
+  server: time.apple.com
+  port: 123
+  interval: 30
+rules:
+- GEOIP,IR,🇮🇷IranWebsites
+- GEOSITE,category-ir,🇮🇷IranWebsites
+- RULE-SET,apps,🇮🇷IranWebsites
+- RULE-SET,category_ir,🇮🇷IranWebsites
+- RULE-SET,iran,🇮🇷IranWebsites
+- RULE-SET,ir,🇮🇷IranWebsites
+- RULE-SET,ircidr,🇮🇷IranWebsites
+- RULE-SET,irasn,🇮🇷IranWebsites
+- RULE-SET,arvancloud,🇮🇷IranWebsites
+- RULE-SET,derakcloud,🇮🇷IranWebsites
+- RULE-SET,iranserver,🇮🇷IranWebsites
+- RULE-SET,parspack,🇮🇷IranWebsites
+- GEOSITE,private,🖥️Lan
+- IP-CIDR,10.10.34.0/24,🖥️Lan
+- RULE-SET,local_ips,🖥️Lan
+- RULE-SET,C4Uprivate,🖥️Lan
+- RULE-SET,private,🖥️Lan
+- RULE-SET,BanEasyPrivacy,🛡️PrivacyTrackers
+- GEOSITE,category-ads-all,🛑Advertisements
+- RULE-SET,ACLBanAD,🛑Advertisements
+- RULE-SET,ACLBanEasyList,🛑Advertisements
+- RULE-SET,BanEasyListChina,🛑Advertisements
+- RULE-SET,IranAds,🛑Advertisements
+- RULE-SET,spotifyads,🛑Advertisements
+- RULE-SET,BanProgramAD,🛑Advertisements
+- RULE-SET,BanAD,🛑Advertisements
+- RULE-SET,PrivateTracker,🛑Advertisements
+- RULE-SET,category_public_tracker,🛑Advertisements
+- RULE-SET,LiteAds,🛑Advertisements
+- RULE-SET,iran_ads,🛑Advertisements
+- RULE-SET,PersianBlocker,🛑Advertisements
+- RULE-SET,ads,🛑Advertisements
+- RULE-SET,BanEasyList,🛑Advertisements
+- RULE-SET,xiaomi-ads,🛑Advertisements
+- RULE-SET,xiaomi_block_list,🛑Advertisements
+- RULE-SET,malware,🦠SECURITY
+- RULE-SET,cryptominers,🦠SECURITY
+- RULE-SET,phishing,🦠SECURITY
+- RULE-SET,warninglist,🦠SECURITY
+- RULE-SET,Ponzi,🦠SECURITY
+- GEOSITE,nvidia,🎛NVIDIA🎯
+- GEOSITE,github,</>GIT🎯
+- GEOSITE,gitlab,</>GIT🎯
+- RULE-SET,github,</>GIT🎯
+- RULE-SET,ACLyoutube,📺YouTube🎯
+- RULE-SET,youtube,📺YouTube🎯
+- RULE-SET,YouTubeMusic,📺YouTube🎯
+- RULE-SET,10iumYouTube,📺YouTube🎯
+- GEOSITE,google,📱Google🎯
+- PROCESS-NAME,com.android.vending,📱Google🎯
+- PROCESS-NAME,com.google.android.gms,📱Google🎯
+- RULE-SET,ACLgoogle,📱Google🎯
+- RULE-SET,google,📱Google🎯
+- RULE-SET,google-play,📱Google🎯
+- RULE-SET,reddit,📙Reddit🎯
+- PROCESS-NAME,Telegram.exe,🔵Telegram🎯
+- PROCESS-NAME,org.telegram.messenger,🔵Telegram🎯
+- PROCESS-NAME,org.telegram.messenger.web,🔵Telegram🎯
+- RULE-SET,ACLtelegram,🔵Telegram🎯
+- RULE-SET,telegram,🔵Telegram🎯
+- GEOSITE,openai,🤖OpenAI🎯
+- RULE-SET,openai,🤖OpenAI🎯
+- PROCESS-NAME,Twitter.exe,🐦Twitter🎯
+- PROCESS-NAME,com.twitter.android,🐦Twitter🎯
+- RULE-SET,ACLTwitter,🐦Twitter🎯
+- RULE-SET,C4Utwitter,🐦Twitter🎯
+- RULE-SET,mihTwitter,🐦Twitter🎯
+- RULE-SET,Domtwitter,🐦Twitter🎯
+- DOMAIN-SUFFIX,grok.com,🤖Grok🎯
+- DOMAIN-SUFFIX,x.ai,🤖Grok🎯
+- RULE-SET,ACLdiscord,🗨️Discord🎯
+- GEOSITE,discord,🗨️Discord🎯
+- RULE-SET,discord,🗨️Discord🎯
+- RULE-SET,ACLsteam,🎮Steam🎯
+- RULE-SET,steam,🎮Steam🎯
+- RULE-SET,SteamRegionCheck,🎮Steam🎯
+- RULE-SET,ACLtwitch,👾Twitch🎯
+- RULE-SET,twitch,👾Twitch🎯
+- GEOSITE,cloudflare,☁️Cloudflare🎯
+- RULE-SET,cloudflare,☁️Cloudflare🎯
+- PROCESS-NAME,com.instagram.android,📸Instagram🎯
+- RULE-SET,ACLinsta,📸Instagram🎯
+- GEOSITE,instagram,📸Instagram🎯
+- RULE-SET,instagram,📸Instagram🎯
+- GEOSITE,facebook,📘Facebook🎯
+- RULE-SET,facebook,📘Facebook🎯
+- GEOSITE,netflix,🎥Netflix🎯
+- RULE-SET,Netflix,🎥Netflix🎯
+- RULE-SET,NetflixIP,🎥Netflix🎯
+- PROCESS-NAME,com.spotify.music,🎶Spotify🎯
+- PROCESS-NAME,Spotify.exe,🎶Spotify🎯
+- RULE-SET,ACLSpotify,🎶Spotify🎯
+- RULE-SET,DomainSpotify,🎶Spotify🎯
+- RULE-SET,mihspotify,🎶Spotify🎯
+- RULE-SET,TikTok,🎬TikTok🎯
+- GEOSITE,linkedin,💼LinkedIn🎯
+- PROCESS-NAME,dota2.exe,🎮Dota2🎯
+- RULE-SET,Dota2,🎮Dota2🎯
+- PROCESS-NAME,dota2.exe,🎮Dota2🎯
+- IP-CIDR,103.10.124.0/23,🎮Dota2🎯,no-resolve
+- IP-CIDR,103.28.54.0/23,🎮Dota2🎯,no-resolve
+- IP-CIDR,146.66.155.0/24,🎮Dota2🎯,no-resolve
+- IP-CIDR,155.133.224.0/19,🎮Dota2🎯,no-resolve
+- IP-CIDR,162.254.192.0/21,🎮Dota2🎯,no-resolve
+- IP-CIDR,185.25.182.0/24,🎮Dota2🎯,no-resolve
+- IP-CIDR,45.121.184.0/22,🎮Dota2🎯,no-resolve
+- IP-CIDR,146.66.155.36/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,155.133.248.53/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,155.133.246.66/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,155.133.248.53/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,155.133.246.66/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,155.133.253.38/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,155.133.232.98/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,155.133.235.34/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,155.133.246.34/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,162.254.198.43/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,155.133.230.101/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,162.213.192.58/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,162.254.192.67/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,155.133.233.99/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,155.133.239.25/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,155.133.245.35/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,103.10.124.44/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,103.10.125.146/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,155.133.238.163/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,3.5.221.177/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,20.60.213.1/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,20.60.213.129/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,23.2.13.184/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,68.169.42.221/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,95.100.170.43/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,95.100.170.59/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,146.66.155.69/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,148.72.168.4/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,155.133.226.73/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,155.133.227.41/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,155.133.230.99/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,155.133.238.178/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,155.133.246.40/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,155.133.248.41/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,155.133.252.88/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,162.254.192.73/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,162.254.193.100/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,162.254.196.70/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,162.254.198.156/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,173.237.26.52/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,185.25.182.51/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,185.25.183.163/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,188.42.106.164/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,188.42.190.28/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,103.10.124.117/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,103.10.125.147/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,103.28.54.174/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,103.28.54.189/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,155.133.246.39/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,155.133.248.36/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,162.254.193.73/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,162.254.194.37/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,162.254.197.36/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,162.254.198.103/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,162.254.199.179/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,23.251.100.186/32,🎮Dota2🎯,no-resolve
+- DOMAIN-SUFFIX,steamcloud-bah.s3.dualstack.me-south-1.amazonaws.com,🎮Dota2🎯
+- DOMAIN-SUFFIX,steamclouddubai.blob.core.windows.net,🎮Dota2🎯
+- DOMAIN-SUFFIX,dota2.com,🎮Dota2🎯
+- IP-CIDR,23.36.163.33/32,🎮Dota2🎯,no-resolve
+- IP-CIDR,23.36.163.22/32,🎮Dota2🎯,no-resolve
+- RULE-SET,DownloadManagers,📥Download🎯
+- RULE-SET,Download,📥Download🎯
+- RULE-SET,category-ai,🤖AI🎯
+- DOMAIN-SUFFIX,deepseek.com,🤖AI🎯
+- DOMAIN-SUFFIX,qwen.ai,🤖AI🎯
+- RULE-SET,censor,🤬censorMovie🎯
+- PROCESS-NAME,com.anydesk.anydeskandroid,💻AnyDesk🎯
+- PROCESS-NAME,AnyDesk.exe,💻AnyDesk🎯
+- DOMAIN-SUFFIX,anydesk.com,💻AnyDesk🎯
+- RULE-SET,game,🕹️VideoGame🎯
+- RULE-SET,category-games,🕹️VideoGame🎯
+- RULE-SET,GameDownload,🕹️VideoGame🎯
+- RULE-SET,Xbox,🕹️VideoGame🎯
+- RULE-SET,xiaomi_white_list,📲Xiaomi🎯
+- RULE-SET,whatsapp,💬Whatsapp🎯
+- PROCESS-NAME,com.whatsapp,💬Whatsapp🎯
+- PROCESS-NAME,WhatsApp.exe,💬Whatsapp🎯
+- RULE-SET,windows,🪟Windows🎯
+- PROCESS-NAME,obs64.exe,🎦Streamer🎯
+- PROCESS-NAME,obs-browser-page.exe,🎦Streamer🎯
+- MATCH,⚡Online
