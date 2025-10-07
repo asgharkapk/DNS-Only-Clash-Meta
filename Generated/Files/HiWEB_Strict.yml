@@ -12,8 +12,8 @@ ipv6: true
 log-level: debug
 geo-auto-update: true
 geo-update-interval: 168
-secret: ''
-bind-address: '*'
+secret: ""
+bind-address: "*"
 unified-delay: false
 disable-keep-alive: false
 keep-alive-idle: 30
@@ -37,29 +37,18 @@ dns:
   fake-ip-filter-mode: blacklist
   fake-ip-range: 198.18.0.1/16
   fake-ip-filter:
-  - '*.lan'
-  - '*.localdomain'
-  - '*.invalid'
-  - '*.localhost'
-  - '*.test'
-  - '*.local'
-  - '*.home.arpa'
-  - time.*.com
-  - ntp.*.com
-  - '*.ir'
-  default-nameserver:
+    - "*.lan"
+    - "*.localdomain"
+    - "*.invalid"
+    - "*.localhost"
+    - "*.test"
+    - "*.local"
+    - "*.home.arpa"
+    - time.*.com
+    - ntp.*.com
+    - "*.ir"
+default-nameserver:
   - 185.161.112.33
-  nameserver: &id001
-  - 185.161.112.33
-  direct-nameserver: *id001
-  proxy-server-nameserver: *id001
-  fallback:
-  - 8.8.8.8
-  - 1.1.1.1
-  - 9.9.9.9
-  - 94.140.14.14
-  - 2606:4700:4700::1111
-  - 2001:4860:4860::8888
 sniffer:
   enable: true
   force-dns-mapping: true
@@ -67,22 +56,9 @@ sniffer:
   override-destination: false
   sniff:
     HTTP:
-      ports:
-      - 80
-      - 8080
-      - 8880
-      - 2052
-      - 2082
-      - 2086
-      - 2095
+      ports: [80, 8080, 8880, 2052, 2082, 2086, 2095]
     TLS:
-      ports:
-      - 443
-      - 8443
-      - 2053
-      - 2083
-      - 2087
-      - 2096
+      ports: [443, 8443, 2053, 2083, 2087, 2096]
 tun:
   enable: true
   stack: mixed
@@ -90,8 +66,8 @@ tun:
   auto-detect-interface: true
   auto-redir: true
   dns-hijack:
-  - any:53
-  - tcp://any:53
+    - any:53
+    - tcp://any:53
 rule-providers:
   category_public_tracker:
     type: http
@@ -588,483 +564,485 @@ rule-providers:
     url: https://raw.githubusercontent.com/asgharkapk/ACL4SSR/refs/heads/master/Clash/English_IR_config/clash_rule_base/yml_rulesets/BanEasyPrivacy.yaml
     interval: 86400
     path: ./ruleset/BanEasyPrivacy.yaml
+    
 proxies:
-- name: dns-out
+- name: "dns-out"
   type: dns
-- name: UDP_IPv4_DIRECT
+- name: "UDP_IPv4_DIRECT"
   type: direct
   udp: true
   ip-version: ipv4
-- name: UDP_IPv6_DIRECT
+- name: "UDP_IPv6_DIRECT"
   type: direct
   udp: true
   ip-version: ipv6
-- name: TCP_IPv4_DIRECT
+- name: "TCP_IPv4_DIRECT"
   type: direct
   udp: false
   ip-version: ipv4
-- name: TCP_IPv6_DIRECT
+- name: "TCP_IPv6_DIRECT"
   type: direct
   udp: false
   ip-version: ipv6
+
 proxy-groups:
-- name: 🌐Connection
-  type: select
-  proxies:
-  - 🔓Direct
-  - 🚫Block
-  - dns-out
-  - UDP_IPv4_DIRECT
-  - TCP_IPv4_DIRECT
-  - UDP_IPv6_DIRECT
-  - TCP_IPv6_DIRECT
-  - REJECT-DROP
-  - PASS
-- name: 📘Facebook🎯
-  type: select
-  proxies:
-  - 🚫Block
-  - 🔓Direct
-  - 🌐Connection
-- name: 🛑Advertisements
-  type: select
-  proxies:
-  - 🚫Block
-  - 🔓Direct
-  - 🌐Connection
-- name: 🛡️PrivacyTrackers
-  type: select
-  proxies:
-  - 🚫Block
-  - 🔓Direct
-  - 🌐Connection
-- name: 🦠SECURITY
-  type: select
-  proxies:
-  - 🚫Block
-  - 🔓Direct
-  - 🌐Connection
-- name: 🖥️Lan
-  type: select
-  proxies:
-  - 🔓Direct
-  - 🌐Connection
-  - 🚫Block
-- name: 🇮🇷IranWebsites
-  type: select
-  proxies:
-  - 🔓Direct
-  - 🌐Connection
-  - 🚫Block
-- name: </>GIT🎯
-  type: select
-  proxies:
-  - 🔓Direct
-  - 🌐Connection
-  - 🚫Block
-- name: 🎮Dota2🎯
-  type: select
-  proxies:
-  - 🔓Direct
-  - 🌐Connection
-  - 🚫Block
-- name: 🎮Steam🎯
-  type: select
-  proxies:
-  - 🔓Direct
-  - 🌐Connection
-  - 🚫Block
-- name: 🤬censorMovie🎯
-  type: select
-  proxies:
-  - 🔓Direct
-  - 🌐Connection
-  - 🚫Block
-- name: 🕹️VideoGame🎯
-  type: select
-  proxies:
-  - 🔓Direct
-  - 🌐Connection
-  - 🚫Block
-- name: 📲Xiaomi🎯
-  type: select
-  proxies:
-  - 🔓Direct
-  - 🌐Connection
-  - 🚫Block
-- name: 🪟Windows🎯
-  type: select
-  proxies:
-  - 🔓Direct
-  - 🌐Connection
-  - 🚫Block
-- name: 📥Download🎯
-  type: select
-  proxies:
-  - 🔓Direct
-  - 🌐Connection
-  - 🚫Block
-- name: 💻AnyDesk🎯
-  type: select
-  proxies:
-  - 🔓Direct
-  - 🌐Connection
-  - 🚫Block
-- name: 💬Whatsapp🎯
-  type: select
-  proxies:
-  - 🔓Direct
-  - 🌐Connection
-  - 🚫Block
-- name: 🎛NVIDIA🎯
-  type: select
-  proxies:
-  - 🌐Connection
-  - 🔓Direct
-  - 🚫Block
-- name: 📺YouTube🎯
-  type: select
-  proxies:
-  - 🌐Connection
-  - 🔓Direct
-  - 🚫Block
-- name: 📱Google🎯
-  type: select
-  proxies:
-  - 🌐Connection
-  - 🔓Direct
-  - 🚫Block
-- name: 📙Reddit🎯
-  type: select
-  proxies:
-  - 🌐Connection
-  - 🔓Direct
-  - 🚫Block
-- name: 🔵Telegram🎯
-  type: select
-  proxies:
-  - 🌐Connection
-  - 🔓Direct
-  - 🚫Block
-- name: 🤖OpenAI🎯
-  type: select
-  proxies:
-  - 🌐Connection
-  - 🔓Direct
-  - 🚫Block
-- name: 🐦Twitter🎯
-  type: select
-  proxies:
-  - 🌐Connection
-  - 🔓Direct
-  - 🚫Block
-- name: 🤖Grok🎯
-  type: select
-  proxies:
-  - 🌐Connection
-  - 🔓Direct
-  - 🚫Block
-- name: 🗨️Discord🎯
-  type: select
-  proxies:
-  - 🌐Connection
-  - 🔓Direct
-  - 🚫Block
-- name: 👾Twitch🎯
-  type: select
-  proxies:
-  - 🌐Connection
-  - 🔓Direct
-  - 🚫Block
-- name: ☁️Cloudflare🎯
-  type: select
-  proxies:
-  - 🌐Connection
-  - 🔓Direct
-  - 🚫Block
-- name: 📸Instagram🎯
-  type: select
-  proxies:
-  - 🌐Connection
-  - 🔓Direct
-  - 🚫Block
-- name: 🎥Netflix🎯
-  type: select
-  proxies:
-  - 🌐Connection
-  - 🔓Direct
-  - 🚫Block
-- name: 🎶Spotify🎯
-  type: select
-  proxies:
-  - 🌐Connection
-  - 🔓Direct
-  - 🚫Block
-- name: 🎬TikTok🎯
-  type: select
-  proxies:
-  - 🌐Connection
-  - 🔓Direct
-  - 🚫Block
-- name: 💼LinkedIn🎯
-  type: select
-  proxies:
-  - 🌐Connection
-  - 🔓Direct
-  - 🚫Block
-- name: 🤖AI🎯
-  type: select
-  proxies:
-  - 🌐Connection
-  - 🔓Direct
-  - 🚫Block
-- name: 🎦Streamer🎯
-  type: select
-  proxies:
-  - 🌐Connection
-  - 🔓Direct
-  - 🚫Block
-- name: 🎯Destinations
-  type: select
-  proxies:
-  - 🖥️Lan
-  - 🇮🇷IranWebsites
-  - 🛑Advertisements
-  - 🛡️PrivacyTrackers
-  - 🦠SECURITY
-  - </>GIT🎯
-  - 🎮Dota2🎯
-  - 🎮Steam🎯
-  - 📘Facebook🎯
-  - 🎛NVIDIA🎯
-  - 📺YouTube🎯
-  - 📱Google🎯
-  - 📙Reddit🎯
-  - 🔵Telegram🎯
-  - 🤖OpenAI🎯
-  - 🐦Twitter🎯
-  - 🤖Grok🎯
-  - 🗨️Discord🎯
-  - 👾Twitch🎯
-  - ☁️Cloudflare🎯
-  - 📸Instagram🎯
-  - 🎥Netflix🎯
-  - 🎶Spotify🎯
-  - 🎬TikTok🎯
-  - 💼LinkedIn🎯
-  - 📥Download🎯
-  - 💻AnyDesk🎯
-  - 🤖AI🎯
-  - 💬Whatsapp🎯
-  - 🤬censorMovie🎯
-  - 🕹️VideoGame🎯
-  - 📲Xiaomi🎯
-  - 🪟Windows🎯
-  - 🎦Streamer🎯
-- name: 🔓Direct
-  type: select
-  proxies:
-  - DIRECT
-- name: 🚫Block
-  type: select
-  proxies:
-  - REJECT
-- name: ⚡Online
-  type: select
-  proxies:
-  - 🌐Connection
-  - 🎯Destinations
+  - name: 🌐Connection
+    type: select
+    proxies:
+      - 🔓Direct
+      - 🚫Block
+      - dns-out
+      - UDP_IPv4_DIRECT
+      - TCP_IPv4_DIRECT
+      - UDP_IPv6_DIRECT
+      - TCP_IPv6_DIRECT
+      - REJECT-DROP
+      - PASS
+  - name: 📘Facebook🎯
+    type: select
+    proxies:
+      - 🚫Block
+      - 🔓Direct
+      - 🌐Connection
+  - name: 🛑Advertisements
+    type: select
+    proxies:
+      - 🚫Block
+      - 🔓Direct
+      - 🌐Connection
+  - name: 🛡️PrivacyTrackers
+    type: select
+    proxies:
+      - 🚫Block
+      - 🔓Direct
+      - 🌐Connection
+  - name: 🦠SECURITY
+    type: select
+    proxies:
+      - 🚫Block
+      - 🔓Direct
+      - 🌐Connection
+  - name: 🖥️Lan
+    type: select
+    proxies:
+      - 🔓Direct
+      - 🌐Connection
+      - 🚫Block
+  - name: 🇮🇷IranWebsites
+    type: select
+    proxies:
+      - 🔓Direct
+      - 🌐Connection
+      - 🚫Block
+  - name: </>GIT🎯
+    type: select
+    proxies:
+      - 🔓Direct
+      - 🌐Connection
+      - 🚫Block
+  - name: 🎮Dota2🎯
+    type: select
+    proxies:
+      - 🔓Direct
+      - 🌐Connection
+      - 🚫Block
+  - name: 🎮Steam🎯
+    type: select
+    proxies:
+      - 🔓Direct
+      - 🌐Connection
+      - 🚫Block
+  - name: 🤬censorMovie🎯
+    type: select
+    proxies:
+      - 🔓Direct
+      - 🌐Connection
+      - 🚫Block
+  - name: 🕹️VideoGame🎯
+    type: select
+    proxies:
+      - 🔓Direct
+      - 🌐Connection
+      - 🚫Block
+  - name: 📲Xiaomi🎯
+    type: select
+    proxies:
+      - 🔓Direct
+      - 🌐Connection
+      - 🚫Block
+  - name: 🪟Windows🎯
+    type: select
+    proxies:
+      - 🔓Direct
+      - 🌐Connection
+      - 🚫Block
+  - name: 📥Download🎯
+    type: select
+    proxies:
+      - 🔓Direct
+      - 🌐Connection
+      - 🚫Block
+  - name: 💻AnyDesk🎯
+    type: select
+    proxies:
+      - 🔓Direct
+      - 🌐Connection
+      - 🚫Block
+  - name: 💬Whatsapp🎯
+    type: select
+    proxies:
+      - 🔓Direct
+      - 🌐Connection
+      - 🚫Block
+  - name: 🎛NVIDIA🎯
+    type: select
+    proxies:
+      - 🌐Connection
+      - 🔓Direct
+      - 🚫Block
+  - name: 📺YouTube🎯
+    type: select
+    proxies:
+      - 🌐Connection
+      - 🔓Direct
+      - 🚫Block
+  - name: 📱Google🎯
+    type: select
+    proxies:
+      - 🌐Connection
+      - 🔓Direct
+      - 🚫Block
+  - name: 📙Reddit🎯
+    type: select
+    proxies:
+      - 🌐Connection
+      - 🔓Direct
+      - 🚫Block
+  - name: 🔵Telegram🎯
+    type: select
+    proxies:
+      - 🌐Connection
+      - 🔓Direct
+      - 🚫Block
+  - name: 🤖OpenAI🎯
+    type: select
+    proxies:
+      - 🌐Connection
+      - 🔓Direct
+      - 🚫Block
+  - name: 🐦Twitter🎯
+    type: select
+    proxies:
+      - 🌐Connection
+      - 🔓Direct
+      - 🚫Block
+  - name: 🤖Grok🎯
+    type: select
+    proxies:
+      - 🌐Connection
+      - 🔓Direct
+      - 🚫Block
+  - name: 🗨️Discord🎯
+    type: select
+    proxies:
+      - 🌐Connection
+      - 🔓Direct
+      - 🚫Block
+  - name: 👾Twitch🎯
+    type: select
+    proxies:
+      - 🌐Connection
+      - 🔓Direct
+      - 🚫Block
+  - name: ☁️Cloudflare🎯
+    type: select
+    proxies:
+      - 🌐Connection
+      - 🔓Direct
+      - 🚫Block
+  - name: 📸Instagram🎯
+    type: select
+    proxies:
+      - 🌐Connection
+      - 🔓Direct
+      - 🚫Block
+  - name: 🎥Netflix🎯
+    type: select
+    proxies:
+      - 🌐Connection
+      - 🔓Direct
+      - 🚫Block
+  - name: 🎶Spotify🎯
+    type: select
+    proxies:
+      - 🌐Connection
+      - 🔓Direct
+      - 🚫Block
+  - name: 🎬TikTok🎯
+    type: select
+    proxies:
+      - 🌐Connection
+      - 🔓Direct
+      - 🚫Block
+  - name: 💼LinkedIn🎯
+    type: select
+    proxies:
+      - 🌐Connection
+      - 🔓Direct
+      - 🚫Block
+  - name: 🤖AI🎯
+    type: select
+    proxies:
+      - 🌐Connection
+      - 🔓Direct
+      - 🚫Block
+  - name: 🎦Streamer🎯
+    type: select
+    proxies:
+      - 🌐Connection
+      - 🔓Direct
+      - 🚫Block
+  - name: 🎯Destinations
+    type: select
+    proxies:
+      - 🖥️Lan
+      - 🇮🇷IranWebsites
+      - 🛑Advertisements
+      - 🛡️PrivacyTrackers
+      - 🦠SECURITY
+      - </>GIT🎯
+      - 🎮Dota2🎯
+      - 🎮Steam🎯
+      - 📘Facebook🎯
+      - 🎛NVIDIA🎯
+      - 📺YouTube🎯
+      - 📱Google🎯
+      - 📙Reddit🎯
+      - 🔵Telegram🎯
+      - 🤖OpenAI🎯
+      - 🐦Twitter🎯
+      - 🤖Grok🎯
+      - 🗨️Discord🎯
+      - 👾Twitch🎯
+      - ☁️Cloudflare🎯
+      - 📸Instagram🎯
+      - 🎥Netflix🎯
+      - 🎶Spotify🎯
+      - 🎬TikTok🎯
+      - 💼LinkedIn🎯
+      - 📥Download🎯
+      - 💻AnyDesk🎯
+      - 🤖AI🎯
+      - 💬Whatsapp🎯
+      - 🤬censorMovie🎯
+      - 🕹️VideoGame🎯
+      - 📲Xiaomi🎯
+      - 🪟Windows🎯
+      - 🎦Streamer🎯
+  - name: 🔓Direct
+    type: select
+    proxies:
+      - DIRECT
+  - name: 🚫Block
+    type: select
+    proxies:
+      - REJECT
+  - name: ⚡Online
+    type: select
+    proxies:
+      - 🌐Connection
+      - 🎯Destinations
 ntp:
   enable: true
   server: time.apple.com
   port: 123
   interval: 30
 rules:
-- GEOIP,IR,🇮🇷IranWebsites
-- GEOSITE,category-ir,🇮🇷IranWebsites
-- RULE-SET,apps,🇮🇷IranWebsites
-- RULE-SET,category_ir,🇮🇷IranWebsites
-- RULE-SET,iran,🇮🇷IranWebsites
-- RULE-SET,ir,🇮🇷IranWebsites
-- RULE-SET,ircidr,🇮🇷IranWebsites
-- RULE-SET,irasn,🇮🇷IranWebsites
-- RULE-SET,arvancloud,🇮🇷IranWebsites
-- RULE-SET,derakcloud,🇮🇷IranWebsites
-- RULE-SET,iranserver,🇮🇷IranWebsites
-- RULE-SET,parspack,🇮🇷IranWebsites
-- GEOSITE,private,🖥️Lan
-- IP-CIDR,10.10.34.0/24,🖥️Lan
-- RULE-SET,local_ips,🖥️Lan
-- RULE-SET,C4Uprivate,🖥️Lan
-- RULE-SET,private,🖥️Lan
-- RULE-SET,BanEasyPrivacy,🛡️PrivacyTrackers
-- GEOSITE,category-ads-all,🛑Advertisements
-- RULE-SET,ACLBanAD,🛑Advertisements
-- RULE-SET,ACLBanEasyList,🛑Advertisements
-- RULE-SET,BanEasyListChina,🛑Advertisements
-- RULE-SET,IranAds,🛑Advertisements
-- RULE-SET,spotifyads,🛑Advertisements
-- RULE-SET,BanProgramAD,🛑Advertisements
-- RULE-SET,BanAD,🛑Advertisements
-- RULE-SET,PrivateTracker,🛑Advertisements
-- RULE-SET,category_public_tracker,🛑Advertisements
-- RULE-SET,LiteAds,🛑Advertisements
-- RULE-SET,iran_ads,🛑Advertisements
-- RULE-SET,PersianBlocker,🛑Advertisements
-- RULE-SET,ads,🛑Advertisements
-- RULE-SET,BanEasyList,🛑Advertisements
-- RULE-SET,xiaomi-ads,🛑Advertisements
-- RULE-SET,xiaomi_block_list,🛑Advertisements
-- RULE-SET,malware,🦠SECURITY
-- RULE-SET,cryptominers,🦠SECURITY
-- RULE-SET,phishing,🦠SECURITY
-- RULE-SET,warninglist,🦠SECURITY
-- RULE-SET,Ponzi,🦠SECURITY
-- GEOSITE,nvidia,🎛NVIDIA🎯
-- GEOSITE,github,</>GIT🎯
-- GEOSITE,gitlab,</>GIT🎯
-- RULE-SET,github,</>GIT🎯
-- RULE-SET,ACLyoutube,📺YouTube🎯
-- RULE-SET,youtube,📺YouTube🎯
-- RULE-SET,YouTubeMusic,📺YouTube🎯
-- RULE-SET,10iumYouTube,📺YouTube🎯
-- GEOSITE,google,📱Google🎯
-- PROCESS-NAME,com.android.vending,📱Google🎯
-- PROCESS-NAME,com.google.android.gms,📱Google🎯
-- RULE-SET,ACLgoogle,📱Google🎯
-- RULE-SET,google,📱Google🎯
-- RULE-SET,google-play,📱Google🎯
-- RULE-SET,reddit,📙Reddit🎯
-- PROCESS-NAME,Telegram.exe,🔵Telegram🎯
-- PROCESS-NAME,org.telegram.messenger,🔵Telegram🎯
-- PROCESS-NAME,org.telegram.messenger.web,🔵Telegram🎯
-- RULE-SET,ACLtelegram,🔵Telegram🎯
-- RULE-SET,telegram,🔵Telegram🎯
-- GEOSITE,openai,🤖OpenAI🎯
-- RULE-SET,openai,🤖OpenAI🎯
-- PROCESS-NAME,Twitter.exe,🐦Twitter🎯
-- PROCESS-NAME,com.twitter.android,🐦Twitter🎯
-- RULE-SET,ACLTwitter,🐦Twitter🎯
-- RULE-SET,C4Utwitter,🐦Twitter🎯
-- RULE-SET,mihTwitter,🐦Twitter🎯
-- RULE-SET,Domtwitter,🐦Twitter🎯
-- DOMAIN-SUFFIX,grok.com,🤖Grok🎯
-- DOMAIN-SUFFIX,x.ai,🤖Grok🎯
-- RULE-SET,ACLdiscord,🗨️Discord🎯
-- GEOSITE,discord,🗨️Discord🎯
-- RULE-SET,discord,🗨️Discord🎯
-- RULE-SET,ACLsteam,🎮Steam🎯
-- RULE-SET,steam,🎮Steam🎯
-- RULE-SET,SteamRegionCheck,🎮Steam🎯
-- RULE-SET,ACLtwitch,👾Twitch🎯
-- RULE-SET,twitch,👾Twitch🎯
-- GEOSITE,cloudflare,☁️Cloudflare🎯
-- RULE-SET,cloudflare,☁️Cloudflare🎯
-- PROCESS-NAME,com.instagram.android,📸Instagram🎯
-- RULE-SET,ACLinsta,📸Instagram🎯
-- GEOSITE,instagram,📸Instagram🎯
-- RULE-SET,instagram,📸Instagram🎯
-- GEOSITE,facebook,📘Facebook🎯
-- RULE-SET,facebook,📘Facebook🎯
-- GEOSITE,netflix,🎥Netflix🎯
-- RULE-SET,Netflix,🎥Netflix🎯
-- RULE-SET,NetflixIP,🎥Netflix🎯
-- PROCESS-NAME,com.spotify.music,🎶Spotify🎯
-- PROCESS-NAME,Spotify.exe,🎶Spotify🎯
-- RULE-SET,ACLSpotify,🎶Spotify🎯
-- RULE-SET,DomainSpotify,🎶Spotify🎯
-- RULE-SET,mihspotify,🎶Spotify🎯
-- RULE-SET,TikTok,🎬TikTok🎯
-- GEOSITE,linkedin,💼LinkedIn🎯
-- PROCESS-NAME,dota2.exe,🎮Dota2🎯
-- RULE-SET,Dota2,🎮Dota2🎯
-- PROCESS-NAME,dota2.exe,🎮Dota2🎯
-- IP-CIDR,103.10.124.0/23,🎮Dota2🎯,no-resolve
-- IP-CIDR,103.28.54.0/23,🎮Dota2🎯,no-resolve
-- IP-CIDR,146.66.155.0/24,🎮Dota2🎯,no-resolve
-- IP-CIDR,155.133.224.0/19,🎮Dota2🎯,no-resolve
-- IP-CIDR,162.254.192.0/21,🎮Dota2🎯,no-resolve
-- IP-CIDR,185.25.182.0/24,🎮Dota2🎯,no-resolve
-- IP-CIDR,45.121.184.0/22,🎮Dota2🎯,no-resolve
-- IP-CIDR,146.66.155.36/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,155.133.248.53/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,155.133.246.66/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,155.133.248.53/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,155.133.246.66/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,155.133.253.38/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,155.133.232.98/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,155.133.235.34/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,155.133.246.34/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,162.254.198.43/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,155.133.230.101/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,162.213.192.58/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,162.254.192.67/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,155.133.233.99/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,155.133.239.25/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,155.133.245.35/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,103.10.124.44/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,103.10.125.146/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,155.133.238.163/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,3.5.221.177/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,20.60.213.1/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,20.60.213.129/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,23.2.13.184/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,68.169.42.221/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,95.100.170.43/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,95.100.170.59/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,146.66.155.69/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,148.72.168.4/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,155.133.226.73/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,155.133.227.41/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,155.133.230.99/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,155.133.238.178/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,155.133.246.40/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,155.133.248.41/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,155.133.252.88/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,162.254.192.73/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,162.254.193.100/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,162.254.196.70/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,162.254.198.156/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,173.237.26.52/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,185.25.182.51/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,185.25.183.163/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,188.42.106.164/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,188.42.190.28/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,103.10.124.117/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,103.10.125.147/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,103.28.54.174/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,103.28.54.189/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,155.133.246.39/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,155.133.248.36/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,162.254.193.73/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,162.254.194.37/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,162.254.197.36/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,162.254.198.103/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,162.254.199.179/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,23.251.100.186/32,🎮Dota2🎯,no-resolve
-- DOMAIN-SUFFIX,steamcloud-bah.s3.dualstack.me-south-1.amazonaws.com,🎮Dota2🎯
-- DOMAIN-SUFFIX,steamclouddubai.blob.core.windows.net,🎮Dota2🎯
-- DOMAIN-SUFFIX,dota2.com,🎮Dota2🎯
-- IP-CIDR,23.36.163.33/32,🎮Dota2🎯,no-resolve
-- IP-CIDR,23.36.163.22/32,🎮Dota2🎯,no-resolve
-- RULE-SET,DownloadManagers,📥Download🎯
-- RULE-SET,Download,📥Download🎯
-- RULE-SET,category-ai,🤖AI🎯
-- DOMAIN-SUFFIX,deepseek.com,🤖AI🎯
-- DOMAIN-SUFFIX,qwen.ai,🤖AI🎯
-- RULE-SET,censor,🤬censorMovie🎯
-- PROCESS-NAME,com.anydesk.anydeskandroid,💻AnyDesk🎯
-- PROCESS-NAME,AnyDesk.exe,💻AnyDesk🎯
-- DOMAIN-SUFFIX,anydesk.com,💻AnyDesk🎯
-- RULE-SET,game,🕹️VideoGame🎯
-- RULE-SET,category-games,🕹️VideoGame🎯
-- RULE-SET,GameDownload,🕹️VideoGame🎯
-- RULE-SET,Xbox,🕹️VideoGame🎯
-- RULE-SET,xiaomi_white_list,📲Xiaomi🎯
-- RULE-SET,whatsapp,💬Whatsapp🎯
-- PROCESS-NAME,com.whatsapp,💬Whatsapp🎯
-- PROCESS-NAME,WhatsApp.exe,💬Whatsapp🎯
-- RULE-SET,windows,🪟Windows🎯
-- PROCESS-NAME,obs64.exe,🎦Streamer🎯
-- PROCESS-NAME,obs-browser-page.exe,🎦Streamer🎯
-- MATCH,⚡Online
+  - GEOIP,IR,🇮🇷IranWebsites
+  - GEOSITE,category-ir,🇮🇷IranWebsites
+  - RULE-SET,apps,🇮🇷IranWebsites
+  - RULE-SET,category_ir,🇮🇷IranWebsites
+  - RULE-SET,iran,🇮🇷IranWebsites
+  - RULE-SET,ir,🇮🇷IranWebsites
+  - RULE-SET,ircidr,🇮🇷IranWebsites
+  - RULE-SET,irasn,🇮🇷IranWebsites
+  - RULE-SET,arvancloud,🇮🇷IranWebsites
+  - RULE-SET,derakcloud,🇮🇷IranWebsites
+  - RULE-SET,iranserver,🇮🇷IranWebsites
+  - RULE-SET,parspack,🇮🇷IranWebsites
+  - GEOSITE,private,🖥️Lan
+  - IP-CIDR,10.10.34.0/24,🖥️Lan
+  - RULE-SET,local_ips,🖥️Lan
+  - RULE-SET,C4Uprivate,🖥️Lan
+  - RULE-SET,private,🖥️Lan
+  - RULE-SET,BanEasyPrivacy,🛡️PrivacyTrackers
+  - GEOSITE,category-ads-all,🛑Advertisements
+  - RULE-SET,ACLBanAD,🛑Advertisements
+  - RULE-SET,ACLBanEasyList,🛑Advertisements
+  - RULE-SET,BanEasyListChina,🛑Advertisements
+  - RULE-SET,IranAds,🛑Advertisements
+  - RULE-SET,spotifyads,🛑Advertisements
+  - RULE-SET,BanProgramAD,🛑Advertisements
+  - RULE-SET,BanAD,🛑Advertisements
+  - RULE-SET,PrivateTracker,🛑Advertisements
+  - RULE-SET,category_public_tracker,🛑Advertisements
+  - RULE-SET,LiteAds,🛑Advertisements
+  - RULE-SET,iran_ads,🛑Advertisements
+  - RULE-SET,PersianBlocker,🛑Advertisements
+  - RULE-SET,ads,🛑Advertisements
+  - RULE-SET,BanEasyList,🛑Advertisements
+  - RULE-SET,xiaomi-ads,🛑Advertisements
+  - RULE-SET,xiaomi_block_list,🛑Advertisements
+  - RULE-SET,malware,🦠SECURITY
+  - RULE-SET,cryptominers,🦠SECURITY
+  - RULE-SET,phishing,🦠SECURITY
+  - RULE-SET,warninglist,🦠SECURITY
+  - RULE-SET,Ponzi,🦠SECURITY
+  - GEOSITE,nvidia,🎛NVIDIA🎯
+  - GEOSITE,github,</>GIT🎯
+  - GEOSITE,gitlab,</>GIT🎯
+  - RULE-SET,github,</>GIT🎯
+  - RULE-SET,ACLyoutube,📺YouTube🎯
+  - RULE-SET,youtube,📺YouTube🎯
+  - RULE-SET,YouTubeMusic,📺YouTube🎯
+  - RULE-SET,10iumYouTube,📺YouTube🎯
+  - GEOSITE,google,📱Google🎯
+  - PROCESS-NAME,com.android.vending,📱Google🎯
+  - PROCESS-NAME,com.google.android.gms,📱Google🎯
+  - RULE-SET,ACLgoogle,📱Google🎯
+  - RULE-SET,google,📱Google🎯
+  - RULE-SET,google-play,📱Google🎯
+  - RULE-SET,reddit,📙Reddit🎯
+  - PROCESS-NAME,Telegram.exe,🔵Telegram🎯
+  - PROCESS-NAME,org.telegram.messenger,🔵Telegram🎯
+  - PROCESS-NAME,org.telegram.messenger.web,🔵Telegram🎯
+  - RULE-SET,ACLtelegram,🔵Telegram🎯
+  - RULE-SET,telegram,🔵Telegram🎯
+  - GEOSITE,openai,🤖OpenAI🎯
+  - RULE-SET,openai,🤖OpenAI🎯
+  - PROCESS-NAME,Twitter.exe,🐦Twitter🎯
+  - PROCESS-NAME,com.twitter.android,🐦Twitter🎯
+  - RULE-SET,ACLTwitter,🐦Twitter🎯
+  - RULE-SET,C4Utwitter,🐦Twitter🎯
+  - RULE-SET,mihTwitter,🐦Twitter🎯
+  - RULE-SET,Domtwitter,🐦Twitter🎯
+  - DOMAIN-SUFFIX,grok.com,🤖Grok🎯
+  - DOMAIN-SUFFIX,x.ai,🤖Grok🎯
+  - RULE-SET,ACLdiscord,🗨️Discord🎯
+  - GEOSITE,discord,🗨️Discord🎯
+  - RULE-SET,discord,🗨️Discord🎯
+  - RULE-SET,ACLsteam,🎮Steam🎯
+  - RULE-SET,steam,🎮Steam🎯
+  - RULE-SET,SteamRegionCheck,🎮Steam🎯
+  - RULE-SET,ACLtwitch,👾Twitch🎯
+  - RULE-SET,twitch,👾Twitch🎯
+  - GEOSITE,cloudflare,☁️Cloudflare🎯
+  - RULE-SET,cloudflare,☁️Cloudflare🎯
+  - PROCESS-NAME,com.instagram.android,📸Instagram🎯
+  - RULE-SET,ACLinsta,📸Instagram🎯
+  - GEOSITE,instagram,📸Instagram🎯
+  - RULE-SET,instagram,📸Instagram🎯
+  - GEOSITE,facebook,📘Facebook🎯
+  - RULE-SET,facebook,📘Facebook🎯
+  - GEOSITE,netflix,🎥Netflix🎯
+  - RULE-SET,Netflix,🎥Netflix🎯
+  - RULE-SET,NetflixIP,🎥Netflix🎯
+  - PROCESS-NAME,com.spotify.music,🎶Spotify🎯
+  - PROCESS-NAME,Spotify.exe,🎶Spotify🎯
+  - RULE-SET,ACLSpotify,🎶Spotify🎯
+  - RULE-SET,DomainSpotify,🎶Spotify🎯
+  - RULE-SET,mihspotify,🎶Spotify🎯
+  - RULE-SET,TikTok,🎬TikTok🎯
+  - GEOSITE,linkedin,💼LinkedIn🎯
+  - PROCESS-NAME,dota2.exe,🎮Dota2🎯
+  - RULE-SET,Dota2,🎮Dota2🎯
+  - PROCESS-NAME,dota2.exe,🎮Dota2🎯
+  - IP-CIDR,103.10.124.0/23,🎮Dota2🎯,no-resolve
+  - IP-CIDR,103.28.54.0/23,🎮Dota2🎯,no-resolve
+  - IP-CIDR,146.66.155.0/24,🎮Dota2🎯,no-resolve
+  - IP-CIDR,155.133.224.0/19,🎮Dota2🎯,no-resolve
+  - IP-CIDR,162.254.192.0/21,🎮Dota2🎯,no-resolve
+  - IP-CIDR,185.25.182.0/24,🎮Dota2🎯,no-resolve
+  - IP-CIDR,45.121.184.0/22,🎮Dota2🎯,no-resolve
+  - IP-CIDR,146.66.155.36/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,155.133.248.53/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,155.133.246.66/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,155.133.248.53/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,155.133.246.66/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,155.133.253.38/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,155.133.232.98/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,155.133.235.34/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,155.133.246.34/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,162.254.198.43/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,155.133.230.101/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,162.213.192.58/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,162.254.192.67/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,155.133.233.99/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,155.133.239.25/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,155.133.245.35/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,103.10.124.44/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,103.10.125.146/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,155.133.238.163/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,3.5.221.177/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,20.60.213.1/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,20.60.213.129/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,23.2.13.184/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,68.169.42.221/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,95.100.170.43/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,95.100.170.59/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,146.66.155.69/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,148.72.168.4/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,155.133.226.73/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,155.133.227.41/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,155.133.230.99/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,155.133.238.178/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,155.133.246.40/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,155.133.248.41/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,155.133.252.88/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,162.254.192.73/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,162.254.193.100/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,162.254.196.70/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,162.254.198.156/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,173.237.26.52/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,185.25.182.51/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,185.25.183.163/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,188.42.106.164/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,188.42.190.28/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,103.10.124.117/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,103.10.125.147/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,103.28.54.174/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,103.28.54.189/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,155.133.246.39/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,155.133.248.36/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,162.254.193.73/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,162.254.194.37/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,162.254.197.36/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,162.254.198.103/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,162.254.199.179/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,23.251.100.186/32,🎮Dota2🎯,no-resolve
+  - DOMAIN-SUFFIX,steamcloud-bah.s3.dualstack.me-south-1.amazonaws.com,🎮Dota2🎯
+  - DOMAIN-SUFFIX,steamclouddubai.blob.core.windows.net,🎮Dota2🎯
+  - DOMAIN-SUFFIX,dota2.com,🎮Dota2🎯
+  - IP-CIDR,23.36.163.33/32,🎮Dota2🎯,no-resolve
+  - IP-CIDR,23.36.163.22/32,🎮Dota2🎯,no-resolve
+  - RULE-SET,DownloadManagers,📥Download🎯
+  - RULE-SET,Download,📥Download🎯
+  - RULE-SET,category-ai,🤖AI🎯
+  - DOMAIN-SUFFIX,deepseek.com,🤖AI🎯
+  - DOMAIN-SUFFIX,qwen.ai,🤖AI🎯
+  - RULE-SET,censor,🤬censorMovie🎯
+  - PROCESS-NAME,com.anydesk.anydeskandroid,💻AnyDesk🎯
+  - PROCESS-NAME,AnyDesk.exe,💻AnyDesk🎯
+  - DOMAIN-SUFFIX,anydesk.com,💻AnyDesk🎯
+  - RULE-SET,game,🕹️VideoGame🎯
+  - RULE-SET,category-games,🕹️VideoGame🎯
+  - RULE-SET,GameDownload,🕹️VideoGame🎯
+  - RULE-SET,Xbox,🕹️VideoGame🎯
+  - RULE-SET,xiaomi_white_list,📲Xiaomi🎯
+  - RULE-SET,whatsapp,💬Whatsapp🎯
+  - PROCESS-NAME,com.whatsapp,💬Whatsapp🎯
+  - PROCESS-NAME,WhatsApp.exe,💬Whatsapp🎯
+  - RULE-SET,windows,🪟Windows🎯
+  - PROCESS-NAME,obs64.exe,🎦Streamer🎯
+  - PROCESS-NAME,obs-browser-page.exe,🎦Streamer🎯
+  - MATCH,⚡Online
