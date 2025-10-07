@@ -60,6 +60,9 @@ def load_template():
 def save_config(provider, data, suffix):
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     out_file = os.path.join(OUTPUT_DIR, f"{provider}_{suffix}.yml")
+    print(f"Writing {out_file} with data: {data['dns']}")
+    if not data:
+        logging.warning(f"⚠️ No data to write for {provider}_{suffix}")
     with open(out_file, "w", encoding="utf-8") as f:
         yaml.dump(data, Dumper=NoAliasDumper, allow_unicode=True, sort_keys=False)
     return out_file
@@ -181,7 +184,7 @@ def main():
             continue
 
         # Normal config
-        normal_cfg = copy.deepcopy(tpl)
+        normal_cfg = copy.deepcopy(tpl) or {}
         normal_cfg["dns"]["nameserver"] = all_entries
         normal_cfg["dns"]["direct-nameserver"] = all_entries
         normal_cfg["dns"]["proxy-server-nameserver"] = all_entries
@@ -191,7 +194,7 @@ def main():
         logging.info(f"✅ Normal config saved: {f1}")
 
         # Strict config
-        strict_cfg = copy.deepcopy(tpl)
+        strict_cfg = copy.deepcopy(tpl) or {}
         strict_cfg["dns"]["default-nameserver"] = list(dict.fromkeys(entries["ipv4"])) + list(dict.fromkeys(entries["ipv6"]))
         strict_cfg["dns"]["nameserver"] = all_entries
         strict_cfg["dns"]["direct-nameserver"] = all_entries
