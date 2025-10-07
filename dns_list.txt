@@ -41,11 +41,11 @@ OpenDNS | doh  | https://dns.opendns.com/dns-query
 OpenDNS | dot  | resolver1.opendns.com
 OpenDNS | country | United States
 
-CleanBrowsing | ipv4 | 185.228.168.9
-CleanBrowsing | ipv4 | 185.228.169.9
-CleanBrowsing | doh  | https://doh.cleanbrowsing.org/doh/family-filter/
-CleanBrowsing | dot  | dot.cleanbrowsing.org
-CleanBrowsing | country | United States
+CleanBrowsing family | ipv4 | 185.228.168.9
+CleanBrowsing family | ipv4 | 185.228.169.9
+CleanBrowsing family | doh  | https://doh.cleanbrowsing.org/doh/family-filter/
+CleanBrowsing family | dot  | dot.cleanbrowsing.org
+CleanBrowsing family | country | United States
 
 ControlD | ipv4 | 76.76.2.0
 ControlD | ipv4 | 76.76.10.0
@@ -430,10 +430,10 @@ NextDNS | doh | dnsl.nextdns.io
 NextDNS | doh | dns2.nextdns.io
 Cloudflare | ipv4 | 1.1.1.1
 Cloudflare | ipv4 | 1.0.0.1
-Cloudflare | ipv4 | 1.0.0.2
-Cloudflare | ipv4 | 1.1.1.2
+Cloudflare security | ipv4 | 1.0.0.2
+Cloudflare security | ipv4 | 1.1.1.2
 Cloudflare | dot | one.one.one.one
-Cloudflare | doh | security.cloudflare-dns.com
+Cloudflare security | doh | security.cloudflare-dns.com
 Other | doh | https://deamnet-a.cerrajeriasanmiguel.com:8888/dns-query
 Other | doh | https://deamnet-b.cerrajeriasanmiguel.com:8888/dns-query
 Other | dot | tls://4.4.4.4
@@ -447,28 +447,28 @@ Cloudflare | ipv4 | 1.0.0.1
 Cloudflare | ipv6 | 2606:4700:4700::1111
 Cloudflare | ipv6 | 2606:4700:4700::1001
 Cloudflare | doh  | https://cloudflare-dns.com/dns-query
-Cloudflare | doh  | https://security.cloudflare-dns.com/dns-query
-Cloudflare | doh  | https://family.cloudflare-dns.com/dns-query
+Cloudflare security | doh  | https://security.cloudflare-dns.com/dns-query
+Cloudflare family | doh  | https://family.cloudflare-dns.com/dns-query
 Cloudflare | hostname | one.one.one.one
 Cloudflare | country | United States
 Cloudflare | dot  | tls://1.1.1.1
 Cloudflare | dot  | tls://1.0.0.1
 Cloudflare | dot  | tls://one.one.one.one
 Cloudflare | dot  | tls://1dot1dot1dot1.cloudflare-dns.com
-Cloudflare | dot  | tls://security.cloudflare-dns.com
-Cloudflare | dot  | tls://family.cloudflare-dns.com
+Cloudflare security | dot  | tls://security.cloudflare-dns.com
+Cloudflare family | dot  | tls://family.cloudflare-dns.com
 Cloudflare | dot  | udp://1.1.1.1
 Cloudflare | dot  | udp://1.0.0.1
 Cloudflare | dot  | udp://one.one.one.one
 Cloudflare | dot  | udp://1dot1dot1dot1.cloudflare-dns.com
-Cloudflare | dot  | udp://security.cloudflare-dns.com
-Cloudflare | dot  | udp://family.cloudflare-dns.com
+Cloudflare security | dot  | udp://security.cloudflare-dns.com
+Cloudflare family | dot  | udp://family.cloudflare-dns.com
 Cloudflare | dot  | tcp://1.1.1.1
 Cloudflare | dot  | tcp://1.0.0.1
 Cloudflare | dot  | tcp://one.one.one.one
 Cloudflare | dot  | tcp://1dot1dot1dot1.cloudflare-dns.com
-Cloudflare | dot  | tcp://security.cloudflare-dns.com
-Cloudflare | dot  | tcp://family.cloudflare-dns.com
+Cloudflare security | dot  | tcp://security.cloudflare-dns.com
+Cloudflare family | dot  | tcp://family.cloudflare-dns.com
 
 OpenDNS | ipv4 | 208.67.222.222
 OpenDNS | ipv4 | 208.67.220.220
@@ -629,10 +629,10 @@ NextDNS | doh | dnsl.nextdns.io
 NextDNS | doh | dns2.nextdns.io
 Cloudflare | ipv4 | 1.1.1.1
 Cloudflare | ipv4 | 1.0.0.1
-Cloudflare | ipv4 | 1.0.0.2
-Cloudflare | ipv4 | 1.1.1.2
+Cloudflare security | ipv4 | 1.0.0.2
+Cloudflare security | ipv4 | 1.1.1.2
 Cloudflare | dot | one.one.one.one
-Cloudflare | doh | security.cloudflare-dns.com
+Cloudflare security | doh | security.cloudflare-dns.com
 Other | doh | https://deamnet-a.cerrajeriasanmiguel.com:8888/dns-query
 Other | doh | https://deamnet-b.cerrajeriasanmiguel.com:8888/dns-query
 Other | dot | tls://4.4.4.4
@@ -690,15 +690,15 @@ Yandex.DNS | dot | tls://77.88.8.8
 Yandex.DNS | dot | tcp://77.88.8.8
 Yandex.DNS | dot | udp://77.88.8.8
 
-CleanBrowsing | ipv4 | 185.228.168.9
-CleanBrowsing | ipv4 | 185.228.169.9
-CleanBrowsing | ipv6 | 2a0d:2a00:1::2
-CleanBrowsing | ipv6 | 2a0d:2a00:2::2
-CleanBrowsing | doh  | https://doh.cleanbrowsing.org/doh/family-filter/
-CleanBrowsing | hostname  | family-filter.cleanbrowsing.org
-CleanBrowsing | dot | tls://185.228.168.9
-CleanBrowsing | dot | tcp://185.228.168.9
-CleanBrowsing | dot | udp://185.228.168.9
+CleanBrowsing family | ipv4 | 185.228.168.9
+CleanBrowsing family | ipv4 | 185.228.169.9
+CleanBrowsing family | ipv6 | 2a0d:2a00:1::2
+CleanBrowsing family | ipv6 | 2a0d:2a00:2::2
+CleanBrowsing family | doh  | https://doh.cleanbrowsing.org/doh/family-filter/
+CleanBrowsing family | hostname  | family-filter.cleanbrowsing.org
+CleanBrowsing family | dot | tls://185.228.168.9
+CleanBrowsing family | dot | tcp://185.228.168.9
+CleanBrowsing family | dot | udp://185.228.168.9
 
 Comodo Secure DNS | ipv4 | 8.26.56.26
 Comodo Secure DNS | ipv4 | 8.20.247.20
