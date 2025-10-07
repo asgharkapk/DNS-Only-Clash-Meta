@@ -2,6 +2,7 @@ import os
 import yaml
 import logging
 import urllib.parse
+import copy
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s - %(message)s")
 
@@ -170,11 +171,17 @@ def main():
     for provider, entries in providers.items():
         logging.info(f"⚙️ Generating configs for provider: {provider}")
         tpl = load_template()
+        if not tpl:
+            logging.error("❌ Template file is empty or invalid YAML!")
+            return
 
         all_entries = list(dict.fromkeys(entries["ipv4"])) + list(dict.fromkeys(entries["ipv6"])) + list(dict.fromkeys(entries["doh"])) + list(dict.fromkeys(entries["dot"])) + list(dict.fromkeys(entries["hostname"]))
+        if not all_entries:
+            logging.warning(f"⚠️ Provider {provider} has no DNS entries. Skipping...")
+            continue
 
         # Normal config
-        normal_cfg = tpl.copy()
+        normal_cfg = copy.deepcopy(tpl)
         normal_cfg["dns"]["nameserver"] = all_entries
         normal_cfg["dns"]["direct-nameserver"] = all_entries
         normal_cfg["dns"]["proxy-server-nameserver"] = all_entries
@@ -184,7 +191,7 @@ def main():
         logging.info(f"✅ Normal config saved: {f1}")
 
         # Strict config
-        strict_cfg = tpl.copy()
+        strict_cfg = copy.deepcopy(tpl)
         strict_cfg["dns"]["default-nameserver"] = list(dict.fromkeys(entries["ipv4"])) + list(dict.fromkeys(entries["ipv6"]))
         strict_cfg["dns"]["nameserver"] = all_entries
         strict_cfg["dns"]["direct-nameserver"] = all_entries
