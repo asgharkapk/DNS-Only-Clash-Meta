@@ -5,6 +5,10 @@ import urllib.parse
 
 logging.basicConfig(level=logging.INFO, format="%(levelname)s - %(message)s")
 
+class NoAliasDumper(yaml.Dumper):
+    def ignore_aliases(self, data):
+        return True
+
 INPUT_FILE = "dns_list.txt"
 TEMPLATE_FILE = "DNS_for_Clash.meta_Template.yml"
 OUTPUT_DIR = "Generated/Files"
@@ -56,7 +60,7 @@ def save_config(provider, data, suffix):
     os.makedirs(OUTPUT_DIR, exist_ok=True)
     out_file = os.path.join(OUTPUT_DIR, f"{provider}_{suffix}.yml")
     with open(out_file, "w", encoding="utf-8") as f:
-        yaml.dump(data, f, allow_unicode=True, sort_keys=False)
+        yaml.dump(data, Dumper=NoAliasDumper, allow_unicode=True, sort_keys=False)
     return out_file
 
 def generate_readme(files):
