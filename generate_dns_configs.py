@@ -22,6 +22,7 @@ DEFAULT_FALLBACK = [
 
 def dictator(torn):
     return list(dict.fromkeys(torn))
+    #return torn
 
 def add_fallback(dns_cfg, entries):
     fallback = entries["fallback"] if entries["fallback"] else DEFAULT_FALLBACK
