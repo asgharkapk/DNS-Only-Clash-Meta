@@ -20,9 +20,12 @@ DEFAULT_FALLBACK = [
     "2606:4700:4700::1111", "2001:4860:4860::8888"
 ]
 
+def dictator(torn):
+    return list(dict.fromkeys(torn))
+
 def add_fallback(dns_cfg, entries):
     fallback = entries["fallback"] if entries["fallback"] else DEFAULT_FALLBACK
-    dns_cfg["dns"]["fallback"] = list(dict.fromkeys(fallback))
+    dns_cfg["dns"]["fallback"] = dictator(fallback)
     return dns_cfg
 
 def parse_dns_list():
@@ -148,7 +151,7 @@ def generate_readme(files):
         if not fallback_list:
             fallback_list = DEFAULT_FALLBACK
         # Deduplicate while preserving order
-        fallback_list = list(dict.fromkeys(fallback_list))
+        fallback_list = dictator(fallback_list)
         fallback_str = ", ".join(fallback_list)
 
         normal_url = strict_url = "N/A"
@@ -185,7 +188,7 @@ def main():
             logging.error("❌ Template file is empty or invalid YAML!")
             return
 
-        all_entries = list(dict.fromkeys(entries["ipv4"])) + list(dict.fromkeys(entries["ipv6"])) + list(dict.fromkeys(entries["doh"])) + list(dict.fromkeys(entries["dot"])) + list(dict.fromkeys(entries["hostname"]))
+        all_entries = dictator(entries["ipv4"]) + dictator(entries["ipv6"]) + dictator(entries["doh"]) + dictator(entries["dot"]) + dictator(entries["hostname"])
         if not all_entries:
             logging.warning(f"⚠️ Provider {provider} has no DNS entries. Skipping...")
             continue
@@ -202,7 +205,7 @@ def main():
 
         # Strict config
         strict_cfg = copy.deepcopy(tpl) or {}
-        strict_cfg["dns"]["default-nameserver"] = list(dict.fromkeys(entries["ipv4"])) + list(dict.fromkeys(entries["ipv6"]))
+        strict_cfg["dns"]["default-nameserver"] = dictator(entries["ipv4"]) + dictator(entries["ipv6"])
         strict_cfg["dns"]["nameserver"] = all_entries
         strict_cfg["dns"]["direct-nameserver"] = all_entries
         strict_cfg["dns"]["proxy-server-nameserver"] = all_entries
