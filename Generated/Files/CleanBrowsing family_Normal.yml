@@ -60,67 +60,45 @@ dns:
   - 223.5.5.5
   - 77.88.8.8
   nameserver:
-  - 1.1.1.1
-  - 1.0.0.1
-  - 2606:4700:4700::1111
-  - 2606:4700:4700::1001
-  - https://cloudflare-dns.com/dns-query
-  - tls://1.1.1.1
-  - tcp://1.1.1.1
-  - udp://1.1.1.1
-  - one.one.one.one
-  - tcp://1.0.0.1
-  - tls://1.0.0.1
-  - tls://one.one.one.one
-  - tls://1dot1dot1dot1.cloudflare-dns.com
-  - udp://1.0.0.1
-  - udp://one.one.one.one
-  - udp://1dot1dot1dot1.cloudflare-dns.com
-  - tcp://one.one.one.one
-  - tcp://1dot1dot1dot1.cloudflare-dns.com
-  - one.one.one.one
+  - 185.228.168.9
+  - 185.228.169.9
+  - 2a0d:2a00:1::2
+  - 2a0d:2a00:2::2
+  - https://doh.cleanbrowsing.org/doh/family-filter/
+  - dot.cleanbrowsing.org
+  - tls://185.228.168.9
+  - tcp://185.228.168.9
+  - udp://185.228.168.9
+  - family-filter.cleanbrowsing.org
   direct-nameserver:
-  - 1.1.1.1
-  - 1.0.0.1
-  - 2606:4700:4700::1111
-  - 2606:4700:4700::1001
-  - https://cloudflare-dns.com/dns-query
-  - tls://1.1.1.1
-  - tcp://1.1.1.1
-  - udp://1.1.1.1
-  - one.one.one.one
-  - tcp://1.0.0.1
-  - tls://1.0.0.1
-  - tls://one.one.one.one
-  - tls://1dot1dot1dot1.cloudflare-dns.com
-  - udp://1.0.0.1
-  - udp://one.one.one.one
-  - udp://1dot1dot1dot1.cloudflare-dns.com
-  - tcp://one.one.one.one
-  - tcp://1dot1dot1dot1.cloudflare-dns.com
-  - one.one.one.one
+  - 185.228.168.9
+  - 185.228.169.9
+  - 2a0d:2a00:1::2
+  - 2a0d:2a00:2::2
+  - https://doh.cleanbrowsing.org/doh/family-filter/
+  - dot.cleanbrowsing.org
+  - tls://185.228.168.9
+  - tcp://185.228.168.9
+  - udp://185.228.168.9
+  - family-filter.cleanbrowsing.org
   proxy-server-nameserver:
-  - 1.1.1.1
-  - 1.0.0.1
-  - 2606:4700:4700::1111
-  - 2606:4700:4700::1001
-  - https://cloudflare-dns.com/dns-query
-  - tls://1.1.1.1
-  - tcp://1.1.1.1
-  - udp://1.1.1.1
-  - one.one.one.one
-  - tcp://1.0.0.1
-  - tls://1.0.0.1
-  - tls://one.one.one.one
-  - tls://1dot1dot1dot1.cloudflare-dns.com
-  - udp://1.0.0.1
-  - udp://one.one.one.one
-  - udp://1dot1dot1dot1.cloudflare-dns.com
-  - tcp://one.one.one.one
-  - tcp://1dot1dot1dot1.cloudflare-dns.com
-  - one.one.one.one
+  - 185.228.168.9
+  - 185.228.169.9
+  - 2a0d:2a00:1::2
+  - 2a0d:2a00:2::2
+  - https://doh.cleanbrowsing.org/doh/family-filter/
+  - dot.cleanbrowsing.org
+  - tls://185.228.168.9
+  - tcp://185.228.168.9
+  - udp://185.228.168.9
+  - family-filter.cleanbrowsing.org
   fallback:
   - 8.8.8.8
+  - 1.1.1.1
+  - 9.9.9.9
+  - 94.140.14.14
+  - 2606:4700:4700::1111
+  - 2001:4860:4860::8888
 sniffer:
   enable: true
   force-dns-mapping: true
