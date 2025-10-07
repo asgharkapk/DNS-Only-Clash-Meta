@@ -64,7 +64,14 @@ def save_config(provider, data, suffix):
     if not data:
         logging.warning(f"⚠️ No data to write for {provider}_{suffix}")
     with open(out_file, "w", encoding="utf-8") as f:
-        yaml.dump(data, Dumper=NoAliasDumper, allow_unicode=True, sort_keys=False)
+        yaml.dump(
+            data,
+            f,
+            Dumper=NoAliasDumper,
+            allow_unicode=True,
+            sort_keys=False,
+            default_flow_style=False   # <- forces each list item on its own line
+        )
     return out_file
 
 def generate_readme(files):
