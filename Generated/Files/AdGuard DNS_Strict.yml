@@ -57,7 +57,6 @@ dns:
   - 2a10:50c0::ad1:ff
   - 2a10:50c0::ad2:ff
   - https://dns.adguard.com/dns-query
-  - tls://dns.adguard.com
   - tls://94.140.14.14
   - tcp://94.140.14.14
   - udp://94.140.14.14
@@ -68,7 +67,6 @@ dns:
   - 2a10:50c0::ad1:ff
   - 2a10:50c0::ad2:ff
   - https://dns.adguard.com/dns-query
-  - tls://dns.adguard.com
   - tls://94.140.14.14
   - tcp://94.140.14.14
   - udp://94.140.14.14
@@ -79,7 +77,6 @@ dns:
   - 2a10:50c0::ad1:ff
   - 2a10:50c0::ad2:ff
   - https://dns.adguard.com/dns-query
-  - tls://dns.adguard.com
   - tls://94.140.14.14
   - tcp://94.140.14.14
   - udp://94.140.14.14
